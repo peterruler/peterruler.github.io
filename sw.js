@@ -2,8 +2,6 @@ var CACHE_NAME = 'homepage-my-site-cache-v5';
 
 var appShellFiles = [
 '/index.html',
-'/assets/docs/2021_Lebenslauf_Peter_Stroessler.pdf',
-'/assets/docs/2021_Zeugnisse_Peter_Stroessler.pdf',
 '/assets/css/about.css',
 '/assets/css/animate.css',
 '/assets/css/bootstrap.min.css',
