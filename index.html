@@ -1,0 +1,775 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <title>Peter Strössler</title>
+  <meta name="description" content="Peter Strössler">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta property="og:title" content="Peter Strössler">
+  <meta property="og:type" content="html homepage">
+  <meta property="og:url" content="https://peterruler.github.io">
+  <meta property="og:image" content="https://peterruler.github.io/assets/img/logo.png">
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="256x256" href="/apple-touch-icon.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/mstile-150x150.png">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
+  <!-- Fonts -->
+  <link rel="stylesheet" type="text/css" href="./assets/fonts/font-awesome.min.css">
+  <!-- Icon -->
+  <link rel="stylesheet" type="text/css" href="./assets/fonts/simple-line-icons.css">
+  <!-- Slicknav -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/slicknav.css">
+  <!-- Menu CSS -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/menu_sideslide.css">
+  <!-- Slider CSS -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/slide-style.css">
+  <!-- Nivo Lightbox -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/nivo-lightbox.css">
+  <!-- Animate -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/animate.css">
+  <!-- Main Style -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+  <!-- Responsive Style -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/responsive.css">
+  <meta name="theme-color" content="#318CE7">
+  <script>document.interestCohort = null;</script>
+  <script>
+    function getAge(dateString) {
+      var today = new Date();
+      var birthDate = new Date(dateString);
+      var age = today.getFullYear() - birthDate.getFullYear();
+      var m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+      }
+      return age;
+    }
+    const GEBURTSDATUM = "1978-03-05";
+    const ALTERSJAHRE = getAge(GEBURTSDATUM);
+    const ERFAHRUNGSDATUM = "2005-09-01";
+    const ERFAHRUNGSJAHRE = getAge(ERFAHRUNGSDATUM);
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js', { scope: './' }).then(function (registration) {
+        console.info('succeeded');
+      }).catch(function (error) {
+        console.error(error);
+      });
+    } else {
+      // Der verwendete Browser unterstützt Service Worker nicht.
+      let aElement = document.createElement('a');
+      aElement.href = 'https://www.chromium.org/blink/serviceworker/service-worker-faq';
+      aElement.textContent = 'unavailable';
+      console.warn('unavailable');
+      let outDiv = document.getElementById("status");
+
+      if (outDiv === null) {
+        let elem = document.createElement('div');
+        elem.id = 'status';
+        document.body.appendChild(elem);
+      }
+      document.querySelector('#status').appendChild(aElement);
+    }
+    navigator.serviceWorker.ready.then(function (registration) {
+      if (!registration.pushManager) {
+        alert('No push notifications support.');
+        return false;
+      }
+      //To subscribe `push notification` from push manager
+      registration.pushManager.subscribe({
+        userVisibleOnly: true //Always show notification when received
+      })
+        .then(function (subscription) {
+          console.log('Subscribed.');
+        })
+        .catch(function (error) {
+          console.log('Subscription error: ', error);
+        });
+    })
+  </script>
+</head>
+
+<body>
+  <!-- Header Area wrapper Starts -->
+  <header id="header-wrap">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar"
+            aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span class="icon-menu"></span>
+            <span class="icon-menu"></span>
+            <span class="icon-menu"></span>
+          </button>
+          <a href="index.html" class="navbar-brand"><img src="./assets/img/logo.png" alt=""></a>
+        </div>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="onepage-nev navbar-nav mr-auto w-100 justify-content-end clearfix">
+            <li class="nav-item active">
+              <a class="nav-link" href="#hero-area">
+                Startseite
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">
+                Über
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">
+                Angebot
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#resume">
+                Zeitleiste
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolios">
+                Portfolio
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">
+                Kontakt
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Mobile Menu Start -->
+      <ul class="onepage-nev mobile-menu">
+        <li>
+          <a href="#hero-area">Startseite</a>
+        </li>
+        <li>
+          <a href="#about">Über</a>
+        </li>
+        <li>
+          <a href="#services">Angebot</a>
+        </li>
+        <li>
+          <a href="#resume">Zeitleiste</a>
+        </li>
+        <li>
+          <a href="#portfolios">Portfolio</a>
+        </li>
+        <li>
+          <a href="#contact">Kontakt</a>
+        </li>
+      </ul>
+      <!-- Mobile Menu End -->
+    </nav>
+    <!-- Navbar End -->
+    <!-- Hero Area Start -->
+    <div id="hero-area" class="hero-area-bg">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 text-center">
+            <div class="contents">
+              <h1 style="display: none;">Peter Strössler</h1>
+              <div style="display: none;">Peter Strössler</div>
+              <h5 class="script-font wow fadeInUp" data-wow-delay="0.2s">Willkommen!</h5>
+              <h2 class="head-title wow fadeInUp" data-wow-delay="0.4s">Peter Strössler</h2>
+              <p class="script-font wow fadeInUp" data-wow-delay="0.6s">Informatik Ingenieur, Frontend- und
+                Backend-Webentwickler</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero Area End -->
+  </header>
+  <!-- Header Area wrapper End -->
+  <!-- About Section Start -->
+  <section id="about" class="section-padding">
+    <h2 style="display:none;">Bewerbungshomepage - Peter Strössler</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="img-thumb wow fadeInLeft" data-wow-delay="0.3s">
+            <img class="img-fluid" src="./assets/img/about/about-1.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="profile-wrapper wow fadeInRight" data-wow-delay="0.3s">
+            <h3>Hallo!</h3>
+            <p>Ich arbeite als Applikationsentwickler und schätze den beruflich und privaten respektvollen Umgang.</p>
+            <div class="about-profile">
+              <ul class="admin-profile">
+                <li><span class="pro-title"> Name </span> <span class="pro-detail">Peter Strössler</span></li>
+                <li><span class="pro-title"> Alter </span> <span class="pro-detail">
+                    <script>
+                        ; (function () {
+                          document.write(ALTERSJAHRE + " Jahre");
+                        })();
+                    </script>
+                  </span></li>
+                <li><span class="pro-title"> Erfahrung </span> <span class="pro-detail">
+                    <script>
+                      ; (function () {
+                        document.write("+ " + ERFAHRUNGSJAHRE + " Jahre");
+                      })();
+                    </script>
+                  </span></li>
+                <li><span class="pro-title"> Land </span> <span class="pro-detail">Schweiz</span></li>
+                <li><span class="pro-title"> Ort </span> <span class="pro-detail">Villigen, Aargau</span></li>
+                <li><span class="pro-title"> E-mail </span> <span class="pro-detail"><a
+                      href="mailto:peter.stroessler@bluewin.ch?subject=Kontakt%20Email%20von%20Bewerbungs-Webseite">peter.stroessler@bluewin.ch</a></span>
+                </li>
+                <li><span class="pro-title"> Telefon </span> <span class="pro-detail"><a href="tel:0041793057029">+ (41)
+                      79 305 70 29</a></span></li>
+              </ul>
+            </div>
+            <a href="mailto:peter.stroessler@bluewin.ch?subject=Kontakt%20Email%20von%20Bewerbungs-Webseite"
+              class="btn btn-danger"><i class="icon-speech"></i> Mich Kontaktieren</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section End -->
+  <!-- Services Section Start -->
+  <section id="services" class="services section-padding">
+    <h2 class="section-title wow flipInX" data-wow-delay="0.4s">Was ich biete</h2>
+    <div class="container">
+      <div class="row">
+        <!-- Services item -->
+        <div class="col-md-6 col-lg-3 col-xs-12">
+          <div class="services-item wow fadeInDown" data-wow-delay="0.3s">
+            <div class="icon">
+              <i class="icon-grid"></i>
+            </div>
+            <div class="services-content">
+              <h3><a href="#">Frontend Entwicklung</a></h3>
+              <p>Ich spreche fliessend HTML5, CSS und JavaScript/ES6. Mit ReactJS kenne ich mich aus.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Services item -->
+        <div class="col-md-6 col-lg-3 col-xs-12">
+          <div class="services-item wow fadeInDown" data-wow-delay="0.9s">
+            <div class="icon">
+              <i class="icon-briefcase"></i>
+            </div>
+            <div class="services-content">
+              <h3><a href="#">Backend Entwicklung</a></h3>
+              <p>Ob NodeJs, Java - Springboot oder PHP - Codeigniter. Mit REST kenne ich mich gut aus.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Services item -->
+        <div class="col-md-6 col-lg-3 col-xs-12">
+          <div class="services-item wow fadeInDown" data-wow-delay="0.6s">
+            <div class="icon">
+              <i class="icon-layers"></i>
+            </div>
+            <div class="services-content">
+              <h3><a href="#">Graphic Design</a></h3>
+              <p>Das nötige Rüstzeugs, um Grafiken für das Web aufzubereiten habe ich verfügbar.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Services item -->
+        <div class="col-md-6 col-lg-3 col-xs-12">
+          <div class="services-item wow fadeInDown" data-wow-delay="1.2s">
+            <div class="icon">
+              <i class="icon-bubbles"></i>
+            </div>
+            <div class="services-content">
+              <h3><a href="#">Consulting</a></h3>
+              <p>Was sie wissen müssen, ich helfe gerne weiter. In Webtechnologien kenne ich mich aus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Services Section End -->
+  <!-- Resume Section Start -->
+  <div id="resume" class="section-padding">
+    <h2 style="display:none;">Bewerbungshomepage - Peter Strössler</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="education wow fadeInRight" data-wow-delay="0.3s">
+            <ul class="timeline">
+              <li>
+                <i class="icon-graduation"></i>
+                <h2 class="timelin-title">Ausbildung</h2>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Bsc In Computer Science</h3>
+                  <span>09.2016 - 08.2021</span>
+                  <p class="line-text">ZHAW Winterthur • Zurich School of Engineering (SoE)</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Diplom Web Programmer PHP</h3>
+                  <span>05.2014 - 05.2016</span>
+                  <p class="line-text">EB Zürich • PHP, JQuery, HTML & CSS Lehrgang • Mit Abschluss Codeigniter-Projekt
+                    "Budget-Rechner"</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Software Entwickler Lehre</h3>
+                  <span>08.2007 - 07.2009</span>
+                  <p class="line-text">Mit EFZ • WISS Zürich • Mit 1 Jahr Begleitpraktikum bei der Liip AG • Zürich und
+                    Freiburg
+                    (Schweiz)</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Web Publisher SIZ</h3>
+                  <span>09.2005 - 06.2006</span>
+                  <p class="line-text">Migros Klubschule Zürich • Eidgenösisch annerkante Ausbildung • Zürich</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Wirtschaftmaturität (Typus E)</h3>
+                  <span>08.1994 - 07.1999</span>
+                  <p class="line-text">Kantonschule Baden</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="experience wow fadeInRight" data-wow-delay="0.6s">
+            <ul class="timeline">
+              <li>
+                <i class="icon-briefcase"></i>
+                <h2 class="timelin-title">Beruflicher Werdegang</h2>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Studienabschluss-Arbeiten</h3>
+                  <span>seit 07.2021</span>
+                  <p class="line-text">Das Studentenzimmer musste aufgelöst werden und zudem mussten die
+                    ZHAW-Schulkonten migriert werden.</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Mitarbeiter Webentwicklung</h3>
+                  <span>05.2015- 04.2021</span>
+                  <p class="line-text">Placement Services • In Winterthur • Aufgrund einer Umstukturierung wurde die
+                    Anstellung aufgelöst.</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Mitarbeiter Webentwicklung</h3>
+                  <span>03.2014 - 04.2015</span>
+                  <p class="line-text">Trinamo AG • In Aarau • PHP, JavaScript, HTML, CSS, Joomla CMS, LAMP</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Praktikant • Metaphor GmbH</h3>
+                  <span>09.2013 - 02.2014</span>
+                  <p class="line-text">Responsive Webdesign • Basel • PHP, JavaScript, HTML, CSS</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Web Developer • Trinamo AG</h3>
+                  <span>10.2010 - 08.2013</span>
+                  <p class="line-text">Aarau • PHP, JavaScript, HTML, CSS, Joomla CMS, LAMP</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Web Entwickler • selbstständig</h3>
+                  <span>12.2009 - 09.2010</span>
+                  <p class="line-text">Wordpress, PHP / MySQL</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Praktikant Webentwicklung</h3>
+                  <span>08.2008 - 07.2009</span>
+                  <p class="line-text">Liip SA • Freiburg (CH) • XSLT, XML, Flux CMS, Moodle Templating</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Web Publisher und KV</h3>
+                  <span>08.2005 - 07.2007</span>
+                  <p class="line-text">Angestellter • Pegasus Aargau • Photoshop, Flash, HTML, CSS, Joomla</p>
+                </div>
+              </li>
+              <li>
+                <div class="content-text">
+                  <h3 class="line-title">Mitarbeiter</h3>
+                  <span>01.2004 - 07.2005</span>
+                  <p class="line-text">Sihl + Eika Papierfabrik AG • Praktikant (Polygraph), Arbeiten mit QuarkXPress,
+                    InDesign, Photoshop</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Resume Section End -->
+  <!-- Portfolio Section -->
+  <section id="portfolios" class="section-padding">
+    <h2 style="display:none;">Bewerbungshomepage - Peter Strössler</h2>
+    <!-- Container Starts -->
+    <div class="container">
+      <h2 class="section-title wow flipInX" data-wow-delay="0.4s">Portfolio</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Portfolio Controller/Buttons -->
+          <div class="controls text-center">
+            <a class="filter active btn btn-common" data-filter="all">
+              Alle
+            </a>
+            <a class="filter btn btn-common" data-filter=".design">
+              Design
+            </a>
+            <a class="filter btn btn-common" data-filter=".development">
+              Entwicklung
+            </a>
+            <a class="filter btn btn-common" data-filter=".print">
+              Print
+            </a>
+          </div>
+          <!-- Portfolio Controller/Buttons Ends-->
+        </div>
+        <!-- Portfolio Recent Projects -->
+        <div id="portfolio" class="row wow fadeInDown" data-wow-delay="0.4s">
+          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
+            <div class="portfolio-item">
+              <div class="shot-item">
+                <img src="assets/img/gallery/img-7.jpg" alt="" />
+                <div class="overlay">
+                  <div class="icons">
+                    <a class="lightbox preview" href="assets/img/gallery/img-7.jpg">
+                      <i class="icon-eye"></i>
+                    </a>
+                    <a class="link" href="https://ps-hapifhir.herokuapp.com/" target="_blank">
+                      <i class="icon-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
+            <div class="portfolio-item">
+              <div class="shot-item">
+                <img src="assets/img/gallery/img-1.jpg" alt="" />
+                <div class="overlay">
+                  <div class="icons">
+                    <a class="lightbox preview" href="assets/img/gallery/img-1.jpg">
+                      <i class="icon-eye"></i>
+                    </a>
+                    <a class="link" href="https://fian-ch.org" target="_blank">
+                      <i class="icon-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
+            <div class="portfolio-item">
+              <div class="shot-item">
+                <img src="assets/img/gallery/img-2.jpg" alt="" />
+                <div class="overlay">
+                  <div class="icons">
+                    <a class="lightbox preview" href="assets/img/gallery/img-2.jpg">
+                      <i class="icon-eye"></i>
+                    </a>
+                    <a class="link" href="https://web-chess-final.herokuapp.com" target="_blank">
+                      <i class="icon-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
+            <div class="portfolio-item">
+              <div class="shot-item">
+                <img src="assets/img/gallery/img-3.jpg" alt="" />
+                <div class="overlay">
+                  <div class="icons">
+                    <a class="lightbox preview" href="assets/img/gallery/img-3.jpg">
+                      <i class="icon-eye"></i>
+                    </a>
+                    <a class="link" href="https://ps78.herokuapp.com#slowLoadingWaitFor10SecondsPlease" target="_blank">
+                      <i class="icon-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development design">
+            <div class="portfolio-item">
+              <div class="shot-item">
+                <img src="assets/img/gallery/img-4.jpg" alt="" />
+                <div class="overlay">
+                  <div class="icons">
+                    <a class="lightbox preview" href="assets/img/gallery/img-4.jpg">
+                      <i class="icon-eye"></i>
+                    </a>
+                    <a class="link" href="http://keepitnative.herokuapp.com" target="_blank">
+                      <i class="icon-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design development">
+            <div class="portfolio-item">
+              <div class="shot-item">
+                <img src="assets/img/gallery/img-5.jpg" alt="" />
+                <div class="overlay">
+                  <div class="icons">
+                    <a class="lightbox preview" href="assets/img/gallery/img-5.jpg">
+                      <i class="icon-eye"></i>
+                    </a>
+                    <a class="link" href="https://ps78.herokuapp.com/web-final" target="_blank">
+                      <i class="icon-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
+            <div class="portfolio-item">
+              <div class="shot-item">
+                <img src="assets/img/gallery/img-6.jpg" alt="" />
+                <div class="overlay">
+                  <div class="icons">
+                    <a class="lightbox preview" href="assets/img/gallery/img-6.jpg">
+                      <i class="icon-eye"></i>
+                    </a>
+                    <a class="link" href="https://ps78.herokuapp.com/turing-maschine" target="_blank">
+                      <i class="icon-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- START Github.com Link -->
+          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
+            <div class="portfolio-item">
+              <div class="shot-item">
+                <img src="assets/img/gallery/img-8.jpg" alt="" />
+                <div class="overlay">
+                  <div class="icons">
+                    <a class="lightbox preview" href="assets/img/gallery/img-8.jpg">
+                      <i class="icon-eye"></i>
+                    </a>
+                    <a class="link" href="https://github.com/peterruler?tab=repositories" target="_blank">
+                      <i class="icon-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ENDE Github.com Link-->
+          <!-- START React Native Example -->
+          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
+            <div class="portfolio-item">
+              <div class="shot-item">
+                <img src="assets/img/gallery/img-9.jpg" alt="" />
+                <div class="overlay">
+                  <div class="icons">
+                    <a class="lightbox preview" href="assets/img/gallery/img-9.jpg">
+                      <i class="icon-eye"></i>
+                    </a>
+                    <a class="link" href="https://snack.expo.dev/@petethegreat/super-trumpf" target="_blank">
+                      <i class="icon-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ENDE React Native Example -->
+          <!-- START spring boot REST API -->
+          <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
+            <div class="portfolio-item">
+              <div class="shot-item">
+                <img src="assets/img/gallery/img-10.jpg" alt="" />
+                <div class="overlay">
+                  <div class="icons">
+                    <a class="lightbox preview" href="assets/img/gallery/img-10.jpg">
+                      <i class="icon-eye"></i>
+                    </a>
+                    <a class="link" href="https://ps007server.herokuapp.com/swagger-ui.html" target="_blank">
+                      <i class="icon-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ENDE spring boot REST API -->
+        </div>
+      </div>
+    </div>
+    <!-- Container Ends -->
+  </section>
+  <!-- Portfolio Section Ends -->
+  <!-- Counter Area Start-->
+  <section class="counter-section section-padding">
+    <h2 style="display:none;">Bewerbungshomepage - Peter Strössler</h2>
+    <div class="container">
+      <div class="row">
+        <!-- Counter Item -->
+        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
+          <div class="counter wow fadeInDown" data-wow-delay="0.3s">
+            <div class="icon"><i class="icon-briefcase"></i></div>
+            <div class="counterUp">10</div>
+            <p>Programmiersprachen</p>
+          </div>
+        </div>
+        <!-- Counter Item -->
+        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
+          <div class="counter wow fadeInDown" data-wow-delay="0.6s">
+            <div class="icon"><i class="icon-check"></i></div>
+            <div class="counterUp experience-display"></div>
+            <p>Jahre Erfahrung</p>
+          </div>
+        </div>
+        <!-- Counter Item -->
+        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
+          <div class="counter wow fadeInDown" data-wow-delay="0.9s">
+            <div class="icon"><i class="icon-diamond"></i></div>
+            <div class="counterUp">4</div>
+            <p>Ausbildungen Absolviert</p>
+          </div>
+        </div>
+        <!-- Counter Item -->
+        <div class="col-md-3 col-sm-6 work-counter-widget text-center">
+          <div class="counter wow fadeInDown" data-wow-delay="1.2s">
+            <div class="icon"><i class="icon-heart"></i></div>
+            <div class="counterUp ageyears"></div>
+            <p>Altersjahre</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Counter Area End-->
+  <!-- Contact Section Start -->
+  <section id="contact" class="section-padding">
+    <h2 style="display:none;">Bewerbungshomepage - Peter Strössler</h2>
+    <div class="contact-form">
+      <div class="container">
+        <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.4s">
+          <div class="col-md-6 col-lg-6 col-sm-12 clearfix" style="margin-bottom: 20px;">
+            <div class="footer-right-area wow fadeIn">
+              <h2>Kontakt Adresse</h2>
+              <div class="footer-right-contact">
+                <div class="single-contact">
+                  <div class="contact-icon">
+                    <i class="fa fa-map-marker"></i>
+                  </div>
+                  <p>Villigen / AG, Switzerland</p>
+                </div>
+                <div class="single-contact">
+                  <div class="contact-icon">
+                    <i class="fa fa-envelope"></i>
+                  </div>
+                  <p><a
+                      href="mailto:peter.stroessler@bluewin.ch?subject=Kontakt%20Email%20von%20Bewerbungs-Webseite">peter.stroessler@bluewin.ch</a>
+                  </p>
+                </div>
+                <div class="single-contact">
+                  <div class="contact-icon">
+                    <i class="fa fa-phone"></i>
+                  </div>
+                  <p><a href="tel:0041793057029">+ (41) 79 305 70 29</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 clearfix">
+            <img src="./assets/img/map.png" id="googlemap" height="816" width="1408"
+              style="border:0; height: auto; width: 100%;" alt="google maps screenshot" />
+            <!--
+              <object style="border:0; height: 450px; width: 100%;" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34015.943594576835!2d-106.43242624069771!3d31.677719472407432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86e75d90e99d597b%3A0x6cd3eb9a9fcd23f1!2sCourtyard+by+Marriott+Ciudad+Juarez!5e0!3m2!1sen!2sbd!4v1533791187584"></object>
+            -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Section End -->
+  <!-- Footer Section Start -->
+  <footer class="footer-area section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="footer-text text-center wow fadeInDown" data-wow-delay="0.3s">
+            <p>©
+              <script>
+                ; (function () {
+                  const year = new Date().getFullYear();
+                  document.write(year);
+                })();
+              </script> Peter Strössler - Template von <a href="https://uideck.com" target="_blank">UIdeck</a> © 2018,
+              all rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+  <!-- Go to Top Link -->
+  <a href="#" class="back-to-top">
+    <i class="icon-arrow-up"></i>
+  </a>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="./assets/js/jquery-min.js"></script>
+  <script src="./assets/js/popper.min.js"></script>
+  <script src="./assets/js/bootstrap.min.js"></script>
+  <script src="./assets/js/jquery.mixitup.js"></script>
+  <script src="./assets/js/jquery.counterup.min.js"></script>
+  <script src="./assets/js/waypoints.min.js"></script>
+  <script src="./assets/js/wow.js"></script>
+  <script src="./assets/js/jquery.nav.js"></script>
+  <script src="./assets/js/jquery.easing.min.js"></script>
+  <script src="./assets/js/nivo-lightbox.js"></script>
+  <script src="./assets/js/jquery.slicknav.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script>
+    document.querySelector(".experience-display").innerHTML = ERFAHRUNGSJAHRE;
+    document.querySelector(".ageyears").innerHTML = ALTERSJAHRE;
+  </script>
+</body>
+
+</html>
