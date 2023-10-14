@@ -1,0 +1,21 @@
+{
+    "short_name": "Homepage",
+    "name": "Homepage",
+    "description": "My Job Homepage",
+    "icons": [
+      {
+        "src": "./android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "./android-chrome-512x512.png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "https://peterruler.github.io/index.html",
+    "display": "fullscreen",
+    "orientation": "portrait-primary",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff"
+  }
