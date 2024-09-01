@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peter Strössler - PSWeb</title>
+  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
+  <body>
+    <!-- ====== Navbar Section Start -->
+    <header class="header bg-transparent absolute top-0 left-0 z-40 w-full flex items-center transition">
+      <div class="container">
+        <div class="flex mx-[-16px] items-center justify-between relative">
+          <div class="px-4 w-60 max-w-full">
+            <a href="index.html" class="header-logo w-full block py-6 lg:py-8">
+              <img src="src/images/logo/logo.svg" alt="logo" class="w-full" />
+            </a>
+          </div>
+          <div class="flex px-4 justify-between items-center w-full">
+            <div>
+              <button
+                id="navbarToggler"
+                name="navbarToggler"
+                aria-label="navbarToggler"
+                class="block absolute right-4 top-1/2 translate-y-[-50%] lg:hidden focus:ring-2 ring-primary px-3 py-[6px] rounded-lg"
+              >
+                <span class="relative w-[30px] h-[2px] my-[6px] block bg-dark"></span>
+                <span class="relative w-[30px] h-[2px] my-[6px] block bg-dark"></span>
+                <span class="relative w-[30px] h-[2px] my-[6px] block bg-dark"></span>
+              </button>
+              <nav
+                id="navbarCollapse"
+                class="absolute py-5 lg:py-0 lg:px-4 xl:px-6 bg-white lg:bg-transparent shadow-lg rounded-lg max-w-[250px] w-full lg:max-w-full lg:w-full right-4 top-full hidden lg:block lg:static lg:shadow-none"
+              >
+                <ul class="blcok lg:flex">
+                  <li class="relative group">
+                    <a href="#home" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0"> Home </a>
+                  </li>
+                  <li class="relative group">
+                    <a href="#about" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12"> Über </a>
+                  </li>
+                  <li class="relative group">
+                    <a href="#services" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12"> Angebot </a>
+                  </li>
+                  <li class="relative group">
+                    <a href="#portfolio" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12"> Projekte </a>
+                  </li>
+                  <li class="relative group">
+                    <a href="#education" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12"> Lebenslauf </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <!--
+            <div class="sm:flex justify-end hidden pr-16 lg:pr-0">
+              <a
+                href="#contact"
+                class="text-base font-bold text-white bg-primary rounded-full py-3 px-8 md:px-9 lg:px-8 xl:px-9 hover:shadow-signUp hover:bg-opacity-90 transition ease-in-out duration-300"
+              >
+                CV Download
+              </a>
+            </div>
+            -->
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ====== Navbar Section End -->
+
+    <!-- ====== Hero Section Start -->
+    <section id="home" class="relative z-10 pt-[150px] lg:pt-[100px] 2xl:flex items-center 2xl:h-[700px]">
+      <div class="container">
+        <div class="flex flex-wrap mx-[-16px]">
+          <div class="w-full lg:w-1/2 self-center px-4">
+            <div>
+              <h1 class="text-base font-semibold text-primary mb-3">
+                Hallo 👋 ich bin
+                <span class="font-bold text-black text-3xl sm:text-3xl md:text-[45px] leading-tight sm:leading-tight md:leading-[50px] block mt-1"> Peter Strössler </span>
+              </h1>
+              <h2 class="font-medium text-body-color text-lg md:text-xl mb-5">
+                Professioneller
+
+                <span class="text-black">Software Engineer </span>
+              </h2>
+              <p class="max-w-[470px] font-medium text-body-color text-base leading-relaxed mb-11">Ich bin Software Enwickler mit Herz und Seele. Mein Beruf ist meine Passion. Mit vieljähriger Erfahrung in der Webentwicklung arbeite ich in der Softwareentwicklung.</p>
+              <div class="flex items-center">
+                <a
+                  href="mailto:peter.stroessler@bluewin.ch?subject=Kontakt%20Email%20von%20Bewerbungs-Webseite"
+                  class="text-base font-semibold text-white bg-primary py-3 px-8 mr-4 hover:shadow-signUp hover:bg-opacity-90 rounded-full transition duration-300 ease-in-out"
+                >
+                  Kontakt
+                </a>
+                <!--
+                <a href="javascript:void(0)" class="text-base font-semibold text-white bg-black py-3 px-8 hover:shadow-signUp hover:bg-opacity-90 rounded-full transition duration-300 ease-in-out">
+                  Mehr Infos
+                </a>
+                -->
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 self-end px-4">
+            <div class="relative mt-12 lg:mt-0 z-10 2xl:absolute 2xl:bottom-0 2xl:right-40">
+              <img src="src/images/hero/hero-image.png" alt="image" class="max-w-full mx-auto" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <span class="absolute right-0 bottom-0 -z-1">
+          <svg width="491" height="490" viewBox="0 0 491 490" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="356.5" cy="356.5" r="356.5" fill="url(#paint0_linear_6:37)" />
+            <defs>
+              <linearGradient id="paint0_linear_6:37" x1="356.5" y1="0" x2="356.5" y2="713" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4A6CF7" offset="100%"/>
+                <stop offset="1" stop-color="#1E3BB3" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+      </div>
+    </section>
+    <!-- ====== Hero Section End -->
+
+    <!-- ====== About Section Start -->
+    <section id="about" class="pt-[145px] pb-[120px] relative z-10">
+      <div class="container">
+        <div class="flex flex-wrap mx-[-16px]">
+          <div class="w-full lg:w-1/2 xl:w-7/12 px-4 mb-8 lg:mb-0">
+            <span class="font-bold text-primary text-lg md:text-xl mb-3"> ÜBER MICH </span>
+            <h2 class="max-w-[400px] font-bold text-black text-3xl sm:text-4xl md:text-[45px] leading-tight sm:leading-tight md:leading-tight mb-5">Ich weiss, dass ich nichts weiss</h2>
+            <p class="max-w-[570px] font-medium text-base text-body-color">
+               Angefangen 2006 mit dem Web Publisher SIZ und der Programmierung von CMS' in PHP, HTML und CSS. Erlangte ich meine fundierten Programmierkenntnisse (dazu zählen HTML5, CSS3, Javascript, Java, Python etc.) während meiner Informatiker Lehre an der WISS. Den Studiumsabschluss als Informatik Ingenieur erlange ich 2021 schliesslich an der ZHAW Winterthur.
+            </p>
+          </div>
+          <div class="w-full lg:w-1/2 xl:w-5/12 px-4">
+            <h3 class="font-semibold text-black text-2xl md:text-3xl mb-6">Kontaktieren Sie mich</h3>
+            <p class="font-medium text-base text-body-color mb-10">
+              Sie können mir jederzeit eine <a style="color:#4B6CF7 !important;" href="mailto:peter.stroessler@bluewin.ch?subject=Kontakt%20Email%20von%20Bewerbungs-Webseite">Email</a> schreiben.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== About Section End  -->
+
+    <!-- ====== Services Section Start  -->
+    <section id="services">
+      <div class="container">
+        <div class="pt-[120px] pb-[90px] border-t border-[#E9ECF8]">
+          <div class="flex flex-wrap mx-[-16px]">
+            <div class="w-full px-4">
+              <div class="max-w-[600px] mx-auto text-center mb-[70px]">
+                <span class="font-semibold text-lg text-primary block mb-2"> Was kann ich anbieten? </span>
+                <h2 class="font-bold text-black text-3xl sm:text-4xl md:text-[45px] mb-5">Mein Angebot</h2>
+                <p class="font-medium text-lg text-body-color">In Softwareentwicklung kenne ich mich aus.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap mx-[-16px]">
+            <div class="w-full md:w-1/2 xl:w-1/4 px-4">
+              <div class="bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
+                <div class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary">
+                  <svg width="35" height="33" viewBox="0 0 35 33" class="fill-current">
+                    <path
+                      d="M22.8335 14.0001C27.0002 14.0001 30.3335 17.3334 30.3335 21.5001C30.3335 22.9668 29.9168 24.3501 29.1835 25.5001L34.3168 30.6668L32.0002 32.9834L26.8002 27.8668C25.6502 28.5834 24.2835 29.0001 22.8335 29.0001C18.6668 29.0001 15.3335 25.6668 15.3335 21.5001C15.3335 17.3334 18.6668 14.0001 22.8335 14.0001ZM22.8335 17.3334C21.7284 17.3334 20.6686 17.7724 19.8872 18.5538C19.1058 19.3352 18.6668 20.395 18.6668 21.5001C18.6668 22.6052 19.1058 23.665 19.8872 24.4464C20.6686 25.2278 21.7284 25.6668 22.8335 25.6668C23.9386 25.6668 24.9984 25.2278 25.7798 24.4464C26.5612 23.665 27.0002 22.6052 27.0002 21.5001C27.0002 20.395 26.5612 19.3352 25.7798 18.5538C24.9984 17.7724 23.9386 17.3334 22.8335 17.3334ZM13.6668 0.666748C15.4349 0.666748 17.1306 1.36913 18.3809 2.61937C19.6311 3.86961 20.3335 5.56531 20.3335 7.33342C20.3335 8.85008 19.8168 10.2501 18.9668 11.3834C17.5335 11.9167 16.2502 12.7667 15.1835 13.8334L13.6668 14.0001C11.8987 14.0001 10.203 13.2977 8.95278 12.0475C7.70254 10.7972 7.00016 9.10153 7.00016 7.33342C7.00016 5.56531 7.70254 3.86961 8.95278 2.61937C10.203 1.36913 11.8987 0.666748 13.6668 0.666748ZM0.333496 27.3334V24.0001C0.333496 20.4668 5.85016 17.5667 12.8335 17.3334C12.3002 18.6334 12.0002 20.0334 12.0002 21.5001C12.0002 23.6501 12.6335 25.6668 13.6668 27.3334H0.333496Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="font-bold text-black text-xl sm:text-2xl lg:text-xl 2xl:text-2xl group-hover:text-white mb-3">Frontend</h3>
+                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Ich spreche fliessend HTML5, CSS und Typescript. Mit ReactJS kenne ich mich aus.</p>
+                <div>
+                  <span class="absolute top-0 right-0 -z-1">
+                    <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle opacity="0.05" cx="156.5" cy="-47.5" r="156.5" fill="white" />
+                      <circle opacity="0.08" cx="210" cy="6" r="62" fill="white" />
+                    </svg>
+                  </span>
+                  <span class="absolute bottom-1 left-1 -z-1">
+                    <svg width="23" height="32" viewBox="0 0 23 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="21.262" cy="1.12081" r="1.12081" transform="rotate(90 21.262 1.12081)" fill="white" />
+                      <circle cx="21.262" cy="30.4863" r="1.12081" transform="rotate(90 21.262 30.4863)" fill="white" />
+                      <circle cx="1.76005" cy="1.12081" r="1.12081" transform="rotate(90 1.76005 1.12081)" fill="white" />
+                      <circle cx="1.76005" cy="30.4863" r="1.12081" transform="rotate(90 1.76005 30.4863)" fill="white" />
+                      <circle cx="11.6228" cy="1.12081" r="1.12081" transform="rotate(90 11.6228 1.12081)" fill="white" />
+                      <circle cx="11.6228" cy="30.4863" r="1.12081" transform="rotate(90 11.6228 30.4863)" fill="white" />
+                      <circle cx="21.262" cy="10.9839" r="1.12081" transform="rotate(90 21.262 10.9839)" fill="white" />
+                      <circle cx="1.76005" cy="10.9839" r="1.12081" transform="rotate(90 1.76005 10.9839)" fill="white" />
+                      <circle cx="11.6228" cy="10.9839" r="1.12081" transform="rotate(90 11.6228 10.9839)" fill="white" />
+                      <circle cx="21.262" cy="20.8469" r="1.12081" transform="rotate(90 21.262 20.8469)" fill="white" />
+                      <circle cx="1.76005" cy="20.8469" r="1.12081" transform="rotate(90 1.76005 20.8469)" fill="white" />
+                      <circle cx="11.6228" cy="20.8469" r="1.12081" transform="rotate(90 11.6228 20.8469)" fill="white" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 xl:w-1/4 px-4">
+              <div class="bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
+                <div class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary">
+                  <svg width="36" height="36" viewBox="0 0 36 36" class="fill-current">
+                    <path
+                      d="M18.6668 28.6666C18.6668 28.1666 18.6668 27.4999 18.8335 26.9999H10.3335V23.6666H7.00016V10.3333H10.3335V6.99992H23.6668V10.3333H27.0002V18.8333C27.5002 18.6666 28.1668 18.6666 28.6668 18.6666C29.1668 18.6666 29.8335 18.6666 30.3335 18.8333V10.3333H33.6668V0.333252H23.6668V3.66659H10.3335V0.333252H0.333496V10.3333H3.66683V23.6666H0.333496V33.6666H10.3335V30.3333H18.8335C18.6668 29.8333 18.6668 29.1666 18.6668 28.6666ZM27.0002 3.66659H30.3335V6.99992H27.0002V3.66659ZM3.66683 3.66659H7.00016V6.99992H3.66683V3.66659ZM7.00016 30.3333H3.66683V26.9999H7.00016V30.3333ZM30.3335 21.9999V26.9999H35.3335V30.3333H30.3335V35.3333H27.0002V30.3333H22.0002V26.9999H27.0002V21.9999H30.3335Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="font-bold text-black text-xl sm:text-2xl lg:text-xl 2xl:text-2xl group-hover:text-white mb-3">Backend</h3>
+                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Ob NodeJs, Java - Springboot oder PHP - Codeigniter. Mit Webservices kenn ich mich aus.</p>
+                <div>
+                  <span class="absolute top-0 right-0 -z-1">
+                    <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle opacity="0.05" cx="156.5" cy="-47.5" r="156.5" fill="white" />
+                      <circle opacity="0.08" cx="210" cy="6" r="62" fill="white" />
+                    </svg>
+                  </span>
+                  <span class="absolute bottom-1 left-1 -z-1">
+                    <svg width="23" height="32" viewBox="0 0 23 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="21.262" cy="1.12081" r="1.12081" transform="rotate(90 21.262 1.12081)" fill="white" />
+                      <circle cx="21.262" cy="30.4863" r="1.12081" transform="rotate(90 21.262 30.4863)" fill="white" />
+                      <circle cx="1.76005" cy="1.12081" r="1.12081" transform="rotate(90 1.76005 1.12081)" fill="white" />
+                      <circle cx="1.76005" cy="30.4863" r="1.12081" transform="rotate(90 1.76005 30.4863)" fill="white" />
+                      <circle cx="11.6228" cy="1.12081" r="1.12081" transform="rotate(90 11.6228 1.12081)" fill="white" />
+                      <circle cx="11.6228" cy="30.4863" r="1.12081" transform="rotate(90 11.6228 30.4863)" fill="white" />
+                      <circle cx="21.262" cy="10.9839" r="1.12081" transform="rotate(90 21.262 10.9839)" fill="white" />
+                      <circle cx="1.76005" cy="10.9839" r="1.12081" transform="rotate(90 1.76005 10.9839)" fill="white" />
+                      <circle cx="11.6228" cy="10.9839" r="1.12081" transform="rotate(90 11.6228 10.9839)" fill="white" />
+                      <circle cx="21.262" cy="20.8469" r="1.12081" transform="rotate(90 21.262 20.8469)" fill="white" />
+                      <circle cx="1.76005" cy="20.8469" r="1.12081" transform="rotate(90 1.76005 20.8469)" fill="white" />
+                      <circle cx="11.6228" cy="20.8469" r="1.12081" transform="rotate(90 11.6228 20.8469)" fill="white" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 xl:w-1/4 px-4">
+              <div class="bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
+                <div class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary">
+                  <svg width="40" height="25" viewBox="0 0 40 25" class="fill-current">
+                    <path
+                      d="M20 0.166748C21.5471 0.166748 23.0308 0.78133 24.1248 1.87529C25.2188 2.96925 25.8333 4.45298 25.8333 6.00008C25.8333 7.54718 25.2188 9.03091 24.1248 10.1249C23.0308 11.2188 21.5471 11.8334 20 11.8334C18.4529 11.8334 16.9692 11.2188 15.8752 10.1249C14.7812 9.03091 14.1667 7.54718 14.1667 6.00008C14.1667 4.45298 14.7812 2.96925 15.8752 1.87529C16.9692 0.78133 18.4529 0.166748 20 0.166748ZM8.33333 4.33341C9.26667 4.33341 10.1333 4.58341 10.8833 5.03341C10.6333 7.41675 11.3333 9.78341 12.7667 11.6334C11.9333 13.2334 10.2667 14.3334 8.33333 14.3334C7.00725 14.3334 5.73548 13.8066 4.7978 12.8689C3.86012 11.9313 3.33333 10.6595 3.33333 9.33341C3.33333 8.00733 3.86012 6.73556 4.7978 5.79788C5.73548 4.8602 7.00725 4.33341 8.33333 4.33341ZM31.6667 4.33341C32.9927 4.33341 34.2645 4.8602 35.2022 5.79788C36.1399 6.73556 36.6667 8.00733 36.6667 9.33341C36.6667 10.6595 36.1399 11.9313 35.2022 12.8689C34.2645 13.8066 32.9927 14.3334 31.6667 14.3334C29.7333 14.3334 28.0667 13.2334 27.2333 11.6334C28.6667 9.78341 29.3667 7.41675 29.1167 5.03341C29.8667 4.58341 30.7333 4.33341 31.6667 4.33341ZM9.16667 21.4167C9.16667 17.9667 14.0167 15.1667 20 15.1667C25.9833 15.1667 30.8333 17.9667 30.8333 21.4167V24.3334H9.16667V21.4167ZM0 24.3334V21.8334C0 19.5167 3.15 17.5667 7.41667 17.0001C6.43333 18.1334 5.83333 19.7001 5.83333 21.4167V24.3334H0ZM40 24.3334H34.1667V21.4167C34.1667 19.7001 33.5667 18.1334 32.5833 17.0001C36.85 17.5667 40 19.5167 40 21.8334V24.3334Z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="font-bold text-black text-xl sm:text-2xl lg:text-xl 2xl:text-2xl group-hover:text-white mb-3">Graphic Design</h3>
+                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Das nötige Rüstzeugs, um Grafiken für das Web aufzubereiten habe ich verfügbar.</p>
+                <div>
+                  <span class="absolute top-0 right-0 -z-1">
+                    <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle opacity="0.05" cx="156.5" cy="-47.5" r="156.5" fill="white" />
+                      <circle opacity="0.08" cx="210" cy="6" r="62" fill="white" />
+                    </svg>
+                  </span>
+                  <span class="absolute bottom-1 left-1 -z-1">
+                    <svg width="23" height="32" viewBox="0 0 23 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="21.262" cy="1.12081" r="1.12081" transform="rotate(90 21.262 1.12081)" fill="white" />
+                      <circle cx="21.262" cy="30.4863" r="1.12081" transform="rotate(90 21.262 30.4863)" fill="white" />
+                      <circle cx="1.76005" cy="1.12081" r="1.12081" transform="rotate(90 1.76005 1.12081)" fill="white" />
+                      <circle cx="1.76005" cy="30.4863" r="1.12081" transform="rotate(90 1.76005 30.4863)" fill="white" />
+                      <circle cx="11.6228" cy="1.12081" r="1.12081" transform="rotate(90 11.6228 1.12081)" fill="white" />
+                      <circle cx="11.6228" cy="30.4863" r="1.12081" transform="rotate(90 11.6228 30.4863)" fill="white" />
+                      <circle cx="21.262" cy="10.9839" r="1.12081" transform="rotate(90 21.262 10.9839)" fill="white" />
+                      <circle cx="1.76005" cy="10.9839" r="1.12081" transform="rotate(90 1.76005 10.9839)" fill="white" />
+                      <circle cx="11.6228" cy="10.9839" r="1.12081" transform="rotate(90 11.6228 10.9839)" fill="white" />
+                      <circle cx="21.262" cy="20.8469" r="1.12081" transform="rotate(90 21.262 20.8469)" fill="white" />
+                      <circle cx="1.76005" cy="20.8469" r="1.12081" transform="rotate(90 1.76005 20.8469)" fill="white" />
+                      <circle cx="11.6228" cy="20.8469" r="1.12081" transform="rotate(90 11.6228 20.8469)" fill="white" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 xl:w-1/4 px-4">
+              <div class="bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
+                <div class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary">
+                  <svg width="30" height="30" viewBox="0 0 30 30" class="fill-current">
+                    <path d="M16.6667 0V13.3333H30V0H16.6667ZM0 30H13.3333V16.6667H0V30ZM0 0V13.3333H13.3333V0H0ZM16.6667 21.6667H21.6667V16.6667H25V21.6667H30V25H25V30H21.6667V25H16.6667V21.6667Z" />
+                  </svg>
+                </div>
+                <h3 class="font-bold text-black text-xl sm:text-2xl lg:text-xl 2xl:text-2xl group-hover:text-white mb-3">Consulting</h3>
+                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Was sie wissen müssen, ich helfe gerne weiter. In Webtechnologien kenne ich mich aus.</p>
+                <div>
+                  <span class="absolute top-0 right-0 -z-1">
+                    <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle opacity="0.05" cx="156.5" cy="-47.5" r="156.5" fill="white" />
+                      <circle opacity="0.08" cx="210" cy="6" r="62" fill="white" />
+                    </svg>
+                  </span>
+                  <span class="absolute bottom-1 left-1 -z-1">
+                    <svg width="23" height="32" viewBox="0 0 23 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="21.262" cy="1.12081" r="1.12081" transform="rotate(90 21.262 1.12081)" fill="white" />
+                      <circle cx="21.262" cy="30.4863" r="1.12081" transform="rotate(90 21.262 30.4863)" fill="white" />
+                      <circle cx="1.76005" cy="1.12081" r="1.12081" transform="rotate(90 1.76005 1.12081)" fill="white" />
+                      <circle cx="1.76005" cy="30.4863" r="1.12081" transform="rotate(90 1.76005 30.4863)" fill="white" />
+                      <circle cx="11.6228" cy="1.12081" r="1.12081" transform="rotate(90 11.6228 1.12081)" fill="white" />
+                      <circle cx="11.6228" cy="30.4863" r="1.12081" transform="rotate(90 11.6228 30.4863)" fill="white" />
+                      <circle cx="21.262" cy="10.9839" r="1.12081" transform="rotate(90 21.262 10.9839)" fill="white" />
+                      <circle cx="1.76005" cy="10.9839" r="1.12081" transform="rotate(90 1.76005 10.9839)" fill="white" />
+                      <circle cx="11.6228" cy="10.9839" r="1.12081" transform="rotate(90 11.6228 10.9839)" fill="white" />
+                      <circle cx="21.262" cy="20.8469" r="1.12081" transform="rotate(90 21.262 20.8469)" fill="white" />
+                      <circle cx="1.76005" cy="20.8469" r="1.12081" transform="rotate(90 1.76005 20.8469)" fill="white" />
+                      <circle cx="11.6228" cy="20.8469" r="1.12081" transform="rotate(90 11.6228 20.8469)" fill="white" />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Services Section End  -->
+
+    <!-- ====== Portfolio Section Start  -->
+    <section id="portfolio" class="pt-[120px] pb-[70px] bg-[#f8f9ff]">
+      <div class="container">
+        <div class="flex flex-wrap mx-[-16px]">
+          <div class="w-full px-4">
+            <div class="max-w-[600px] mx-auto text-center mb-[50px]">
+              <span class="font-semibold text-lg text-primary block mb-2"> Projekte </span>
+              <h2 class="font-bold text-black text-3xl sm:text-4xl md:text-[45px] mb-5">Meine Arbeiten</h2>
+              <p class="font-medium text-lg text-body-color">Ein Auszug meiner Arbeiten in Web und Mobile. Weitere finden sie auf meinem <a style="color:#4B6CF7 !important;" href="https://github.com/peterruler?tab=repositories" target="_blank">Github</a> Account. Eine Übersicht meiner Webprojekte aus dem Bachelor Studium sind <a style="color:#4B6CF7 !important;" href="https://zhaw.rf.gd/" target="_blank">hier</a>.</p>
+            </div>
+          </div>
+          <div class="w-full px-4">
+            <div class="portfolio-buttons flex flex-wrap items-center justify-center mb-12">
+              <button class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color active" data-filter="*">Alle</button>
+              <button class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color hover:bg-primary hover:text-white" data-filter=".web">Web Design</button>
+              <button class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color hover:bg-primary hover:text-white" data-filter=".graphics">
+                Grafik
+              </button>
+              <button class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color hover:bg-primary hover:text-white" data-filter=".app">App</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-container flex justify-center -mx-4">
+          <div class="w-full xl:w-10/12 px-4">
+            <div class="items-wrapper flex flex-wrap justify-center mx-[-16px]">
+              <div class="w-full md:w-1/2 px-4 item web app">
+                <div class="mb-12">
+                  <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
+                    <img src="src/images/portfolio/portfolio-01.jpg" alt="image" class="w-full" />
+                    <div
+                      class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
+                    >
+                      <a href="src/images/portfolio/portfolio-01.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <h3 class="mt-6">
+                    <a href="https://snack.expo.dev/@petethegreat/currency-reactnative?platform=web" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3" target="_blank"> Währungsrechner </a>
+                  </h3>
+                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://snack.expo.dev/@petethegreat/currency-reactnative?platform=web" target="_blank">Weiterleitung zur App</a></p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-4 item graphics web">
+                <div class="mb-12">
+                  <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
+                    <img src="src/images/portfolio/portfolio-02.jpg" alt="image" class="w-full" />
+                    <div
+                      class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
+                    >
+                      <a href="src/images/portfolio/portfolio-02.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <h3 class="mt-6">
+                    <a href="portfolio-details.html" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> Wordpress Webseite Fian Schweiz </a>
+                  </h3>
+                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://fian-ch.org" target="_blank">Weiter zur Webseite</a></p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-4 item app">
+                <div class="mb-12">
+                  <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
+                    <img src="src/images/portfolio/portfolio-03.jpg" alt="image" class="w-full" />
+                    <div
+                      class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
+                    >
+                      <a href="src/images/portfolio/portfolio-03.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <h3 class="mt-6">
+                    <a href="https://snack.expo.dev/@petethegreat/react-native-frontend?platform=web" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3" target="_blank"> KI mit Katzen und Hunde Detektion </a>
+                  </h3>
+                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://snack.expo.dev/@petethegreat/react-native-frontend?platform=web" target="_blank">Weiterleitung zur App.</a> Mit Mobiltelefon installierter Expo App.</p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/2 px-4 item graphics web">
+                <div class="mb-12">
+                  <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
+                    <img src="src/images/portfolio/portfolio-04.jpg" alt="image" class="w-full" />
+                    <div
+                      class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
+                    >
+                      <a href="src/images/portfolio/portfolio-04.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <h3 class="mt-6">
+                    <a href="portfolio-details.html" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> Todo App - FH Projekt React / Typescript</a>
+                  </h3>
+                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://vercel-issue-tracker.vercel.app/" target="_blank">Weiter zur Webseite</a></p>
+                </div>
+              </div>
+
+              <!-- 05 START-->
+              <div class="w-full md:w-1/2 px-4 item graphics web">
+                <div class="mb-12">
+                  <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
+                    <img src="src/images/portfolio/portfolio-05.jpg" alt="image" class="w-full" />
+                    <div
+                      class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
+                    >
+                      <a href="src/images/portfolio/portfolio-05.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
+                        </svg>
+                      </a>
+                    </div>
+                  </div>
+                  <h3 class="mt-6">
+                    <a href="portfolio-details.html" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> Hotel App - Angular 2.x </a>
+                  </h3>
+                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://hotel-app-qkpu.onrender.com" target="_blank">Weiter zur Webseite</a></p>
+                </div>
+              </div>
+              <!-- 05 END-->
+
+                <!-- 06 START-->
+                <div class="w-full md:w-1/2 px-4 item web">
+                  <div class="mb-12">
+                    <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
+                      <img src="src/images/portfolio/portfolio-06.jpg" alt="image" class="w-full" />
+                      <div
+                        class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
+                      >
+                        <a href="src/images/portfolio/portfolio-06.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                    <h3 class="mt-6">
+                      <a href="portfolio-details.html" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> HAPI Fhir App Reactjs</a>
+                    </h3>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://ps-hapifhir.vercel.app" target="_blank">Weiter zur Webseite</a></p>
+                  </div>
+                </div>
+                <!-- 06 END-->
+                <!-- 07 START-->
+                <div class="w-full md:w-1/2 px-4 item web">
+                  <div class="mb-12">
+                    <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
+                      <img src="src/images/portfolio/portfolio-07.jpg" alt="image" class="w-full" />
+                      <div
+                        class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
+                      >
+                        <a href="src/images/portfolio/portfolio-07.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                    <h3 class="mt-6">
+                      <a href="portfolio-details.html" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> PWA / Websocket Schachapp</a>
+                    </h3>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://render-chess.onrender.com" target="_blank">Weiter zur Webseite</a></p>
+                  </div>
+                </div>
+                <!-- 07 END-->
+                <!-- 08 START-->
+                <div class="w-full md:w-1/2 px-4 item web">
+                  <div class="mb-12">
+                    <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
+                      <img src="src/images/portfolio/portfolio-08.jpg" alt="image" class="w-full" />
+                      <div
+                        class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
+                      >
+                        <a href="src/images/portfolio/portfolio-08.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                    <h3 class="mt-6">
+                      <a href="portfolio-details.html" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> Connect4 Reactjs</a>
+                    </h3>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://zhaw.rf.gd/moba2/connect-four-one-file" target="_blank">Weiter zur Webseite</a></p>
+                  </div>
+                </div>
+                <!-- 08 END-->
+                <!-- 09 START-->
+                <div class="w-full md:w-1/2 px-4 item web">
+                  <div class="mb-12">
+                    <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
+                      <img src="src/images/portfolio/portfolio-09.jpg" alt="image" class="w-full" />
+                      <div
+                        class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
+                      >
+                        <a href="src/images/portfolio/portfolio-09.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                    <h3 class="mt-6">
+                      <a href="portfolio-details.html" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> RestAPI Nodejs / Mongodb ARM Cloudserver</a>
+                    </h3>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://keepitnative.xyz" target="_blank">Weiter zur Webseite</a></p>
+                  </div>
+                </div>
+                <!-- 09 END-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Portfolio Section End  -->
+    <!-- ====== Education Section Start  -->
+    <section id="education" class="pt-[120px] bg-white relative z-10">
+      <div class="container">
+        <div class="border-b border-[#E9ECF8] pb-[70px]">
+          <div class="flex flex-wrap mx-[-16px]">
+            <div class="w-full px-4">
+              <div class="max-w-[600px] mx-auto text-center mb-[50px]">
+                <span class="font-semibold text-lg text-primary block mb-2"> Ausbildung & Berufserfahrung </span>
+                <h2 class="font-bold text-black text-3xl sm:text-4xl md:text-[45px] mb-5">Lebenslauf</h2>
+                <p class="font-medium text-lg text-body-color">Auszug meiner Karriere-Stationen.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative pt-12">
+            <span class="absolute top-0 block left-2 lg:left-1/2 w-[1px] h-full bg-[#d7dfff]"></span>
+
+            <div class="flex flex-wrap -mx-4">
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full ml-auto pl-8 sm:pl-11 lg:pl-0 lg:pr-0 lg:mr-5 lg:text-right relative pb-12">
+                  <span class="absolute top-1 left-0 lg:left-auto lg:-right-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">Stelle als Applikationsentwickler</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">CISTEC AG  • Zürich</p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 03.2022 -  bis auf weiteres</span>
+                  <p class="font-medium text-base text-body-color">
+                    Applikationsentwickler im Gesundheitsbereich.
+                  </p>
+                </div>
+              </div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full pl-8 sm:pl-11 lg:pl-0 lg:ml-5 relative pb-12">
+                  <span class="absolute top-1 left-0 lg:-left-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">
+                    Bachelor In Computer Science</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">ZHAW Winterthur • Zurich School of Engineering (SoE)</p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 09.2016 - 08.2021 </span>
+                  <p class="font-medium text-base text-body-color">
+                    Note 4.79 • Bachelorarbeit in eHealth
+                  </p>
+                </div>
+              </div>
+
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full pl-8 sm:pl-11 lg:pl-0 lg:ml-5 relative pb-12">
+                  <span class="absolute top-1 left-0 lg:-left-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">
+                    PHP Diplom</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">Erwachsenenbildung • Zürich
+                  </p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 05.2014 - 05.2016 </span>
+                  <p class="font-medium text-base text-body-color">
+                    PHP, JQuery, HTML & CSS Lehrgang • Mit Abschluss Codeigniter-Projekt "Budget-Rechner"
+                  </p>
+                </div>
+              </div>
+
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full ml-auto pl-8 sm:pl-11 lg:pl-0 lg:pr-0 lg:mr-5 lg:text-right relative pb-12">
+                  <span class="absolute top-1 left-0 lg:left-auto lg:-right-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">Mitarbeiter Webentwicklung</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">Placement Services  • Winterthur</p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 05.2015 - 04.2021 </span>
+                  <p class="font-medium text-base text-body-color">
+                    Webentwickler, VTiger CRM, Wordpress, PHP, JS, HTML, CSS
+                  </p>
+                </div>
+              </div>
+
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full ml-auto pl-8 sm:pl-11 lg:pl-0 lg:pr-0 lg:mr-5 lg:text-right relative pb-12">
+                  <span class="absolute top-1 left-0 lg:left-auto lg:-right-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">Mitarbeiter Webentwicklung</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">Trinamo • Aarau</p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 03.2014 - 04.2015</span>
+                  <p class="font-medium text-base text-body-color">
+                    PHP, JavaScript, HTML, CSS, Joomla CMS, LAMP
+                  </p>
+                </div>
+              </div>
+
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full ml-auto pl-8 sm:pl-11 lg:pl-0 lg:pr-0 lg:mr-5 lg:text-right relative pb-12">
+                  <span class="absolute top-1 left-0 lg:left-auto lg:-right-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">Praktikant • Metaphor GmbH</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">Webentwicklung  • Basel</p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 09.2013 - 02.2014 </span>
+                  <p class="font-medium text-base text-body-color">
+                    Responsive Webdesign • Basel • PHP, JavaScript, HTML, CSS
+                  </p>
+                </div>
+              </div>
+              <div class="w-full lg:w-1/2 px-4">
+              </div>
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full ml-auto pl-8 sm:pl-11 lg:pl-0 lg:pr-0 lg:mr-5 lg:text-right relative pb-12">
+                  <span class="absolute top-1 left-0 lg:left-auto lg:-right-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">Web Entwickler</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">
+                    Trinamo AG  • Angestellter • Aarau</p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 10.2010 - 08.2013 </span>
+                  <p class="font-medium text-base text-body-color">
+                    Arbeit in der Webentwicklung
+                  </p>
+                </div>
+              </div>  
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>      
+              <div class="w-full lg:w-1/2 px-4">
+              </div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full ml-auto pl-8 sm:pl-11 lg:pl-0 lg:pr-0 lg:mr-5 lg:text-right relative pb-12">
+                  <span class="absolute top-1 left-0 lg:left-auto lg:-right-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">Web Entwickler</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">
+                    selbstständig </p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 12.2009 - 09.2010 </span>
+                  <p class="font-medium text-base text-body-color">
+                    Wordpress, PHP / MySQL
+                  </p>
+                </div>
+              </div>
+              
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full pl-8 sm:pl-11 lg:pl-0 lg:ml-5 relative pb-12">
+                  <span class="absolute top-1 left-0 lg:-left-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">
+                    Software Entwickler Lehre</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">WISS Zürich • Eidgenösisch annerkante Ausbildung • Zürich</p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 08.2007 - 07.2009 </span>
+                  <p class="font-medium text-base text-body-color">
+                    Note: 5.1 • Mit EFZ • Mit 1 Jahr Begleitpraktikum bei der Liip SA • Zürich und Freiburg (Schweiz)
+                  </p>
+                </div>
+              </div>
+
+
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full ml-auto pl-8 sm:pl-11 lg:pl-0 lg:pr-0 lg:mr-5 lg:text-right relative pb-12">
+                  <span class="absolute top-1 left-0 lg:left-auto lg:-right-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">Praktikant Webentwicklung</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">
+                    Liip SA • Freiburg (Schweiz) </p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 08.2008 - 07.2009 </span>
+                  <p class="font-medium text-base text-body-color">
+                    XSLT, XML, Flux CMS, Moodle Templating
+                  </p>
+                </div>
+              </div>
+
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full pl-8 sm:pl-11 lg:pl-0 lg:ml-5 relative pb-12">
+                  <span class="absolute top-1 left-0 lg:-left-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">
+                    Web Publisher SIZ</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">Migros Klubschule Zürich • Eidgenösisch annerkante Ausbildung • Zürich</p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 09.2005 - 06.2006 </span>
+                  <p class="font-medium text-base text-body-color">
+                    Note: 4.5 • Eidgenössischer Abschluss
+                  </p>
+                </div>
+              </div>
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full ml-auto pl-8 sm:pl-11 lg:pl-0 lg:pr-0 lg:mr-5 lg:text-right relative pb-12">
+                  <span class="absolute top-1 left-0 lg:left-auto lg:-right-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">Web Publisher und KV</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">
+                    Pegasus • Aargau</p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 08.2005 - 07.2007 </span>
+                  <p class="font-medium text-base text-body-color">
+                    Grafikdesigner, Photoshop, Flash, HTML, CSS, Joomla
+                  </p>
+                </div>
+              </div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full pl-8 sm:pl-11 lg:pl-0 lg:ml-5 relative pb-12">
+                  <span class="absolute top-1 left-0 lg:-left-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">Wirtschaftmaturität (Typus E)
+                  </h3>
+                  <p class="font-semibold text-base text-body-color mb-3">Kantonschule Baden</p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 08.1994 - 07.1999 </span>
+                  <p class="font-medium text-base text-body-color">
+                    Note 4.5  • Gymnasium Abschluss
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="absolute right-0 top-0 z-0">
+          <svg width="455" height="1307" viewBox="0 0 455 1307" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect opacity="0.08" width="332.05" height="1060.35" transform="matrix(-0.632736 -0.774367 -0.774367 0.632736 1031.2 139.128)" fill="url(#paint0_linear_0:1)" />
+            <rect opacity="0.08" width="509.849" height="1060.35" transform="matrix(-0.632736 -0.774367 -0.774367 0.632736 1293.7 635.81)" fill="url(#paint1_linear_0:1)" />
+            <defs>
+              <linearGradient id="paint0_linear_0:1" x1="166.025" y1="0" x2="166.025" y2="1060.35" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4A6CF7" offset="100%"/>
+                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="paint1_linear_0:1" x1="254.924" y1="0" x2="254.924" y2="1060.35" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4A6CF7" offset="100%"/>
+                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="absolute left-0 bottom-0 z-[-1]">
+          <svg width="416" height="1453" viewBox="0 0 416 1453" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect opacity="0.08" width="332.05" height="1030.82" transform="matrix(0.632736 0.774368 0.774368 -0.632736 -603 1507.24)" fill="url(#paint0_linear_0:1)" />
+            <rect opacity="0.08" width="791.583" height="1060.35" transform="matrix(0.632736 0.774368 0.774368 -0.632736 -906.263 670.922)" fill="url(#paint1_linear_0:1)" />
+            <defs>
+              <linearGradient id="paint0_linear_0:1" x1="166.025" y1="0" x2="166.025" y2="1030.82" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4A6CF7" offset="100%" />
+                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="paint1_linear_0:1" x1="395.791" y1="0" x2="395.791" y2="1060.35" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4A6CF7" offset="100%" />
+                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+      </div>
+    </section>
+    <!-- ====== Education Section End  -->
+
+    <!-- ====== Testimonial Section Start  -->
+    <section id="testimonial" class="pt-[120px] pb-20">
+      <div class="container">
+        <div class="flex flex-wrap mx-[-16px]">
+          <div class="w-full px-4">
+            <div class="max-w-[600px] mx-auto text-center mb-[50px]">
+              <span class="font-semibold text-lg text-primary block mb-2"> Auszug Testimonials </span>
+              <h2 class="font-bold text-black text-3xl sm:text-4xl md:text-[45px] mb-5">Kundenmeinungen</h2>
+              <p class="font-medium text-lg text-body-color"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full lg:w-1/2 px-4">
+            <div class="bg-white rounded-xl relative overflow-hidden px-7 sm:px-10 p-10 shadow-testimonial mb-10">
+              <div class="mb-5">
+                <img src="src/images/testimonial/fian.svg" alt="lineicons" class="h-5" />
+              </div>
+              <p class="font-medium text-lg text-body-color mb-8">
+                Peter Strössler baute vor vielen Jahren in enger Zusammenarbeit mit uns die Website von FIAN Schweiz auf betreut sie seither. Seine Arbeit umfasst gelegentliche Anpassungen im Layout, die Einbindung und das Update von Plugins, die Beantwortung unserer Fragen und anderes. Da die Zusammenarbeit jeweils zeitnah und kompetent erfolgt und wo nötig auf eigener Initiative basiert, sind wir sehr zufrieden damit.
+              </p>
+              <div class="flex items-center">
+                <div class="max-w-[60px] w-full h-[60px] rounded-full overflow-hidden mr-3">
+                  <img src="src/images/testimonial/image-1.png" alt="image" class="w-full" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-base text-black mb-1">Michael Nanz</h3>
+                  <p class="text-sm text-body-color">Co-Präsident @ Fian Schweiz / Suisse</p>
+                </div>
+              </div>
+              <div class="absolute bottom-8 right-8">
+                <svg width="51" height="29" viewBox="0 0 51 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.15">
+                    <path
+                      d="M12.4311 0.00142075C7.14984 -0.0798293 2.35609 3.33267 1.21859 7.96392C0.568593 10.8077 1.13734 13.6514 2.84359 15.9264C4.63109 18.3639 7.39359 19.9077 10.4811 20.3139L13.3248 27.3014C13.6498 28.0327 14.3811 28.5202 15.1936 28.5202C16.0061 28.5202 16.7373 28.0327 17.0623 27.3014C17.5498 26.0827 18.1186 24.7827 18.6873 23.5639C20.0686 20.4764 21.4498 17.3077 22.5061 14.0577C23.6436 10.6452 23.1561 6.98892 21.2061 4.22642C19.2561 1.54517 16.1686 0.0826707 12.4311 0.00142075ZM19.8248 13.2452C18.7686 16.3327 17.3873 19.5014 16.0873 22.5077C15.8436 23.1577 15.5186 23.7264 15.2748 24.3764L12.5123 17.7139L11.6186 17.6327C9.01859 17.4702 6.58109 16.1702 5.19984 14.3014C3.98109 12.6764 3.57484 10.6452 4.06234 8.69517C4.87484 5.36392 8.36859 2.92642 12.3498 2.92642H12.4311C15.1936 2.92642 17.4686 4.06392 18.9311 6.01392C20.3123 7.96392 20.6373 10.7264 19.8248 13.2452Z"
+                      fill="#4A6CF7"
+                    />
+                    <path
+                      d="M49.0747 4.30772C47.1247 1.54522 44.0372 0.00146484 40.2997 0.00146484C40.2185 0.00146484 40.2185 0.00146484 40.1372 0.00146484C34.9372 0.00146484 30.2247 3.41397 29.0872 7.96397C28.4372 10.8077 29.006 13.6515 30.7122 16.0077C32.4997 18.4452 35.2622 19.989 38.3497 20.3952L41.1935 27.3827C41.5185 28.114 42.2497 28.6015 43.0622 28.6015C43.8747 28.6015 44.606 28.114 44.931 27.3827C45.4185 26.164 45.9872 24.864 46.556 23.6452C47.9372 20.5577 49.3185 17.389 50.3747 14.139C51.5122 10.8077 51.0247 7.07022 49.0747 4.30772ZM47.6935 13.2452C46.6372 16.3327 45.256 19.5015 43.956 22.5077C43.7122 23.1577 43.3872 23.7265 43.1435 24.3765L40.381 17.714L39.4872 17.6327C36.8872 17.4702 34.4497 16.1702 33.0685 14.3015C31.8497 12.6765 31.4435 10.6452 31.931 8.61397C32.7435 5.28272 36.2372 2.84521 40.2185 2.84521H40.2997C43.0622 2.84521 45.3372 3.98272 46.7997 5.93272C48.181 7.96397 48.506 10.7265 47.6935 13.2452Z"
+                      fill="#4A6CF7"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2 px-4">
+            <div class="bg-white rounded-xl relative overflow-hidden px-7 sm:px-10 p-10 shadow-testimonial mb-10">
+              <div class="mb-5">
+                <img src="src/images/testimonial/placementservices.svg" alt="tailgrids" class="h-7" />
+              </div>
+              <p class="font-medium text-lg text-body-color mb-8">
+                Herr Strössler hatte sich dank seiner raschen Auffassungsgabe selbständig in sein komplexes Aufgabengebiet eingearbeitet. Er arbeitete zuverlässig, zeigte grosses Interesse und zeichnete sich insbesondere durch seine hohe Lernbereitschaft aus. Dank seiner überdurchschnittlichen Programmierkenntnisse löste er auch fachlich anspruchsvolle Problemstellungen. In Zeiten grosser Arbeitsbelastung war er flexibel. Die ihm übertragenen Aufgaben erledigte Herr Strössler mit grossem Engagement zu unserer vollsten Zufriedenheit.
+              </p>
+              <div class="flex items-center">
+                <div class="max-w-[60px] w-full h-[60px] rounded-full overflow-hidden mr-3">
+                  <img src="src/images/testimonial/image-2.png" alt="image" class="w-full" />
+                </div>
+                <div>
+                  <h3 class="font-semibold text-base text-black mb-1">Tolga Tuna - Andelfingen</h3>
+                  <p class="text-sm text-body-color">CEO @ Placementservices</p>
+                </div>
+              </div>
+              <div class="absolute bottom-8 right-8">
+                <svg width="51" height="29" viewBox="0 0 51 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.15">
+                    <path
+                      d="M12.4311 0.00142075C7.14984 -0.0798293 2.35609 3.33267 1.21859 7.96392C0.568593 10.8077 1.13734 13.6514 2.84359 15.9264C4.63109 18.3639 7.39359 19.9077 10.4811 20.3139L13.3248 27.3014C13.6498 28.0327 14.3811 28.5202 15.1936 28.5202C16.0061 28.5202 16.7373 28.0327 17.0623 27.3014C17.5498 26.0827 18.1186 24.7827 18.6873 23.5639C20.0686 20.4764 21.4498 17.3077 22.5061 14.0577C23.6436 10.6452 23.1561 6.98892 21.2061 4.22642C19.2561 1.54517 16.1686 0.0826707 12.4311 0.00142075ZM19.8248 13.2452C18.7686 16.3327 17.3873 19.5014 16.0873 22.5077C15.8436 23.1577 15.5186 23.7264 15.2748 24.3764L12.5123 17.7139L11.6186 17.6327C9.01859 17.4702 6.58109 16.1702 5.19984 14.3014C3.98109 12.6764 3.57484 10.6452 4.06234 8.69517C4.87484 5.36392 8.36859 2.92642 12.3498 2.92642H12.4311C15.1936 2.92642 17.4686 4.06392 18.9311 6.01392C20.3123 7.96392 20.6373 10.7264 19.8248 13.2452Z"
+                      fill="#4A6CF7"
+                    />
+                    <path
+                      d="M49.0747 4.30772C47.1247 1.54522 44.0372 0.00146484 40.2997 0.00146484C40.2185 0.00146484 40.2185 0.00146484 40.1372 0.00146484C34.9372 0.00146484 30.2247 3.41397 29.0872 7.96397C28.4372 10.8077 29.006 13.6515 30.7122 16.0077C32.4997 18.4452 35.2622 19.989 38.3497 20.3952L41.1935 27.3827C41.5185 28.114 42.2497 28.6015 43.0622 28.6015C43.8747 28.6015 44.606 28.114 44.931 27.3827C45.4185 26.164 45.9872 24.864 46.556 23.6452C47.9372 20.5577 49.3185 17.389 50.3747 14.139C51.5122 10.8077 51.0247 7.07022 49.0747 4.30772ZM47.6935 13.2452C46.6372 16.3327 45.256 19.5015 43.956 22.5077C43.7122 23.1577 43.3872 23.7265 43.1435 24.3765L40.381 17.714L39.4872 17.6327C36.8872 17.4702 34.4497 16.1702 33.0685 14.3015C31.8497 12.6765 31.4435 10.6452 31.931 8.61397C32.7435 5.28272 36.2372 2.84521 40.2185 2.84521H40.2997C43.0622 2.84521 45.3372 3.98272 46.7997 5.93272C48.181 7.96397 48.506 10.7265 47.6935 13.2452Z"
+                      fill="#4A6CF7"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Testimonial Section End  -->
+    <!-- ====== Footer Section Start  -->
+    <footer class="bg-black pt-[100px] pb-12 relative z-10">
+      <div class="container">
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full md:w-1/2 lg:w-4/12 px-4">
+            <div class="mb-10">
+              <h2 class="font-bold text-white text-[44px] leading-tight mb-5">Lass uns miteinander sprechen!</h2>
+              <h3 class="font-bold text-white opacity-70 text-2xl mb-2">Kontakt Info</h3>
+              <p class="font-medium text-base text-body-color mb-1">peter.stroessler@bluewin.ch</p>
+              <p class="font-medium text-base text-body-color mb-1">Schweiz</p>
+            </div>
+          </div>
+        <div class="mt-10 pt-12 border-t border-white border-opacity-10">
+          <div class="flex items-center justify-center mb-5">
+          <p class="font-medium text-base text-body-color text-center">Alle Rechte vorbehalten © und gemacht mit ♥ von Peter Strössler <script>
+            ; (function () {
+              const year = new Date().getFullYear();
+              document.write(year);
+            })();
+          </script></p>
+        </div>
+        </div>
+      </div>
+      <div class="absolute left-0 bottom-0 -z-1" aria-label="shape">
+        <span class="hidden">shape</span>
+        <svg width="143" height="138" viewBox="0 0 143 138" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="25" cy="118" r="101" stroke="url(#paint0_linear_52:83)" stroke-width="34" />
+          <defs>
+            <linearGradient id="paint0_linear_52:83" x1="-12.7969" y1="-37.3359" x2="99.2109" y2="173.773" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#4A6CF7"  offset="100%" />
+              <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="absolute right-3 top-3 -z-1" aria-label="shape">
+        <span class="hidden">shape</span>
+        <svg width="61" height="77" viewBox="0 0 61 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g opacity="0.5">
+            <circle cx="45.0001" cy="1.66667" r="1.66667" transform="rotate(90 45.0001 1.66667)" fill="white" />
+            <circle cx="16.0001" cy="1.66667" r="1.66667" transform="rotate(90 16.0001 1.66667)" fill="white" />
+            <circle cx="59.0001" cy="1.66667" r="1.66667" transform="rotate(90 59.0001 1.66667)" fill="white" />
+            <circle cx="30.6668" cy="1.66667" r="1.66667" transform="rotate(90 30.6668 1.66667)" fill="white" />
+            <circle cx="1.66683" cy="1.66667" r="1.66667" transform="rotate(90 1.66683 1.66667)" fill="white" />
+            <circle cx="45.0001" cy="16.3332" r="1.66667" transform="rotate(90 45.0001 16.3332)" fill="white" />
+            <circle cx="16.0001" cy="16.3332" r="1.66667" transform="rotate(90 16.0001 16.3332)" fill="white" />
+            <circle cx="59.0001" cy="16.3332" r="1.66667" transform="rotate(90 59.0001 16.3332)" fill="white" />
+            <circle cx="30.6668" cy="16.3332" r="1.66667" transform="rotate(90 30.6668 16.3332)" fill="white" />
+            <circle cx="1.66683" cy="16.3332" r="1.66667" transform="rotate(90 1.66683 16.3332)" fill="white" />
+            <circle cx="45.0001" cy="31.0002" r="1.66667" transform="rotate(90 45.0001 31.0002)" fill="white" />
+            <circle cx="45.0001" cy="74.6667" r="1.66667" transform="rotate(90 45.0001 74.6667)" fill="white" />
+            <circle cx="16.0001" cy="31.0002" r="1.66667" transform="rotate(90 16.0001 31.0002)" fill="white" />
+            <circle cx="16.0001" cy="74.6667" r="1.66667" transform="rotate(90 16.0001 74.6667)" fill="white" />
+            <circle cx="59.0001" cy="31.0002" r="1.66667" transform="rotate(90 59.0001 31.0002)" fill="white" />
+            <circle cx="59.0001" cy="74.6667" r="1.66667" transform="rotate(90 59.0001 74.6667)" fill="white" />
+            <circle cx="30.6668" cy="31.0002" r="1.66667" transform="rotate(90 30.6668 31.0002)" fill="white" />
+            <circle cx="30.6668" cy="74.6667" r="1.66667" transform="rotate(90 30.6668 74.6667)" fill="white" />
+            <circle cx="1.66683" cy="31.0002" r="1.66667" transform="rotate(90 1.66683 31.0002)" fill="white" />
+            <circle cx="1.66683" cy="74.6667" r="1.66667" transform="rotate(90 1.66683 74.6667)" fill="white" />
+            <circle cx="45.0001" cy="45.6667" r="1.66667" transform="rotate(90 45.0001 45.6667)" fill="white" />
+            <circle cx="16.0001" cy="45.6667" r="1.66667" transform="rotate(90 16.0001 45.6667)" fill="white" />
+            <circle cx="59.0001" cy="45.6667" r="1.66667" transform="rotate(90 59.0001 45.6667)" fill="white" />
+            <circle cx="30.6668" cy="45.6667" r="1.66667" transform="rotate(90 30.6668 45.6667)" fill="white" />
+            <circle cx="1.66683" cy="45.6667" r="1.66667" transform="rotate(90 1.66683 45.6667)" fill="white" />
+            <circle cx="45.0001" cy="60.3332" r="1.66667" transform="rotate(90 45.0001 60.3332)" fill="white" />
+            <circle cx="16.0001" cy="60.3332" r="1.66667" transform="rotate(90 16.0001 60.3332)" fill="white" />
+            <circle cx="59.0001" cy="60.3332" r="1.66667" transform="rotate(90 59.0001 60.3332)" fill="white" />
+            <circle cx="30.6668" cy="60.3332" r="1.66667" transform="rotate(90 30.6668 60.3332)" fill="white" />
+            <circle cx="1.66683" cy="60.3332" r="1.66667" transform="rotate(90 1.66683 60.3332)" fill="white" />
+          </g>
+        </svg>
+      </div>
+      </div>
+    </footer>
+    <!-- ====== Footer Section End  -->
+
+    <!-- ====== Back To Top Start -->
+    <a
+      href="javascript:void(0)"
+      class="hidden items-center justify-center bg-primary text-white w-10 h-10 rounded-md fixed bottom-8 right-8 left-auto z-[999] hover:shadow-signUp transition duration-300 back-to-top"
+    >
+      <span class="w-3 h-3 border-t border-l border-white rotate-45 mt-[6px]"></span>
+    </a>
+    <!-- ====== Back To Top End -->
+
+    <!-- ====== All Scripts -->
+    <script>
+      // ==== for menu scroll
+      const pageLink = document.querySelectorAll(".menu-scroll");
+
+      pageLink.forEach((elem) => {
+        elem.addEventListener("click", (e) => {
+          e.preventDefault();
+          document.querySelector(elem.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+            offsetTop: 1 - 60,
+          });
+        });
+      });
+
+      // section menu active
+      function onScroll(event) {
+        const sections = document.querySelectorAll(".menu-scroll");
+        const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+
+        for (let i = 0; i < sections.length; i++) {
+          const currLink = sections[i];
+          const val = currLink.getAttribute("href");
+          const refElement = document.querySelector(val);
+          const scrollTopMinus = scrollPos + 73;
+          if (refElement.offsetTop <= scrollTopMinus && refElement.offsetTop + refElement.offsetHeight > scrollTopMinus) {
+            document.querySelector(".menu-scroll").classList.remove("active");
+            currLink.classList.add("active");
+          } else {
+            currLink.classList.remove("active");
+          }
+        }
+      }
+
+      window.document.addEventListener("scroll", onScroll);
+    </script>
+  <script defer src="bundle.js"></script></body>
+</html>

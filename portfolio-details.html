@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Details | Personal Portfolio Template</title>
+  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
+  <body>
+    <!-- ====== Navbar Section Start -->
+    <header class="header bg-transparent absolute top-0 left-0 z-40 w-full flex items-center transition">
+      <div class="container">
+        <div class="flex mx-[-16px] items-center justify-between relative">
+          <div class="px-4 w-60 max-w-full">
+            <a href="index.html" class="header-logo w-full block py-6 lg:py-8">
+              <img src="src/images/logo/logo.svg" alt="logo" class="w-full" />
+            </a>
+          </div>
+          <div class="flex px-4 justify-between items-center w-full">
+            <div>
+              <button
+                id="navbarToggler"
+                name="navbarToggler"
+                aria-label="navbarToggler"
+                class="block absolute right-4 top-1/2 translate-y-[-50%] lg:hidden focus:ring-2 ring-primary px-3 py-[6px] rounded-lg"
+              >
+                <span class="relative w-[30px] h-[2px] my-[6px] block bg-dark"></span>
+                <span class="relative w-[30px] h-[2px] my-[6px] block bg-dark"></span>
+                <span class="relative w-[30px] h-[2px] my-[6px] block bg-dark"></span>
+              </button>
+              <nav
+                id="navbarCollapse"
+                class="absolute py-5 lg:py-0 lg:px-4 xl:px-6 bg-white lg:bg-transparent shadow-lg rounded-lg max-w-[250px] w-full lg:max-w-full lg:w-full right-4 top-full hidden lg:block lg:static lg:shadow-none"
+              >
+                <ul class="blcok lg:flex">
+                  <li class="relative group">
+                    <a href="/#home" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0"> Home </a>
+                  </li>
+                  <li class="relative group">
+                    <a
+                      href="/#about"
+                      class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li class="relative group">
+                    <a
+                      href="/#services"
+                      class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12"
+                    >
+                      Services
+                    </a>
+                  </li>
+                  <li class="relative group">
+                    <a
+                      href="/#pricing"
+                      class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12"
+                    >
+                      Pricing
+                    </a>
+                  </li>
+                  <li class="relative group">
+                    <a
+                      href="/#contact"
+                      class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12"
+                    >
+                      Contact
+                    </a>
+                  </li>
+                  <li class="relative group submenu-item">
+                    <a
+                      href="javascript:void(0)"
+                      class="text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:pl-0 lg:pr-4 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12 relative after:absolute after:w-2 after:h-2 after:border-b-2 after:border-r-2 after:border-current after:rotate-45 lg:after:right-0 after:right-1 after:top-1/2 after:translate-y-[-50%] after:mt-[-2px]"
+                    >
+                      Pages
+                    </a>
+                    <div
+                      class="submenu hidden relative lg:absolute w-[250px] top-full lg:top-[110%] left-0 rounded-sm lg:shadow-lg p-4 lg:block lg:opacity-0 lg:invisible group-hover:opacity-100 lg:group-hover:visible lg:group-hover:top-full bg-white transition-[top] duration-300"
+                    >
+                      <a href="portfolio-details.html" class="block text-sm text-black rounded hover:text-primary py-[10px] px-4"> Portfolio Details Page </a>
+
+                      <a href="blog-grids.html" class="block text-sm text-black rounded hover:text-primary py-[10px] px-4"> Blog Grids Page </a>
+                      <a href="blog-details.html" class="block text-sm text-black rounded hover:text-primary py-[10px] px-4"> Blog Details Page </a>
+                    </div>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="sm:flex justify-end hidden pr-16 lg:pr-0">
+              <a
+                href="#contact"
+                class="text-base font-bold text-white bg-primary rounded-full py-3 px-8 md:px-9 lg:px-8 xl:px-9 hover:shadow-signUp hover:bg-opacity-90 transition ease-in-out duration-300"
+              >
+                Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ====== Navbar Section End -->
+
+    <!-- ====== Page Title Section Start -->
+    <section class="relative z-10 pt-[150px] pb-[90px] mb-20 overflow-hidden">
+      <div class="container">
+        <div class="flex flex-wrap items-center mx-[-16px]">
+          <div class="w-full md:w-8/12 lg:w-7/12 px-4">
+            <div class="max-w-[570px] mb-12 md:mb-0">
+              <h1 class="font-bold text-black text-2xl sm:text-3xl mb-5">Portfolio Details Page</h1>
+              <p class="font-medium text-base text-body-color leading-relaxed">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero.
+              </p>
+            </div>
+          </div>
+          <div class="w-full md:w-4/12 lg:w-5/12 px-4">
+            <div class="text-end">
+              <ul class="flex items-center md:justify-end">
+                <li class="flex items-center">
+                  <a href="index.html" class="font-medium text-base text-body-color pr-1 hover:text-primary"> Home </a>
+                  <span class="block w-2 h-2 border-t-2 border-r-2 border-body-color rotate-45 mr-3"></span>
+                </li>
+                <li class="font-medium text-base text-primary">Portfolio Details</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="absolute bottom-0 left-0 z-[-1]">
+          <svg width="730" height="206" viewBox="0 0 730 206" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect opacity="0.08" width="136.991" height="563.705" transform="matrix(0.632736 0.774368 0.774368 -0.632736 -201.278 330.677)" fill="url(#paint0_linear_0:1)" />
+            <rect opacity="0.05" width="345.355" height="563.705" transform="matrix(0.632736 0.774368 0.774368 -0.632736 74 330.677)" fill="url(#paint1_linear_0:1)" />
+            <defs>
+              <linearGradient id="paint0_linear_0:1" x1="68.4956" y1="0" x2="68.4956" y2="563.705" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4A6CF7" />
+                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="paint1_linear_0:1" x1="172.678" y1="0" x2="172.678" y2="563.705" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4A6CF7" />
+                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="absolute top-0 right-0 z-[-1]">
+          <svg width="405" height="206" viewBox="0 0 405 206" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect opacity="0.08" width="289.718" height="563.705" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 603.461 -125.138)" fill="url(#paint0_linear_54:595)" />
+            <defs>
+              <linearGradient id="paint0_linear_54:595" x1="144.859" y1="0" x2="144.859" y2="563.705" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4A6CF7" />
+                <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+      </div>
+    </section>
+    <!-- ====== Page Title Section End -->
+
+    <!-- ====== Blog Section Start -->
+    <section class="pb-20">
+      <div class="container">
+        <div class="flex flex-wrap -mx-5">
+          <div class="w-full lg:w-8/12 px-5">
+            <div>
+              <div class="rounded-sm mb-8">
+                <img src="src/images/portfolio/portfolio-details.jpg" alt="image" class="w-full object-cover object-center" />
+              </div>
+              <h3 class="font-bold text-black text-2xl sm:text-4xl lg:text-3xl mb-7">Professional graphics design</h3>
+              <p class="text-base sm:text-lg lg:text-base xl:text-lg text-body-color mb-8">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+              </p>
+              <p class="text-base sm:text-lg lg:text-base xl:text-lg text-body-color mb-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis enim lobortis scelerisque fermentum. Neque sodales ut
+                etiam sit amet. Ligula ullamcorper proin libero nunc consequat interdum varius. Quam pellentesque nec nam.
+              </p>
+              <h4 class="font-bold text-xl sm:text-2xl lg:text-xl xl:text-2xl text-black mb-8"><span class="text-primary">01.</span> Marketing solutions</h4>
+              <ul class="list list-inside list-disc mb-7">
+                <li class="text-base sm:text-lg lg:text-base xl:text-lg text-primary mb-3">
+                  <span class="text-body-color"> Consectetur adipiscing elit in voluptate velit. </span>
+                </li>
+                <li class="text-base sm:text-lg lg:text-base xl:text-lg text-primary mb-3">
+                  <span class="text-body-color"> Mattis vulputate cupidatat. </span>
+                </li>
+                <li class="text-base sm:text-lg lg:text-base xl:text-lg text-primary mb-3">
+                  <span class="text-body-color"> Vulputate enim nulla aliquet porttitor odio pellentesque </span>
+                </li>
+                <li class="text-base sm:text-lg lg:text-base xl:text-lg text-primary mb-3">
+                  <span class="text-body-color"> Ligula ullamcorper malesuada proin </span>
+                </li>
+              </ul>
+              <p class="text-base sm:text-lg lg:text-base xl:text-lg text-body-color mb-10">
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.
+              </p>
+              <h4 class="font-bold text-xl sm:text-2xl lg:text-xl xl:text-2xl text-black mb-8"><span class="text-primary">02.</span> Branding solutions</h4>
+              <p class="text-base sm:text-lg lg:text-base xl:text-lg text-body-color mb-8">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis enim lobortis scelerisque fermentum. Neque sodales ut
+                etiam sit door telium sieat amet.
+              </p>
+            </div>
+          </div>
+          <div class="w-full lg:w-4/12 px-5">
+            <div class="bg-[#F8F9FF] border border-[#D7DFFF] py-9 px-6 sm:p-9 lg:px-6 xl:px-5 rounded-sm mb-10">
+              <h3 class="font-bold text-primary text-[22px] mb-7">Project Info</h3>
+              <ul>
+                <li class="flex lg:flex-wrap xl:flex-nowrap mb-3">
+                  <span class="max-w-[90px] w-full font-medium text-black text-base flex justify-between">
+                    Category
+                    <span class="text-body-color">:</span>
+                  </span>
+                  <span class="w-full font-medium text-body-color text-base pl-5 lg:pl-0 xl:pl-5"> Branding, Design </span>
+                </li>
+                <li class="flex lg:flex-wrap xl:flex-nowrap mb-3">
+                  <span class="max-w-[90px] w-full font-medium text-black text-base flex justify-between">
+                    Date
+                    <span class="text-body-color">:</span>
+                  </span>
+                  <span class="w-full font-medium text-body-color text-base pl-5 lg:pl-0 xl:pl-5"> June, 21, 2024 </span>
+                </li>
+                <li class="flex lg:flex-wrap xl:flex-nowrap mb-3">
+                  <span class="max-w-[90px] w-full font-medium text-black text-base flex justify-between">
+                    Tags
+                    <span class="text-body-color">:</span>
+                  </span>
+                  <span class="w-full font-medium text-body-color text-base pl-5 lg:pl-0 xl:pl-5"> Business, Consulting </span>
+                </li>
+                <li class="flex lg:flex-wrap xl:flex-nowrap mb-3">
+                  <span class="max-w-[90px] w-full font-medium text-black text-base flex justify-between">
+                    Website
+                    <span class="text-body-color">:</span>
+                  </span>
+                  <span class="w-full font-medium text-body-color text-base pl-5 lg:pl-0 xl:pl-5"> www.yoursite.com </span>
+                </li>
+                <li class="flex lg:flex-wrap xl:flex-nowrap">
+                  <span class="max-w-[90px] w-full font-medium text-black text-base flex justify-between">
+                    Location
+                    <span class="text-body-color">:</span>
+                  </span>
+                  <span class="w-full font-medium text-body-color text-base pl-5 lg:pl-0 xl:pl-5"> New York, USA </span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-[#F8F9FF] border border-[#D7DFFF] py-9 px-6 sm:p-9 lg:px-6 xl:px-5 rounded-sm">
+              <h3 class="font-bold text-primary text-[22px] mb-7">Downoad Files</h3>
+              <ul>
+                <li class="flex mb-4">
+                  <button class="w-full flex items-center font-medium text-base text-white bg-primary py-3 px-5 rounded-sm">
+                    <span class="pr-2">
+                      <svg width="21" height="21" viewBox="0 0 21 21" class="fill-current">
+                        <path
+                          d="M5.00327 2.6569C4.56125 2.65777 4.13767 2.83419 3.82572 3.14736C3.51377 3.46053 3.339 3.88479 3.33986 4.32682L3.3659 17.6601C3.36676 18.1022 3.54318 18.5257 3.85635 18.8377C4.16952 19.1496 4.59379 19.3244 5.03581 19.3235L15.0358 19.304C15.4778 19.3032 15.9014 19.1267 16.2134 18.8136C16.5253 18.5004 16.7001 18.0761 16.6992 17.6341L16.6797 7.63411L11.6699 2.64389L5.00327 2.6569ZM5.00653 4.32357L10.8398 4.31218L10.848 8.47884L15.0146 8.4707L15.0325 17.6374L5.03256 17.6569L5.00653 4.32357ZM6.68621 10.987L6.68946 12.6536L13.3561 12.6406L13.3529 10.9739L6.68621 10.987ZM6.69271 14.3203L6.69597 15.987L10.8626 15.9788L10.8594 14.3122L6.69271 14.3203Z"
+                        />
+                      </svg>
+                    </span>
+                    <span> Main-project-file.zif </span>
+                  </button>
+                </li>
+                <li class="flex">
+                  <button class="w-full flex items-center font-medium text-base text-white bg-primary py-3 px-5 rounded-sm">
+                    <span class="pr-2">
+                      <svg width="21" height="21" viewBox="0 0 21 21" class="fill-current">
+                        <path
+                          d="M5.00327 2.6569C4.56125 2.65777 4.13767 2.83419 3.82572 3.14736C3.51377 3.46053 3.339 3.88479 3.33986 4.32682L3.3659 17.6601C3.36676 18.1022 3.54318 18.5257 3.85635 18.8377C4.16952 19.1496 4.59379 19.3244 5.03581 19.3235L15.0358 19.304C15.4778 19.3032 15.9014 19.1267 16.2134 18.8136C16.5253 18.5004 16.7001 18.0761 16.6992 17.6341L16.6797 7.63411L11.6699 2.64389L5.00327 2.6569ZM5.00653 4.32357L10.8398 4.31218L10.848 8.47884L15.0146 8.4707L15.0325 17.6374L5.03256 17.6569L5.00653 4.32357ZM6.68621 10.987L6.68946 12.6536L13.3561 12.6406L13.3529 10.9739L6.68621 10.987ZM6.69271 14.3203L6.69597 15.987L10.8626 15.9788L10.8594 14.3122L6.69271 14.3203Z"
+                        />
+                      </svg>
+                    </span>
+                    <span> Design-file.zif </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Blog Section End -->
+
+    <!-- ====== Footer Section Start  -->
+    <footer class="bg-black pt-[100px] pb-12 relative z-10">
+      <div class="container">
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full md:w-1/2 lg:w-4/12 px-4">
+            <div class="mb-10">
+              <h2 class="font-bold text-white text-[44px] leading-tight mb-5">Let's Talk!</h2>
+              <h3 class="font-bold text-white opacity-70 text-2xl mb-2">Contact Info</h3>
+              <p class="font-medium text-base text-body-color mb-1">closerpage@email.com</p>
+              <p class="font-medium text-base text-body-color mb-1">12 Hilton St, Manchester M1 1JF</p>
+              <p class="font-medium text-base text-body-color mb-1">+44 012 34 5678</p>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-3/12 px-4">
+            <div class="mb-10">
+              <h3 class="font-semibold text-white text-xl mb-9">What I Do?</h3>
+              <ul>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> The Studio </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> Sponsoring </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> Newsletter </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> Contact Us </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-2/12 px-4">
+            <div class="mb-10">
+              <h3 class="font-semibold text-white text-xl mb-9">News</h3>
+              <ul>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> Hot Stuff </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> Perfect Place </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> Vintage </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> Products </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-3/12 px-4">
+            <div class="mb-10">
+              <h3 class="font-semibold text-white text-xl mb-9">Quick Links</h3>
+              <ul>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> Style </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> Health </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> Relationship </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0)" class="inline-block text-base text-body-color mb-3 hover:text-primary"> Legal & Privacy </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 pt-12 border-t border-white border-opacity-10">
+          <div class="flex items-center justify-center mb-5">
+            <a
+              href="javascript:void(0)"
+              class="flex items-center justify-center w-8 h-8 founded-full mx-2 text-body-color hover:text-primary"
+              aria-label="social-link"
+              name="social-link"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" class="fill-current" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M32 16C32 7.1625 24.8375 0 16 0C7.1625 0 0 7.1625 0 16C0 24.8375 7.1625 32 16 32C16.0938 32 16.1875 32 16.2812 31.9937V19.5438H12.8438V15.5375H16.2812V12.5875C16.2812 9.16875 18.3688 7.30625 21.4188 7.30625C22.8813 7.30625 24.1375 7.4125 24.5 7.4625V11.0375H22.4C20.7437 11.0375 20.4188 11.825 20.4188 12.9812V15.5312H24.3875L23.8687 19.5375H20.4188V31.3813C27.1063 29.4625 32 23.3062 32 16Z"
+                />
+              </svg>
+            </a>
+            <a
+              href="javascript:void(0)"
+              class="flex items-center justify-center w-8 h-8 founded-full mx-2 text-body-color hover:text-primary"
+              aria-label="social-link"
+              name="social-link"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" class="fill-current">
+                <path
+                  d="M19.0625 16C19.0625 17.6914 17.6914 19.0625 16 19.0625C14.3086 19.0625 12.9375 17.6914 12.9375 16C12.9375 14.3086 14.3086 12.9375 16 12.9375C17.6914 12.9375 19.0625 14.3086 19.0625 16Z"
+                />
+                <path
+                  d="M23.1621 10.5813C23.0149 10.1824 22.78 9.82129 22.4749 9.5249C22.1785 9.21973 21.8176 8.98486 21.4185 8.83765C21.0947 8.71191 20.6084 8.56226 19.7126 8.52148C18.7437 8.47729 18.4531 8.46777 16 8.46777C13.5466 8.46777 13.2561 8.47705 12.2874 8.52124C11.3916 8.56226 10.905 8.71191 10.5815 8.83765C10.1824 8.98486 9.82129 9.21973 9.52515 9.5249C9.21997 9.82129 8.98511 10.1821 8.83765 10.5813C8.71191 10.905 8.56226 11.3916 8.52148 12.2874C8.47729 13.2561 8.46777 13.5466 8.46777 16C8.46777 18.4531 8.47729 18.7437 8.52148 19.7126C8.56226 20.6084 8.71191 21.0947 8.83765 21.4185C8.98511 21.8176 9.21973 22.1785 9.5249 22.4749C9.82129 22.78 10.1821 23.0149 10.5813 23.1621C10.905 23.2881 11.3916 23.4377 12.2874 23.4785C13.2561 23.5227 13.5464 23.532 15.9998 23.532C18.4534 23.532 18.7439 23.5227 19.7124 23.4785C20.6082 23.4377 21.0947 23.2881 21.4185 23.1621C22.2197 22.853 22.853 22.2197 23.1621 21.4185C23.2878 21.0947 23.4375 20.6084 23.4785 19.7126C23.5227 18.7437 23.532 18.4531 23.532 16C23.532 13.5466 23.5227 13.2561 23.4785 12.2874C23.4377 11.3916 23.2881 10.905 23.1621 10.5813ZM16 20.7175C13.3943 20.7175 11.282 18.6055 11.282 15.9998C11.282 13.394 13.3943 11.282 16 11.282C18.6055 11.282 20.7178 13.394 20.7178 15.9998C20.7178 18.6055 18.6055 20.7175 16 20.7175ZM20.9043 12.198C20.2954 12.198 19.8018 11.7043 19.8018 11.0955C19.8018 10.4866 20.2954 9.99292 20.9043 9.99292C21.5132 9.99292 22.0068 10.4866 22.0068 11.0955C22.0066 11.7043 21.5132 12.198 20.9043 12.198Z"
+                />
+                <path
+                  d="M16 0C7.16479 0 0 7.16479 0 16C0 24.8352 7.16479 32 16 32C24.8352 32 32 24.8352 32 16C32 7.16479 24.8352 0 16 0ZM25.1321 19.7878C25.0876 20.7659 24.9321 21.4336 24.7051 22.0181C24.2278 23.2522 23.2522 24.2278 22.0181 24.7051C21.4338 24.9321 20.7659 25.0874 19.7881 25.1321C18.8083 25.1768 18.4954 25.1875 16.0002 25.1875C13.5049 25.1875 13.1921 25.1768 12.2122 25.1321C11.2344 25.0874 10.5664 24.9321 9.98218 24.7051C9.3689 24.4744 8.81372 24.1128 8.35474 23.6453C7.88745 23.1865 7.52588 22.6311 7.29517 22.0181C7.06812 21.4338 6.9126 20.7659 6.86816 19.7881C6.823 18.8081 6.8125 18.4951 6.8125 16C6.8125 13.5049 6.823 13.1919 6.86792 12.2122C6.91235 11.2341 7.06763 10.5664 7.29468 9.98193C7.52539 9.3689 7.88721 8.81348 8.35474 8.35474C8.81348 7.88721 9.3689 7.52563 9.98193 7.29492C10.5664 7.06787 11.2341 6.9126 12.2122 6.86792C13.1919 6.82324 13.5049 6.8125 16 6.8125C18.4951 6.8125 18.8081 6.82324 19.7878 6.86816C20.7659 6.9126 21.4336 7.06787 22.0181 7.29468C22.6311 7.52539 23.1865 7.88721 23.6455 8.35474C24.1128 8.81372 24.4746 9.3689 24.7051 9.98193C24.9324 10.5664 25.0876 11.2341 25.1323 12.2122C25.177 13.1919 25.1875 13.5049 25.1875 16C25.1875 18.4951 25.177 18.8081 25.1321 19.7878Z"
+                />
+              </svg>
+            </a>
+            <a
+              href="javascript:void(0)"
+              class="flex items-center justify-center w-8 h-8 founded-full mx-2 text-body-color hover:text-primary"
+              aria-label="social-link"
+              name="social-link"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" class="fill-current">
+                <path
+                  d="M16 0C7.16479 0 0 7.16479 0 16C0 24.8352 7.16479 32 16 32C24.8352 32 32 24.8352 32 16C32 7.16479 24.8352 0 16 0ZM23.3054 12.4751C23.3125 12.6326 23.3159 12.7908 23.3159 12.9497C23.3159 17.8025 19.6221 23.3984 12.8669 23.3987H12.8672H12.8669C10.793 23.3987 8.86304 22.7908 7.23779 21.749C7.52515 21.783 7.81763 21.7998 8.11377 21.7998C9.83447 21.7998 11.418 21.2129 12.675 20.2278C11.0674 20.198 9.71191 19.1362 9.24414 17.677C9.46802 17.72 9.69824 17.7434 9.93433 17.7434C10.2695 17.7434 10.5942 17.6982 10.9028 17.614C9.22241 17.2776 7.95654 15.7925 7.95654 14.0142C7.95654 13.9976 7.95654 13.9827 7.95703 13.9673C8.4519 14.2424 9.01782 14.408 9.62036 14.4265C8.63428 13.7686 7.98608 12.6438 7.98608 11.3696C7.98608 10.6968 8.16797 10.0664 8.4834 9.52368C10.2944 11.7458 13.001 13.2073 16.0532 13.3608C15.9902 13.0918 15.9578 12.8115 15.9578 12.5234C15.9578 10.4961 17.6025 8.85132 19.6306 8.85132C20.687 8.85132 21.6411 9.29785 22.3113 10.0117C23.1479 9.84668 23.9336 9.54102 24.6433 9.12036C24.3687 9.97754 23.7866 10.6968 23.0283 11.1516C23.7712 11.0627 24.4792 10.8657 25.1372 10.5732C24.6458 11.3098 24.0225 11.9568 23.3054 12.4751Z"
+                />
+              </svg>
+            </a>
+            <a
+              href="javascript:void(0)"
+              class="flex items-center justify-center w-8 h-8 founded-full mx-2 text-body-color hover:text-primary"
+              aria-label="social-link"
+              name="social-link"
+            >
+              <svg width="32" height="32" viewBox="0 0 32 32" class="fill-current">
+                <path
+                  d="M16 0C7.16479 0 0 7.16479 0 16C0 24.8352 7.16479 32 16 32C24.8352 32 32 24.8352 32 16C32 7.16479 24.8352 0 16 0ZM11.3506 24.1875H7.45386V12.4641H11.3506V24.1875ZM9.40234 10.8633H9.37695C8.06934 10.8633 7.22363 9.96313 7.22363 8.83813C7.22363 7.68774 8.09521 6.8125 9.42822 6.8125C10.7612 6.8125 11.5815 7.68774 11.6069 8.83813C11.6069 9.96313 10.7612 10.8633 9.40234 10.8633ZM25.4014 24.1875H21.5051V17.9158C21.5051 16.3396 20.9409 15.2646 19.531 15.2646C18.4546 15.2646 17.8135 15.9897 17.5317 16.6897C17.4287 16.9402 17.4036 17.2903 17.4036 17.6406V24.1875H13.5071C13.5071 24.1875 13.5581 13.564 13.5071 12.4641H17.4036V14.124C17.9214 13.3252 18.8479 12.189 20.9153 12.189C23.479 12.189 25.4014 13.8645 25.4014 17.4653V24.1875Z"
+                />
+              </svg>
+            </a>
+          </div>
+          <p class="font-medium text-base text-body-color text-center">All rights reserved by © Portfolio creative 2024</p>
+        </div>
+      </div>
+
+      <div class="absolute left-0 bottom-0 -z-1" aria-label="shape" name="shape">
+        <span class="hidden">shape</span>
+        <svg width="143" height="138" viewBox="0 0 143 138" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="25" cy="118" r="101" stroke="url(#paint0_linear_52:83)" stroke-width="34" />
+          <defs>
+            <linearGradient id="paint0_linear_52:83" x1="-12.7969" y1="-37.3359" x2="99.2109" y2="173.773" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#4A6CF7" />
+              <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="absolute right-3 top-3 -z-1" aria-label="shape" name="shape">
+        <span class="hidden">shape</span>
+        <svg width="61" height="77" viewBox="0 0 61 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g opacity="0.5">
+            <circle cx="45.0001" cy="1.66667" r="1.66667" transform="rotate(90 45.0001 1.66667)" fill="white" />
+            <circle cx="16.0001" cy="1.66667" r="1.66667" transform="rotate(90 16.0001 1.66667)" fill="white" />
+            <circle cx="59.0001" cy="1.66667" r="1.66667" transform="rotate(90 59.0001 1.66667)" fill="white" />
+            <circle cx="30.6668" cy="1.66667" r="1.66667" transform="rotate(90 30.6668 1.66667)" fill="white" />
+            <circle cx="1.66683" cy="1.66667" r="1.66667" transform="rotate(90 1.66683 1.66667)" fill="white" />
+            <circle cx="45.0001" cy="16.3332" r="1.66667" transform="rotate(90 45.0001 16.3332)" fill="white" />
+            <circle cx="16.0001" cy="16.3332" r="1.66667" transform="rotate(90 16.0001 16.3332)" fill="white" />
+            <circle cx="59.0001" cy="16.3332" r="1.66667" transform="rotate(90 59.0001 16.3332)" fill="white" />
+            <circle cx="30.6668" cy="16.3332" r="1.66667" transform="rotate(90 30.6668 16.3332)" fill="white" />
+            <circle cx="1.66683" cy="16.3332" r="1.66667" transform="rotate(90 1.66683 16.3332)" fill="white" />
+            <circle cx="45.0001" cy="31.0002" r="1.66667" transform="rotate(90 45.0001 31.0002)" fill="white" />
+            <circle cx="45.0001" cy="74.6667" r="1.66667" transform="rotate(90 45.0001 74.6667)" fill="white" />
+            <circle cx="16.0001" cy="31.0002" r="1.66667" transform="rotate(90 16.0001 31.0002)" fill="white" />
+            <circle cx="16.0001" cy="74.6667" r="1.66667" transform="rotate(90 16.0001 74.6667)" fill="white" />
+            <circle cx="59.0001" cy="31.0002" r="1.66667" transform="rotate(90 59.0001 31.0002)" fill="white" />
+            <circle cx="59.0001" cy="74.6667" r="1.66667" transform="rotate(90 59.0001 74.6667)" fill="white" />
+            <circle cx="30.6668" cy="31.0002" r="1.66667" transform="rotate(90 30.6668 31.0002)" fill="white" />
+            <circle cx="30.6668" cy="74.6667" r="1.66667" transform="rotate(90 30.6668 74.6667)" fill="white" />
+            <circle cx="1.66683" cy="31.0002" r="1.66667" transform="rotate(90 1.66683 31.0002)" fill="white" />
+            <circle cx="1.66683" cy="74.6667" r="1.66667" transform="rotate(90 1.66683 74.6667)" fill="white" />
+            <circle cx="45.0001" cy="45.6667" r="1.66667" transform="rotate(90 45.0001 45.6667)" fill="white" />
+            <circle cx="16.0001" cy="45.6667" r="1.66667" transform="rotate(90 16.0001 45.6667)" fill="white" />
+            <circle cx="59.0001" cy="45.6667" r="1.66667" transform="rotate(90 59.0001 45.6667)" fill="white" />
+            <circle cx="30.6668" cy="45.6667" r="1.66667" transform="rotate(90 30.6668 45.6667)" fill="white" />
+            <circle cx="1.66683" cy="45.6667" r="1.66667" transform="rotate(90 1.66683 45.6667)" fill="white" />
+            <circle cx="45.0001" cy="60.3332" r="1.66667" transform="rotate(90 45.0001 60.3332)" fill="white" />
+            <circle cx="16.0001" cy="60.3332" r="1.66667" transform="rotate(90 16.0001 60.3332)" fill="white" />
+            <circle cx="59.0001" cy="60.3332" r="1.66667" transform="rotate(90 59.0001 60.3332)" fill="white" />
+            <circle cx="30.6668" cy="60.3332" r="1.66667" transform="rotate(90 30.6668 60.3332)" fill="white" />
+            <circle cx="1.66683" cy="60.3332" r="1.66667" transform="rotate(90 1.66683 60.3332)" fill="white" />
+          </g>
+        </svg>
+      </div>
+    </footer>
+    <!-- ====== Footer Section End  -->
+
+    <!-- ====== Back To Top Start -->
+    <a
+      href="javascript:void(0)"
+      class="hidden items-center justify-center bg-primary text-white w-10 h-10 rounded-sm fixed bottom-8 right-8 left-auto z-[999] hover:shadow-signUp transition back-to-top shadow-md"
+    >
+      <span class="w-3 h-3 border-t border-l border-white rotate-45 mt-[6px]"></span>
+    </a>
+    <!-- ====== Back To Top End -->
+  <script defer src="bundle.js"></script></body>
+</html>
