@@ -1,18 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Peter Strössler - PSWeb</title>
-  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet">
-  <style>
-    body, section#education {
-      max-width:100%;
-      overflow-x:hidden;
-    }
-  </style>
-  </head>
+    <link rel="icon" type="image/png" href="src/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="src/images/favicon-96x96.png" sizes="96x96">
+    <link rel="apple-touch-icon" sizes="152x152" href="src/images/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="src/images/apple-touch-icon-180x180.png" />
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="src/images/mstile-150x150.png">
+  <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
   <body>
     <!-- ====== Navbar Section Start -->
     <header class="header bg-transparent absolute top-0 left-0 z-40 w-full flex items-center transition">
@@ -41,7 +40,7 @@
               >
                 <ul class="blcok lg:flex">
                   <li class="relative group">
-                    <a href="#home" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0"> Home </a>
+                    <a href="#home" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0"> Start </a>
                   </li>
                   <li class="relative group">
                     <a href="#about" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12"> Über </a>
@@ -56,6 +55,7 @@
                     <a href="#education" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12"> Lebenslauf </a>
                   </li>
                 </ul>
+                </ul>
               </nav>
             </div>
             <!--
@@ -64,7 +64,7 @@
                 href="#contact"
                 class="text-base font-bold text-white bg-primary rounded-full py-3 px-8 md:px-9 lg:px-8 xl:px-9 hover:shadow-signUp hover:bg-opacity-90 transition ease-in-out duration-300"
               >
-                CV Download
+                Download CV
               </a>
             </div>
             -->
@@ -82,6 +82,7 @@
             <div>
               <h1 class="text-base font-semibold text-primary mb-3">
                 Hallo 👋 ich bin
+
                 <span class="font-bold text-black text-3xl sm:text-3xl md:text-[45px] leading-tight sm:leading-tight md:leading-[50px] block mt-1"> Peter Strössler </span>
               </h1>
               <h2 class="font-medium text-body-color text-lg md:text-xl mb-5">
@@ -99,7 +100,7 @@
                 </a>
                 <!--
                 <a href="javascript:void(0)" class="text-base font-semibold text-white bg-black py-3 px-8 hover:shadow-signUp hover:bg-opacity-90 rounded-full transition duration-300 ease-in-out">
-                  Mehr Infos
+                  Learn More
                 </a>
                 -->
               </div>
@@ -119,7 +120,7 @@
             <circle cx="356.5" cy="356.5" r="356.5" fill="url(#paint0_linear_6:37)" />
             <defs>
               <linearGradient id="paint0_linear_6:37" x1="356.5" y1="0" x2="356.5" y2="713" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#4A6CF7" offset="100%"/>
+                <stop stop-color="#4A6CF7" />
                 <stop offset="1" stop-color="#1E3BB3" />
               </linearGradient>
             </defs>
@@ -137,7 +138,7 @@
             <span class="font-bold text-primary text-lg md:text-xl mb-3"> ÜBER MICH </span>
             <h2 class="max-w-[400px] font-bold text-black text-3xl sm:text-4xl md:text-[45px] leading-tight sm:leading-tight md:leading-tight mb-5">Ich weiss, dass ich nichts weiss</h2>
             <p class="max-w-[570px] font-medium text-base text-body-color">
-               Angefangen 2006 mit dem Web Publisher SIZ und der Programmierung von CMS' in PHP, HTML und CSS. Erlangte ich meine fundierten Programmierkenntnisse (dazu zählen HTML5, CSS3, Javascript, Java, Python etc.) während meiner Informatiker Lehre an der WISS. Den Studiumsabschluss als Informatik Ingenieur erlange ich 2021 schliesslich an der ZHAW Winterthur.
+               Angefangen 2006 mit dem Web Publisher SIZ und der Programmierung von CMS in PHP, HTML und CSS. Erlangte ich meine fundierten Programmierkenntnisse (dazu zählen inzwischen HTML5, CSS3, Javascript, Typescript, Java, Python etc.) während meiner Informatiker Lehre an der WISS. Den Studiumsabschluss als Informatik Ingenieur erlange ich 2021 schliesslich an der ZHAW Winterthur.
             </p>
           </div>
           <div class="w-full lg:w-1/2 xl:w-5/12 px-4">
@@ -213,7 +214,7 @@
                   </svg>
                 </div>
                 <h3 class="font-bold text-black text-xl sm:text-2xl lg:text-xl 2xl:text-2xl group-hover:text-white mb-3">Backend</h3>
-                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Ob NodeJs, Java - Springboot oder PHP - Codeigniter. Mit Webservices kenn ich mich aus.</p>
+                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Ob NodeJs, Java - Springboot oder PHP - Codeigniter. Ich kann Webservices.</p>
                 <div>
                   <span class="absolute top-0 right-0 -z-1">
                     <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -317,7 +318,7 @@
       </div>
     </section>
     <!-- ====== Services Section End  -->
-
+     
     <!-- ====== Portfolio Section Start  -->
     <section id="portfolio" class="pt-[120px] pb-[70px] bg-[#f8f9ff]">
       <div class="container">
@@ -326,7 +327,7 @@
             <div class="max-w-[600px] mx-auto text-center mb-[50px]">
               <span class="font-semibold text-lg text-primary block mb-2"> Projekte </span>
               <h2 class="font-bold text-black text-3xl sm:text-4xl md:text-[45px] mb-5">Meine Arbeiten</h2>
-              <p class="font-medium text-lg text-body-color">Ein Auszug meiner Arbeiten in Web und Mobile. Weitere finden sie auf meinem <a style="color:#4B6CF7 !important;" href="https://github.com/peterruler?tab=repositories" target="_blank">Github</a> Account. Eine Übersicht meiner Webprojekte aus dem Bachelor Studium sind <a style="color:#4B6CF7 !important;" href="https://zhaw.rf.gd/" target="_blank">hier</a>.</p>
+              <p class="font-medium text-lg text-body-color">Ein Auszug meiner Arbeiten in Web und Mobile. Weitere finden sie auf meinem <a style="color:#4B6CF7 !important;" href="https://github.com/peterruler?tab=repositories" target="_blank">Github</a> Account. Meine Webprojekte aus dem Bachelor Studium sind <a style="color:#4B6CF7 !important;" href="https://zhaw.rf.gd/" target="_blank">hier</a>.</p>
             </div>
           </div>
           <div class="w-full px-4">
@@ -351,7 +352,7 @@
                     <div
                       class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                     >
-                      <a href="src/images/portfolio/portfolio-01.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                      <a href="images/portfolio/portfolio-01.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                         </svg>
@@ -371,7 +372,7 @@
                     <div
                       class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                     >
-                      <a href="src/images/portfolio/portfolio-02.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                      <a href="images/portfolio/portfolio-02.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                         </svg>
@@ -379,7 +380,7 @@
                     </div>
                   </div>
                   <h3 class="mt-6">
-                    <a href="portfolio-details.html" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> Wordpress Webseite Fian Schweiz </a>
+                    <a href="portfolio-details.html" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> Wordpress Fian Schweiz </a>
                   </h3>
                   <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://fian-ch.org" target="_blank">Weiter zur Webseite</a></p>
                 </div>
@@ -391,7 +392,7 @@
                     <div
                       class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                     >
-                      <a href="src/images/portfolio/portfolio-03.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                      <a href="images/portfolio/portfolio-03.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                         </svg>
@@ -401,7 +402,7 @@
                   <h3 class="mt-6">
                     <a href="https://snack.expo.dev/@petethegreat/react-native-frontend?platform=web" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3" target="_blank"> KI mit Katzen und Hunde Detektion </a>
                   </h3>
-                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://snack.expo.dev/@petethegreat/react-native-frontend?platform=web" target="_blank">Weiterleitung zur App.</a> Mit Mobiltelefon installierter Expo App.</p>
+                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://snack.expo.dev/@petethegreat/react-native-frontend?platform=web" target="_blank">Weiterleitung zur App.</a> Mit installierter Expo App.</p>
                 </div>
               </div>
               <div class="w-full md:w-1/2 px-4 item graphics web">
@@ -411,7 +412,7 @@
                     <div
                       class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                     >
-                      <a href="src/images/portfolio/portfolio-04.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                      <a href="images/portfolio/portfolio-04.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                         </svg>
@@ -433,7 +434,7 @@
                     <div
                       class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                     >
-                      <a href="src/images/portfolio/portfolio-05.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                      <a href="images/portfolio/portfolio-05.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                         </svg>
@@ -456,7 +457,7 @@
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-06.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="images/portfolio/portfolio-06.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -478,7 +479,7 @@
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-07.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="images/portfolio/portfolio-07.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -500,7 +501,7 @@
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-08.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="images/portfolio/portfolio-08.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -522,7 +523,7 @@
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-09.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="images/portfolio/portfolio-09.jpg" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -591,17 +592,6 @@
 
               <div class="w-full lg:w-1/2 px-4"></div>
               <div class="w-full lg:w-1/2 px-4">
-                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full pl-8 sm:pl-11 lg:pl-0 lg:ml-5 relative pb-12">
-                  <span class="absolute top-1 left-0 lg:-left-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
-                  <h3 class="font-semibold text-xl text-black mb-1">
-                    PHP Diplom</h3>
-                  <p class="font-semibold text-base text-body-color mb-3">Erwachsenenbildung • Zürich
-                  </p>
-                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 05.2014 - 05.2016 </span>
-                  <p class="font-medium text-base text-body-color">
-                    PHP, JQuery, HTML & CSS Lehrgang • Mit Abschluss Codeigniter-Projekt "Budget-Rechner"
-                  </p>
-                </div>
               </div>
 
               <div class="w-full lg:w-1/2 px-4">
@@ -615,8 +605,19 @@
                   </p>
                 </div>
               </div>
-
-              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4">
+                <div class="lg:max-w-[428px] xl:max-w-[490px] w-full pl-8 sm:pl-11 lg:pl-0 lg:ml-5 relative pb-12">
+                  <span class="absolute top-1 left-0 lg:-left-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
+                  <h3 class="font-semibold text-xl text-black mb-1">
+                    Web Programmer PHP (mit Diplom)</h3>
+                  <p class="font-semibold text-base text-body-color mb-3">Erwachsenenbildung • Zürich
+                  </p>
+                  <span class="inline-flex items-center justify-center py-2 px-4 rounded-full bg-primary text-white text-xs font-semibold mb-5"> 05.2014 - 05.2015 </span>
+                  <p class="font-medium text-base text-body-color">
+                    PHP, JQuery, HTML & CSS Lehrgang • Mit Abschluss Codeigniter-Projekt "Budget-Rechner"
+                  </p>
+                </div>
+              </div>
               <div class="w-full lg:w-1/2 px-4">
                 <div class="lg:max-w-[428px] xl:max-w-[490px] w-full ml-auto pl-8 sm:pl-11 lg:pl-0 lg:pr-0 lg:mr-5 lg:text-right relative pb-12">
                   <span class="absolute top-1 left-0 lg:left-auto lg:-right-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
@@ -677,6 +678,8 @@
                 </div>
               </div>
               
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>
               <div class="w-full lg:w-1/2 px-4">
                 <div class="lg:max-w-[428px] xl:max-w-[490px] w-full pl-8 sm:pl-11 lg:pl-0 lg:ml-5 relative pb-12">
                   <span class="absolute top-1 left-0 lg:-left-11 w-4 h-4 rounded-full bg-white border-4 border-primary"></span>
@@ -690,6 +693,8 @@
                 </div>
               </div>
 
+              <div class="w-full lg:w-1/2 px-4"></div>
+              <div class="w-full lg:w-1/2 px-4"></div>
 
               <div class="w-full lg:w-1/2 px-4">
                 <div class="lg:max-w-[428px] xl:max-w-[490px] w-full ml-auto pl-8 sm:pl-11 lg:pl-0 lg:pr-0 lg:mr-5 lg:text-right relative pb-12">
@@ -704,8 +709,6 @@
                 </div>
               </div>
 
-              <div class="w-full lg:w-1/2 px-4"></div>
-              <div class="w-full lg:w-1/2 px-4"></div>
               <div class="w-full lg:w-1/2 px-4"></div>
               <div class="w-full lg:w-1/2 px-4"></div>
               <div class="w-full lg:w-1/2 px-4">
@@ -786,9 +789,8 @@
       </div>
     </section>
     <!-- ====== Education Section End  -->
-
     <!-- ====== Testimonial Section Start  -->
-    <section id="testimonial" class="pt-[120px] pb-20">
+    <section id="testimonial" class="pt-[120px] pb-20"></section>
       <div class="container">
         <div class="flex flex-wrap mx-[-16px]">
           <div class="w-full px-4">
@@ -879,12 +881,26 @@
             <div class="mb-10">
               <h2 class="font-bold text-white text-[44px] leading-tight mb-5">Lass uns miteinander sprechen!</h2>
               <h3 class="font-bold text-white opacity-70 text-2xl mb-2">Kontakt Info</h3>
-              <p class="font-medium text-base text-body-color mb-1">peter.stroessler@bluewin.ch</p>
+              <p class="font-medium text-base text-body-color mb-1"><a style="color:#4B6CF7 !important;" href="mailto:peter.stroessler@bluewin.ch?subject=Kontakt%20Email%20von%20Bewerbungs-Webseite">peter.stroessler@bluewin.ch</a></p>
               <p class="font-medium text-base text-body-color mb-1">Schweiz</p>
             </div>
+            </div>
           </div>
+          <div class="w-full md:w-1/2 lg:w-3/12 px-4">
+            <div class="mb-10">
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-2/12 px-4">
+            <div class="mb-10">
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-3/12 px-4">
+            <div class="mb-10">
+            </div>
+          </div>
+        </div>
+
         <div class="mt-10 pt-12 border-t border-white border-opacity-10">
-          <div class="flex items-center justify-center mb-5">
           <p class="font-medium text-base text-body-color text-center">Alle Rechte vorbehalten © und gemacht mit ♥ von Peter Strössler <script>
             ; (function () {
               const year = new Date().getFullYear();
@@ -892,24 +908,12 @@
             })();
           </script></p>
         </div>
-        </div>
       </div>
-      <!--
-      <div class="absolute left-0 bottom-0 -z-1" aria-label="shape">
+
+      <div class="absolute left-0 bottom-0 -z-1" aria-label="shape" name="shape">
         <span class="hidden">shape</span>
-        <svg width="143" height="138" viewBox="0 0 143 138" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="25" cy="118" r="101" stroke="url(#paint0_linear_52:83)" stroke-width="34" />
-          <defs>
-            <linearGradient id="paint0_linear_52:83" x1="-12.7969" y1="-37.3359" x2="99.2109" y2="173.773" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#4A6CF7"  offset="100%" />
-              <stop offset="1" stop-color="#4A6CF7" stop-opacity="0" />
-            </linearGradient>
-          </defs>
-        </svg>
       </div>
-        -->
-      
-      <div class="absolute right-3 top-3 -z-1" aria-label="shape">
+      <div class="absolute right-3 top-3 -z-1" aria-label="shape" name="shape">
         <span class="hidden">shape</span>
         <svg width="61" height="77" viewBox="0 0 61 77" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g opacity="0.5">
@@ -945,7 +949,6 @@
             <circle cx="1.66683" cy="60.3332" r="1.66667" transform="rotate(90 1.66683 60.3332)" fill="white" />
           </g>
         </svg>
-      </div>
       </div>
     </footer>
     <!-- ====== Footer Section End  -->
