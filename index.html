@@ -2,6 +2,11 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8">
+    <script>
+         window.eventsFromK5 = funtion(json){
+          alert(JSON.stringify(json));
+        } 
+    </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Peter Strössler - PSWeb">
     <meta name="keywords" content="Nodejs, Python, AI, KI, HTML, CSS, Typescript, JavaScript">
@@ -22,14 +27,6 @@
       }
     </style>
   <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
-  <script>
-     addEventListener("load", (event) => {
-       console.info("page is loaded");
-         window.eventsFromK5 = (json)  => {
-          alert(JSON.stringify(json));
-        } 
-     });
-  </script>
   <body>
     <!-- ====== Navbar Section Start -->
     <header class="header bg-transparent absolute top-0 left-0 z-40 w-full flex items-center transition">
