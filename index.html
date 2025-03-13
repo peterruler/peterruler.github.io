@@ -23,11 +23,12 @@
     </style>
   <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
   <script>
-      ;(function() {
-        window.eventsFromK5 = (json)  => {
+     addEventListener("load", (event) => {
+       console.info("page is loaded");
+         window.eventsFromK5 = (json)  => {
           alert(JSON.stringify(json));
         } 
-      });
+     });
   </script>
   <body>
     <!-- ====== Navbar Section Start -->
