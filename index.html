@@ -1147,9 +1147,11 @@
       }
 
       window.document.addEventListener("scroll", onScroll);
-      window.eventsFromK5 = function(json) {
-        alert(JSON.stringify(json));
-      } 
+      ;(function() {
+        window.eventsFromK5 = function(json) {
+          alert(JSON.stringify(json));
+        } 
+      });
     </script>
   <script defer src="bundle.js"></script></body>
 </html>
