@@ -22,6 +22,13 @@
       }
     </style>
   <link rel="icon" href="favicon.ico"><link href="style.css" rel="stylesheet"></head>
+  <script>
+      ;(function() {
+        window.eventsFromK5 = (json)  => {
+          alert(JSON.stringify(json));
+        } 
+      });
+  </script>
   <body>
     <!-- ====== Navbar Section Start -->
     <header class="header bg-transparent absolute top-0 left-0 z-40 w-full flex items-center transition">
@@ -1147,11 +1154,6 @@
       }
 
       window.document.addEventListener("scroll", onScroll);
-      ;(function() {
-        window.eventsFromK5 = function eventsFromK5(json) {
-          alert(JSON.stringify(json));
-        } 
-      });
     </script>
   <script defer src="bundle.js"></script></body>
 </html>
