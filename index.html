@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <script>
-      window.eventsFromK5 = function(json){
+      window.eventsFromK5 = async function(json){
         return new Promise((resolve) => {
           resolve(json);
           console.warn("1."+json);
@@ -1160,15 +1160,18 @@
       }
 
       window.document.addEventListener("scroll", onScroll);
-      const json =  await window.eventsFromK5({
-        "type": "foo 2."
-      });
-      console.warn("3."+json);
+
       /*
       window.eventsFromK5({
         "type": "RegisterHatFokusErhalten"
       });
       */
+    </script>
+    <script type="module">
+      const json =  await window.eventsFromK5({
+        "type": "foo 2."
+      });
+      console.warn("3."+json);
     </script>
   <script defer src="bundle.js"></script></body>
 </html>
