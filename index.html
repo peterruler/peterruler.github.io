@@ -3,9 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <script>
-         window.eventsFromK5 = function(json){
+      window.eventsFromK5 = function(json){
+        return new Promise((resolve) => {
+          resolve(json);
+          console.warn("1."+json);
+        });                                 
+      }
+        /*
+        window.eventsFromK5 = function(json){
           console.info(JSON.stringify(json));
         } 
+      */
     </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Peter Strössler - PSWeb">
@@ -1152,9 +1160,15 @@
       }
 
       window.document.addEventListener("scroll", onScroll);
+      const json =  await window.eventsFromK5({
+        "type": "foo 2."
+      });
+      console.warn("3."+json);
+      /*
       window.eventsFromK5({
         "type": "RegisterHatFokusErhalten"
       });
+      */
     </script>
   <script defer src="bundle.js"></script></body>
 </html>
