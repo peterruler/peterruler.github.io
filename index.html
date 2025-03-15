@@ -1170,9 +1170,12 @@
       */
     </script>
     <script type="module">
+      /*
       const json =  await window.eventsFromK5({
         "type": "foo 2."
       });
+      */
+      const json =  await window.eventsFromK5();
       console.warn("3."+JSON.stringify(json));
     </script>
   <script defer src="bundle.js"></script></body>
