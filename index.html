@@ -8,8 +8,8 @@
       window.eventsFromK5 = async function(json){
         return new Promise((resolve) => {
           resolve(json);
-          console.warn("1."+JSON.stringify(json));
           if (json) {
+            console.warn("1."+JSON.stringify(json));
             var jsonObj = JSON.parse(json);
             visum = jsonObj.visum;
             if(visum) {
