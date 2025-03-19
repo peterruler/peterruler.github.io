@@ -3,12 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <script>
-
+      var visum = "";
       
       window.eventsFromK5 = async function(json){
         return new Promise((resolve) => {
           resolve(json);
-          console.warn("1."+JSON.stringify(json));
+          if (json) {
+            var jsonObj = JSON.parse(json);
+            visum = jsonObj.visum;
+            console.warn("1."+JSON.stringify(json));
+            if(visum) {
+              console.info("Visum is: " + visum);
+            }
+          }
         });                                 
       }
       
