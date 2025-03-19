@@ -1184,8 +1184,17 @@
         "type": "foo 2."
       });
       */
-     const {type, visum} =  await window.eventsFromK5();
-     console.warn("3. not working "+JSON.stringify(visum));
+      try {
+        const json =  await window.eventsFromK5();
+        if(json) {
+          const {type, visum} = json;
+          console.warn("3. not working "+JSON.stringify(visum));
+        } else {
+          console.warn("received undefined or null data from eventsFromK5");
+        }
+      } catch (e) {
+        console.error("error calling eventsFromK5" , e);
+      }
     </script>
   <script defer src="bundle.js"></script></body>
 </html>
