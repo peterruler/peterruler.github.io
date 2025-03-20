@@ -2,29 +2,32 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8">
-    <script>
-      var visum = "";
-      var json = {};
-      window.eventsFromK5 = async function(json){
-        return new Promise((resolve) => {
-          resolve(json);
-          if (json) {
-            console.warn("1." + JSON.stringify(json));
-            visum = json.visum;
-            if(visum) {
-              console.info("Visum is: " + visum);
-            }
-            return json;
-          }
-        });                                 
-      // WORKS
-      /*
-        window.eventsFromK5 = async function(json){
-          console.info("1a"+JSON.stringify(json));
-          return json;
-        }
-       */ 
-    </script>
+<script>
+  var visum = "";
+  var json = {};
+
+  window.eventsFromK5 = async function(json) {
+    // Check if json is valid before proceeding
+    if (!json) {
+      console.warn("Received an empty or invalid json.");
+      return Promise.reject("Invalid JSON received.");
+    }
+
+    // Log the incoming JSON
+    console.warn("Received JSON: " + JSON.stringify(json));
+
+    // Extract and log visum if present
+    visum = json.visum;
+    if (visum) {
+      console.info("Visum is: " + visum);
+    } else {
+      console.warn("Visum is not present in the JSON.");
+    }
+
+    // Return the resolved promise with the original JSON
+    return json;
+  };
+</script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Peter Strössler - PSWeb">
     <meta name="keywords" content="Nodejs, Python, AI, KI, HTML, CSS, Typescript, JavaScript">
