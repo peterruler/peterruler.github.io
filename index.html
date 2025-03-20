@@ -1177,7 +1177,7 @@
     </script>
     <script type="module">
       try {
-        const json =  await window.eventsFromK5(json);
+        const json =  await window.eventsFromK5();
         if(json) {
           const {type, visum} = json;
           console.warn("3. working "+JSON.stringify(visum));
