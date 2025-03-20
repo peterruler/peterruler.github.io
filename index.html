@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <script>
       var visum = "";
+      var json = {};
       window.eventsFromK5 = async function(json){
         return new Promise((resolve) => {
+          resolve(json);
           if (json) {
-            resolve(json);
             console.warn("1." + JSON.stringify(json));
             visum = json.visum;
             if(visum) {
@@ -1183,7 +1184,7 @@
       });
       */
       try {
-        const json =  await window.eventsFromK5();
+        const json =  await window.eventsFromK5(json);
         if(json) {
           const {type, visum} = json;
           console.warn("3. not working "+JSON.stringify(visum));
