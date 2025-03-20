@@ -17,9 +17,9 @@
     console.warn("Received JSON: " + JSON.stringify(json));
 
     // Extract and log visum if present
-    visum = json.visum;
-    if (visum) {
-      console.info("Visum is: " + visum);
+    const {type, visum} = json;
+    if (type && visum) {
+      console.info("json is: " + type + " " + visum);
     } else {
       console.warn("Visum is not present in the JSON.");
     }
@@ -27,6 +27,7 @@
     // Return the resolved promise with the original JSON
     return new Promise((resolve) => {
       resolve(json);
+      return json;
     });
   };
 </script>
