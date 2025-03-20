@@ -1174,18 +1174,8 @@
 
       window.document.addEventListener("scroll", onScroll);
 
-      /*
-      window.eventsFromK5({
-        "type": "RegisterHatFokusErhalten"
-      });
-      */
     </script>
     <script type="module">
-      /*
-      const json =  await window.eventsFromK5({
-        "type": "foo 2."
-      });
-      */
       try {
         const json =  await window.eventsFromK5(json);
         if(json) {
