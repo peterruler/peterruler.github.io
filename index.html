@@ -1180,7 +1180,7 @@
         const json =  await window.eventsFromK5(json);
         if(json) {
           const {type, visum} = json;
-          console.warn("3. not working "+JSON.stringify(visum));
+          console.warn("3. working "+JSON.stringify(visum));
         } else {
           console.warn("received undefined or null data from eventsFromK5");
         }
