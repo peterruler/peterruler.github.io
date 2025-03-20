@@ -22,11 +22,13 @@
       } else {
         console.warn("Visum is not present in the JSON.");
       }
-  
+      return json;
       // Return the resolved promise with the original JSON
+      /*
       return new Promise((resolve) => {
         resolve(json);
       });
+      */
     }
   };
 </script>
