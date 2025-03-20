@@ -10,25 +10,24 @@
     // Check if json is valid before proceeding
     if (!json) {
       console.warn("Received an empty or invalid json.");
-      return Promise.reject("Invalid JSON received.");
-    }
-
-    // Log the incoming JSON
-    console.warn("Received JSON: " + JSON.stringify(json));
-
-    // Extract and log visum if present
-    const {type, visum} = json;
-    if (type && visum) {
-      console.info("json is: " + type + " " + visum);
+      // return Promise.reject("Invalid JSON received.");
     } else {
-      console.warn("Visum is not present in the JSON.");
+      // Log the incoming JSON
+      console.warn("Received JSON: " + JSON.stringify(json));
+  
+      // Extract and log visum if present
+      const {type, visum} = json;
+      if (type && visum) {
+        console.info("json is: " + type + " " + visum);
+      } else {
+        console.warn("Visum is not present in the JSON.");
+      }
+  
+      // Return the resolved promise with the original JSON
+      return new Promise((resolve) => {
+        resolve(json);
+      });
     }
-
-    // Return the resolved promise with the original JSON
-    return new Promise((resolve) => {
-      resolve(json);
-      return json;
-    });
   };
 </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
