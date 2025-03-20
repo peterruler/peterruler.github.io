@@ -25,7 +25,9 @@
     }
 
     // Return the resolved promise with the original JSON
-    return json;
+    return new Promise((resolve) => {
+      resolve(json);
+    });
   };
 </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
