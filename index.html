@@ -6,8 +6,8 @@
       var visum = "";
       window.eventsFromK5 = async function(json){
         return new Promise((resolve) => {
-          resolve(json);
           if (json) {
+            resolve(json);
             console.warn("1." + JSON.stringify(json));
             visum = json.visum;
             if(visum) {
