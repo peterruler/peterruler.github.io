@@ -1084,13 +1084,14 @@
         </div>
       </div>
       <div class="mt-10 pt-12 border-t border-white border-opacity-10">
-        <p class="font-medium text-base text-body-color text-center">Alle Rechte vorbehalten © und gemacht mit ♥ von Peter Strössler 
         <script>
-                ; (function () {
+                ;(function () {
                   const year = new Date().getFullYear();
-                  document.write(year);
+                  document.getElementById("year-footer").innerText(year);
                 })();
-        </script></p>
+        </script>
+        <p class="font-medium text-base text-body-color text-center">Alle Rechte vorbehalten © und gemacht mit ♥ von Peter Strössler <span id="year-footer"></span>
+        </p>
       </div>
       <div class="absolute left-0 bottom-0 -z-1">
         <span class="hidden">shape</span>
