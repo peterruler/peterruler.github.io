@@ -31,10 +31,6 @@
       */
     }
   };
-;(function () {
- const year = new Date().getFullYear();
- document.getElementById("year-footer").innerText = year;
-})();
 </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Peter Strössler - PSWeb">
@@ -1090,6 +1086,12 @@
       <div class="mt-10 pt-12 border-t border-white border-opacity-10">
         <p class="font-medium text-base text-body-color text-center">Alle Rechte vorbehalten © und gemacht mit ♥ von Peter Strössler <span id="year-footer"></span>
         </p>
+      <script>
+        ;(function () {
+          const year = new Date().getFullYear();
+          document.getElementById("year-footer").innerText = year;
+        })();
+      </script>
       </div>
       <div class="absolute left-0 bottom-0 -z-1">
         <span class="hidden">shape</span>
