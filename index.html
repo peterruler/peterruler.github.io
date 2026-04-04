@@ -53,6 +53,10 @@
         max-width:100%;
         overflow-x:hidden;
       }
+
+      #portfolio .items-wrapper:not(.portfolio-ready) .item:not(.feat) {
+        display:none;
+      }
     </style>
   <body>
     <!-- ====== Navbar Section Start -->
@@ -1305,6 +1309,26 @@
       } catch (e) {
         console.error("error calling eventsFromK5" , e);
       }
+    </script>
+    <script>
+      window.addEventListener("load", function () {
+        const itemsWrapper = document.querySelector("#portfolio .items-wrapper");
+        const featuredButton = document.querySelector('.portfolio-buttons button[data-filter=".feat"]');
+
+        if (!itemsWrapper) {
+          return;
+        }
+
+        itemsWrapper.querySelectorAll(".item").forEach(function (item) {
+          item.style.display = item.classList.contains("feat") ? "" : "none";
+        });
+
+        if (featuredButton) {
+          featuredButton.click();
+        }
+
+        itemsWrapper.classList.add("portfolio-ready");
+      });
     </script>
   <script defer src="bundle.js"></script></body>
 </html>
