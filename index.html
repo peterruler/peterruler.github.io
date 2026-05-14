@@ -57,6 +57,68 @@
       #portfolio .items-wrapper:not(.portfolio-ready) .item:not(.feat) {
         display:none;
       }
+
+      #contact .contact-field {
+        width:100%;
+        border:1px solid #E9ECF8;
+        border-radius:0.375rem;
+        background-color:#ffffff;
+        padding:0.875rem 1.25rem;
+        color:#111928;
+        transition:border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      #contact .contact-field::placeholder {
+        color:#959cb1;
+      }
+
+      #contact .contact-field:focus {
+        outline:none;
+        border-color:#4A6CF7;
+        box-shadow:0 0 0 3px rgba(74, 108, 247, 0.12);
+      }
+
+      #contact textarea.contact-field {
+        min-height:160px;
+        resize:vertical;
+      }
+
+      #contact .contact-form-status {
+        display:none;
+        margin-top:1rem;
+        border:1px solid transparent;
+        border-radius:0.75rem;
+        padding:0.875rem 1rem;
+        font-weight:600;
+        line-height:1.5;
+      }
+
+      #contact .contact-form-status.is-visible {
+        display:block;
+      }
+
+      #contact .contact-form-status.is-error {
+        border-color:#f5c2c7;
+        background-color:#f8d7da;
+        color:#842029;
+      }
+
+      #contact .contact-form-status.is-success {
+        border-color:#badbcc;
+        background-color:#d1e7dd;
+        color:#0f5132;
+      }
+
+      #contact .contact-form-status.is-pending {
+        border-color:#b6d4fe;
+        background-color:#cfe2ff;
+        color:#084298;
+      }
+
+      #contact .contact-field.is-invalid {
+        border-color:#dc3545;
+        box-shadow:0 0 0 3px rgba(220, 53, 69, 0.12);
+      }
     </style>
   <body>
     <!-- ====== Navbar Section Start -->
@@ -99,6 +161,11 @@
                   </li>
                   <li class="relative group">
                     <a href="#education" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12"> Lebenslauf </a>
+                  </li>
+                  <li class="relative group">
+                    <a href="#contact" class="menu-scroll text-base text-black group-hover:text-primary py-2 lg:py-6 lg:inline-flex lg:px-0 flex mx-8 lg:mr-0 lg:ml-8 xl:ml-12">
+                      Kontakt
+                    </a>
                   </li>
                 </ul>
               </nav>
@@ -1177,6 +1244,81 @@
     </div>
   </section>
     <!-- ====== Testimonial Section End  -->
+    <!-- ====== Contact Section Start  -->
+    <section id="contact" class="pt-[120px] pb-[120px] bg-[#f8f9ff]">
+      <div class="container">
+        <div class="flex flex-wrap mx-[-16px]">
+          <div class="w-full px-4">
+            <div class="max-w-[600px] mx-auto text-center mb-[50px]">
+              <span class="font-semibold text-lg text-primary block mb-2"> Kontakt </span>
+              <h2 class="font-bold text-black text-3xl sm:text-4xl md:text-[45px] mb-5">Lassen Sie uns sprechen</h2>
+              <p class="font-medium text-lg text-body-color">Für Projekte, Freelance-Anfragen oder eine Festanstellung erreichen Sie mich direkt per Formular oder E-Mail.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap mx-[-16px] items-stretch">
+          <div class="w-full lg:w-5/12 px-4 mb-8 lg:mb-0">
+            <div class="bg-white shadow-service rounded-xl py-10 px-8 h-full">
+              <h3 class="font-semibold text-black text-2xl md:text-3xl mb-6">Direkter Kontakt</h3>
+              <p class="font-medium text-base text-body-color mb-8">Ich antworte bevorzugt per E-Mail. Wenn Sie bereits Projektinfos haben, können Sie diese direkt im Formular mitsenden.</p>
+              <div class="mb-8">
+                <p class="font-semibold text-black text-lg mb-2">E-Mail</p>
+                <p class="font-medium text-base text-body-color">
+                  <a style="color:#4B6CF7 !important;" href="mailto:peter.stroessler@bluewin.ch?subject=Kontakt%20von%20PSWeb">peter.stroessler@bluewin.ch</a>
+                </p>
+              </div>
+              <div class="mb-8">
+                <p class="font-semibold text-black text-lg mb-2">Standort</p>
+                <p class="font-medium text-base text-body-color">Schweiz</p>
+              </div>
+              <div>
+                <p class="font-semibold text-black text-lg mb-2">Themen</p>
+                <p class="font-medium text-base text-body-color">Frontend, Backend, AI-Prototypen, Webapps, technische Beratung</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-full lg:w-7/12 px-4">
+            <div class="bg-white shadow-service rounded-xl py-10 px-8">
+              <form id="contact-form" data-endpoint="https://zhaw.rf.gd/mailer/swiftmailer.php" method="get" novalidate>
+                <div class="flex flex-wrap mx-[-12px]">
+                  <div class="w-full md:w-1/2 px-3 mb-6">
+                    <input type="text" name="name" placeholder="Ihr Name" class="contact-field" required />
+                  </div>
+                  <div class="w-full md:w-1/2 px-3 mb-6">
+                    <input type="text" name="company" placeholder="Firma (optional)" class="contact-field" />
+                  </div>
+                  <div class="w-full md:w-1/2 px-3 mb-6">
+                    <input type="email" name="email" placeholder="Ihre E-Mail" class="contact-field" required />
+                  </div>
+                  <div class="w-full md:w-1/2 px-3 mb-6">
+                    <input type="tel" name="phone" placeholder="Telefon (optional)" class="contact-field" />
+                  </div>
+                  <div class="w-full px-3 mb-6">
+                    <input type="text" name="area" placeholder="Fachgebiet" class="contact-field" required />
+                  </div>
+                  <div class="w-full px-3 mb-8">
+                    <textarea rows="6" name="content" placeholder="Erzählen Sie mir von Ihrem Projekt" class="contact-field" required></textarea>
+                  </div>
+                  <div class="w-full px-3">
+                    <button
+                      type="submit"
+                      data-label="Nachricht senden"
+                      class="text-base font-semibold text-white bg-primary py-3 px-8 hover:shadow-signUp hover:bg-opacity-90 rounded-full transition duration-300 ease-in-out"
+                    >
+                      Nachricht senden
+                    </button>
+                    <div id="contact-form-status" class="contact-form-status text-base" aria-live="polite" role="status"></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ====== Contact Section End  -->     
     <!-- ====== Footer Section Start  -->
     <footer class="bg-black pt-[100px] pb-12 relative z-10">
       <div class="container">
@@ -1329,6 +1471,226 @@
 
         itemsWrapper.classList.add("portfolio-ready");
       });
+    </script>
+    <script>
+      ;(function () {
+        const form = document.getElementById("contact-form");
+        const status = document.getElementById("contact-form-status");
+
+        if (!form || !status) {
+          return;
+        }
+
+        const submitButton = form.querySelector('button[type="submit"]');
+        const defaultButtonLabel = submitButton ? submitButton.dataset.label || submitButton.textContent.trim() : "Senden";
+
+        function setStatus(message, type) {
+          status.textContent = message;
+          status.classList.remove("is-error", "is-success", "is-pending", "is-visible");
+
+          if (!message) {
+            return;
+          }
+
+          status.classList.add("is-visible");
+
+          if (type) {
+            status.classList.add(type);
+          }
+        }
+
+        function parseResponseMessage(responseText) {
+          if (!responseText) {
+            return "";
+          }
+
+          try {
+            const parsedResponse = JSON.parse(responseText);
+
+            if (parsedResponse && typeof parsedResponse === "object") {
+              if (typeof parsedResponse.message === "string" && parsedResponse.message) {
+                return parsedResponse.message;
+              }
+
+              if (parsedResponse.errors && typeof parsedResponse.errors === "object") {
+                const firstError = Object.values(parsedResponse.errors)[0];
+
+                if (typeof firstError === "string") {
+                  return firstError;
+                }
+              }
+            }
+          } catch (_jsonError) {
+            return responseText;
+          }
+
+          return responseText;
+        }
+
+        function clearFieldValidation() {
+          form.querySelectorAll(".contact-field").forEach(function (field) {
+            field.classList.remove("is-invalid");
+          });
+        }
+
+        function invalidateField(field, message) {
+          if (field) {
+            field.classList.add("is-invalid");
+            field.focus();
+          }
+
+          setStatus(message, "is-error");
+        }
+
+        function validateForm() {
+          const nameField = form.elements.namedItem("name");
+          const companyField = form.elements.namedItem("company");
+          const emailField = form.elements.namedItem("email");
+          const phoneField = form.elements.namedItem("phone");
+          const areaField = form.elements.namedItem("area");
+          const contentField = form.elements.namedItem("content");
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const phonePattern = /^[0-9+()\-\s/]{6,}$/;
+          const textPattern = /^[\p{L}\p{M}0-9 .,'&()\-/]+$/u;
+
+          clearFieldValidation();
+
+          if (!(nameField instanceof HTMLInputElement) || nameField.value.trim().length < 2) {
+            invalidateField(nameField, "Bitte geben Sie einen gueltigen Namen ein.");
+            return false;
+          }
+
+          if (!textPattern.test(nameField.value.trim())) {
+            invalidateField(nameField, "Der Name enthaelt ungueltige Zeichen.");
+            return false;
+          }
+
+          if (companyField instanceof HTMLInputElement && companyField.value.trim() && !textPattern.test(companyField.value.trim())) {
+            invalidateField(companyField, "Die Firma enthaelt ungueltige Zeichen.");
+            return false;
+          }
+
+          if (!(emailField instanceof HTMLInputElement) || !emailPattern.test(emailField.value.trim())) {
+            invalidateField(emailField, "Bitte geben Sie eine gueltige E-Mail-Adresse ein.");
+            return false;
+          }
+
+          if (phoneField instanceof HTMLInputElement && phoneField.value.trim() && !phonePattern.test(phoneField.value.trim())) {
+            invalidateField(phoneField, "Bitte geben Sie eine gueltige Telefonnummer ein.");
+            return false;
+          }
+
+          if (!(areaField instanceof HTMLInputElement) || areaField.value.trim().length < 2) {
+            invalidateField(areaField, "Bitte geben Sie ein Fachgebiet ein.");
+            return false;
+          }
+
+          if (!textPattern.test(areaField.value.trim())) {
+            invalidateField(areaField, "Das Fachgebiet enthaelt ungueltige Zeichen.");
+            return false;
+          }
+
+          if (!(contentField instanceof HTMLTextAreaElement) || contentField.value.trim().length < 10) {
+            invalidateField(contentField, "Bitte beschreiben Sie Ihr Anliegen mit mindestens 10 Zeichen.");
+            return false;
+          }
+
+          setStatus("");
+          return true;
+        }
+
+        function getSubmitErrorMessage(error, endpoint) {
+          if (error instanceof Error) {
+            if (error.message) {
+              try {
+                const parsedError = JSON.parse(error.message);
+
+                if (parsedError && typeof parsedError === "object") {
+                  if (parsedError.errors && typeof parsedError.errors === "object") {
+                    const firstError = Object.values(parsedError.errors)[0];
+
+                    if (typeof firstError === "string") {
+                      return firstError;
+                    }
+                  }
+
+                  if (typeof parsedError.message === "string" && parsedError.message) {
+                    return parsedError.message;
+                  }
+                }
+              } catch (_jsonError) {
+                // Keep the original message when the server did not return JSON.
+              }
+            }
+
+            if (error.name === "TypeError" && /fetch/i.test(error.message)) {
+              return "Verbindung zu " + endpoint + " fehlgeschlagen. Der lokale Server auf localhost:8000 ist entweder nicht gestartet oder blockiert den Request per CORS.";
+            }
+
+            return error.message;
+          }
+
+          return "Senden fehlgeschlagen. Bitte pruefen Sie den lokalen Mailserver auf localhost:8000.";
+        }
+
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const endpoint = form.dataset.endpoint;
+
+          if (!validateForm()) {
+            return;
+          }
+
+          const formData = new FormData(form);
+          const requestUrl = new URL(endpoint);
+
+          for (const [key, value] of formData.entries()) {
+            requestUrl.searchParams.append(key, String(value));
+          }
+
+          if (!endpoint) {
+            setStatus("Kein Mail-Endpunkt definiert.", "is-error");
+            return;
+          }
+
+          try {
+            setStatus("Nachricht wird gesendet...", "is-pending");
+
+            if (submitButton) {
+              submitButton.disabled = true;
+              submitButton.textContent = "Wird gesendet...";
+            }
+
+            const response = await fetch(requestUrl.toString(), {
+              method: "GET",
+              body: null,
+              mode: "cors",
+              headers: {
+                Accept: "application/json, text/plain, */*",
+              },
+            });
+
+            const responseText = await response.text();
+            const responseMessage = parseResponseMessage(responseText);
+
+            if (!response.ok) {
+              throw new Error(responseMessage || "Die Anfrage wurde vom Server abgelehnt.");
+            }
+
+            setStatus(responseMessage || "Nachricht erfolgreich gesendet.", "is-success");
+            form.reset();
+          } catch (error) {
+            console.error("contact form submit failed", error);
+            setStatus(getSubmitErrorMessage(error, endpoint), "is-error");
+          } finally {
+            if (submitButton) {
+              submitButton.disabled = false;
+              submitButton.textContent = defaultButtonLabel;
+            }
+          }
+        });
+      })();
     </script>
   <script defer src="bundle.js"></script></body>
 </html>
