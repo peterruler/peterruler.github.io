@@ -119,6 +119,11 @@
         border-color:#dc3545;
         box-shadow:0 0 0 3px rgba(220, 53, 69, 0.12);
       }
+
+      #contact-submit-frame {
+        display:none;
+      }
+
     </style>
   <body>
     <!-- ====== Navbar Section Start -->
@@ -1281,7 +1286,7 @@
 
           <div class="w-full lg:w-7/12 px-4">
             <div class="bg-white shadow-service rounded-xl py-10 px-8">
-              <form id="contact-form" data-endpoint="https://zhaw.rf.gd/mailer/swiftmailer.php" method="get" novalidate>
+              <form id="contactForm" data-endpoint="https://zhaw.rf.gd/mailer/swiftmailer.php" method="post" novalidate>
                 <div class="flex flex-wrap mx-[-12px]">
                   <div class="w-full md:w-1/2 px-3 mb-6">
                     <input type="text" name="name" placeholder="Ihr Name" class="contact-field" required />
@@ -1309,10 +1314,11 @@
                     >
                       Nachricht senden
                     </button>
-                    <div id="contact-form-status" class="contact-form-status text-base" aria-live="polite" role="status"></div>
+                    <div id="result" class="contact-form-status text-base" aria-live="polite" role="status"></div>
                   </div>
                 </div>
               </form>
+              <iframe id="contact-submit-frame" name="contact-submit-frame" title="Kontakt Fallback"></iframe>
             </div>
           </div>
         </div>
@@ -1474,8 +1480,9 @@
     </script>
     <script>
       ;(function () {
-        const form = document.getElementById("contact-form");
-        const status = document.getElementById("contact-form-status");
+        const form = document.getElementById("contactForm");
+        const status = document.getElementById("result");
+        const fallbackFrame = document.getElementById("contact-submit-frame");
 
         if (!form || !status) {
           return;
@@ -1483,6 +1490,7 @@
 
         const submitButton = form.querySelector('button[type="submit"]');
         const defaultButtonLabel = submitButton ? submitButton.dataset.label || submitButton.textContent.trim() : "Senden";
+        let waitingForFallback = false;
 
         function setStatus(message, type) {
           status.textContent = message;
@@ -1497,34 +1505,6 @@
           if (type) {
             status.classList.add(type);
           }
-        }
-
-        function parseResponseMessage(responseText) {
-          if (!responseText) {
-            return "";
-          }
-
-          try {
-            const parsedResponse = JSON.parse(responseText);
-
-            if (parsedResponse && typeof parsedResponse === "object") {
-              if (typeof parsedResponse.message === "string" && parsedResponse.message) {
-                return parsedResponse.message;
-              }
-
-              if (parsedResponse.errors && typeof parsedResponse.errors === "object") {
-                const firstError = Object.values(parsedResponse.errors)[0];
-
-                if (typeof firstError === "string") {
-                  return firstError;
-                }
-              }
-            }
-          } catch (_jsonError) {
-            return responseText;
-          }
-
-          return responseText;
         }
 
         function clearFieldValidation() {
@@ -1599,38 +1579,46 @@
           return true;
         }
 
-        function getSubmitErrorMessage(error, endpoint) {
-          if (error instanceof Error) {
-            if (error.message) {
-              try {
-                const parsedError = JSON.parse(error.message);
-
-                if (parsedError && typeof parsedError === "object") {
-                  if (parsedError.errors && typeof parsedError.errors === "object") {
-                    const firstError = Object.values(parsedError.errors)[0];
-
-                    if (typeof firstError === "string") {
-                      return firstError;
-                    }
-                  }
-
-                  if (typeof parsedError.message === "string" && parsedError.message) {
-                    return parsedError.message;
-                  }
-                }
-              } catch (_jsonError) {
-                // Keep the original message when the server did not return JSON.
-              }
-            }
-
-            if (error.name === "TypeError" && /fetch/i.test(error.message)) {
-              return "Verbindung zu " + endpoint + " fehlgeschlagen. Der Zielserver ist entweder nicht erreichbar oder blockiert den Request per CORS.";
-            }
-
-            return error.message;
+        function setSubmittingState(isSubmitting) {
+          if (!submitButton) {
+            return;
           }
 
-          return "Senden fehlgeschlagen. Bitte pruefen Sie den Zielserver oder dessen CORS-Konfiguration.";
+          submitButton.disabled = isSubmitting;
+          submitButton.textContent = isSubmitting ? "Wird gesendet..." : defaultButtonLabel;
+        }
+
+        function submitViaIframe(endpoint, sourceFormData) {
+          const fallbackForm = document.createElement("form");
+          fallbackForm.method = "POST";
+          fallbackForm.action = endpoint;
+          fallbackForm.target = "contact-submit-frame";
+          fallbackForm.style.display = "none";
+
+          for (const [key, value] of sourceFormData.entries()) {
+            const input = document.createElement("input");
+            input.type = "hidden";
+            input.name = key;
+            input.value = String(value);
+            fallbackForm.appendChild(input);
+          }
+
+          document.body.appendChild(fallbackForm);
+          fallbackForm.submit();
+          fallbackForm.remove();
+        }
+
+        if (fallbackFrame instanceof HTMLIFrameElement) {
+          fallbackFrame.addEventListener("load", function () {
+            if (!waitingForFallback) {
+              return;
+            }
+
+            waitingForFallback = false;
+            setSubmittingState(false);
+            setStatus("Nachricht wurde ueber den Formular-Fallback gesendet.", "is-success");
+            form.reset();
+          });
         }
 
         form.addEventListener("submit", async function (event) {
@@ -1643,50 +1631,61 @@
           }
 
           const formData = new FormData(form);
-          const requestUrl = new URL(endpoint);
-
-          for (const [key, value] of formData.entries()) {
-            requestUrl.searchParams.append(key, String(value));
-          }
 
           if (!endpoint) {
             setStatus("Kein Mail-Endpunkt definiert.", "is-error");
             return;
           }
 
+          setStatus("Nachricht wird gesendet...", "is-pending");
+          setSubmittingState(true);
+
           try {
-            setStatus("Nachricht wird gesendet...", "is-pending");
-
-            if (submitButton) {
-              submitButton.disabled = true;
-              submitButton.textContent = "Wird gesendet...";
-            }
-
-            const response = await fetch(requestUrl.toString(), {
-              method: "GET",
-              body: null,
-              mode: "cors",
-              headers: {
-                Accept: "application/json, text/plain, */*",
-              },
+            const response = await fetch(endpoint, {
+              method: "POST",
+              body: formData,
             });
 
-            const responseText = await response.text();
-            const responseMessage = parseResponseMessage(responseText);
+            const text = await response.text();
+            console.log(text);
 
-            if (!response.ok) {
-              throw new Error(responseMessage || "Die Anfrage wurde vom Server abgelehnt.");
+            let data;
+
+            try {
+              data = JSON.parse(text);
+            } catch (_jsonError) {
+              throw new Error("Server did not return JSON: " + text);
             }
 
-            setStatus(responseMessage || "Nachricht erfolgreich gesendet.", "is-success");
-            form.reset();
+            const isSuccess = data && (data.success === true || data.ok === true);
+            const successMessage = typeof data.message === "string" && data.message ? data.message : "Message sent successfully.";
+            const errorMessage = typeof data.error === "string" && data.error
+              ? data.error
+              : typeof data.message === "string" && data.message
+                ? data.message
+                : "Unknown error";
+
+            setStatus(
+              isSuccess ? successMessage : "Error: " + errorMessage,
+              isSuccess ? "is-success" : "is-error"
+            );
+
+            if (isSuccess) {
+              form.reset();
+            }
           } catch (error) {
-            console.error("contact form submit failed", error);
-            setStatus(getSubmitErrorMessage(error, endpoint), "is-error");
+            const message = error instanceof Error ? error.message : "Unknown error";
+            if (error instanceof Error && error.name === "TypeError" && /fetch/i.test(error.message) && fallbackFrame instanceof HTMLIFrameElement) {
+              waitingForFallback = true;
+              setStatus("Fetch fehlgeschlagen. Sende Nachricht ueber Formular-Fallback...", "is-pending");
+              submitViaIframe(endpoint, formData);
+              return;
+            }
+
+            setStatus("Connection failed: " + message, "is-error");
           } finally {
-            if (submitButton) {
-              submitButton.disabled = false;
-              submitButton.textContent = defaultButtonLabel;
+            if (!waitingForFallback) {
+              setSubmittingState(false);
             }
           }
         });
