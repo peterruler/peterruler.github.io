@@ -1,0 +1,9 @@
+name = "peterstroessler-contact-proxy"
+main = "contact-proxy-worker.js"
+compatibility_date = "2026-05-14"
+
+[vars]
+MAILER_URL = "https://zhaw.rf.gd/mailer/swiftmailer.php"
+
+[observability.logs]
+enabled = true

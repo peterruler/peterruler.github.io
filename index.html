@@ -1286,7 +1286,13 @@
 
           <div class="w-full lg:w-7/12 px-4">
             <div class="bg-white shadow-service rounded-xl py-10 px-8">
-              <form id="contactForm" data-endpoint="https://zhaw.rf.gd/mailer/swiftmailer.php" method="post" novalidate>
+              <form
+                id="contactForm"
+                action="https://zhaw.rf.gd/mailer/swiftmailer.php"
+                target="contact-submit-frame"
+                method="post"
+                novalidate
+              >
                 <div class="flex flex-wrap mx-[-12px]">
                   <div class="w-full md:w-1/2 px-3 mb-6">
                     <input type="text" name="name" placeholder="Ihr Name" class="contact-field" required />
@@ -1490,7 +1496,8 @@
 
         const submitButton = form.querySelector('button[type="submit"]');
         const defaultButtonLabel = submitButton ? submitButton.dataset.label || submitButton.textContent.trim() : "Senden";
-        let waitingForFallback = false;
+        let waitingForSubmit = false;
+        const endpoint = form.getAttribute("action");
 
         function setStatus(message, type) {
           status.textContent = message;
@@ -1588,106 +1595,34 @@
           submitButton.textContent = isSubmitting ? "Wird gesendet..." : defaultButtonLabel;
         }
 
-        function submitViaIframe(endpoint, sourceFormData) {
-          const fallbackForm = document.createElement("form");
-          fallbackForm.method = "POST";
-          fallbackForm.action = endpoint;
-          fallbackForm.target = "contact-submit-frame";
-          fallbackForm.style.display = "none";
-
-          for (const [key, value] of sourceFormData.entries()) {
-            const input = document.createElement("input");
-            input.type = "hidden";
-            input.name = key;
-            input.value = String(value);
-            fallbackForm.appendChild(input);
-          }
-
-          document.body.appendChild(fallbackForm);
-          fallbackForm.submit();
-          fallbackForm.remove();
-        }
-
         if (fallbackFrame instanceof HTMLIFrameElement) {
           fallbackFrame.addEventListener("load", function () {
-            if (!waitingForFallback) {
+            if (!waitingForSubmit) {
               return;
             }
 
-            waitingForFallback = false;
+            waitingForSubmit = false;
             setSubmittingState(false);
-            setStatus("Nachricht wurde ueber den Formular-Fallback gesendet.", "is-success");
+            setStatus("Nachricht wurde ueber das Formular gesendet.", "is-success");
             form.reset();
           });
         }
 
-        form.addEventListener("submit", async function (event) {
-          event.preventDefault();
-
-          const endpoint = form.dataset.endpoint;
-
+        form.addEventListener("submit", function (event) {
           if (!validateForm()) {
+            event.preventDefault();
             return;
           }
 
-          const formData = new FormData(form);
-
           if (!endpoint) {
+            event.preventDefault();
             setStatus("Kein Mail-Endpunkt definiert.", "is-error");
             return;
           }
 
-          setStatus("Nachricht wird gesendet...", "is-pending");
+          waitingForSubmit = true;
+          setStatus("Nachricht wird ueber Formular gesendet...", "is-pending");
           setSubmittingState(true);
-
-          try {
-            const response = await fetch(endpoint, {
-              method: "POST",
-              body: formData,
-            });
-
-            const text = await response.text();
-            console.log(text);
-
-            let data;
-
-            try {
-              data = JSON.parse(text);
-            } catch (_jsonError) {
-              throw new Error("Server did not return JSON: " + text);
-            }
-
-            const isSuccess = data && (data.success === true || data.ok === true);
-            const successMessage = typeof data.message === "string" && data.message ? data.message : "Message sent successfully.";
-            const errorMessage = typeof data.error === "string" && data.error
-              ? data.error
-              : typeof data.message === "string" && data.message
-                ? data.message
-                : "Unknown error";
-
-            setStatus(
-              isSuccess ? successMessage : "Error: " + errorMessage,
-              isSuccess ? "is-success" : "is-error"
-            );
-
-            if (isSuccess) {
-              form.reset();
-            }
-          } catch (error) {
-            const message = error instanceof Error ? error.message : "Unknown error";
-            if (error instanceof Error && error.name === "TypeError" && /fetch/i.test(error.message) && fallbackFrame instanceof HTMLIFrameElement) {
-              waitingForFallback = true;
-              setStatus("Fetch fehlgeschlagen. Sende Nachricht ueber Formular-Fallback...", "is-pending");
-              submitViaIframe(endpoint, formData);
-              return;
-            }
-
-            setStatus("Connection failed: " + message, "is-error");
-          } finally {
-            if (!waitingForFallback) {
-              setSubmittingState(false);
-            }
-          }
         });
       })();
     </script>
