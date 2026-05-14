@@ -1624,13 +1624,13 @@
             }
 
             if (error.name === "TypeError" && /fetch/i.test(error.message)) {
-              return "Verbindung zu " + endpoint + " fehlgeschlagen. Der lokale Server auf localhost:8000 ist entweder nicht gestartet oder blockiert den Request per CORS.";
+              return "Verbindung zu " + endpoint + " fehlgeschlagen. Der Zielserver ist entweder nicht erreichbar oder blockiert den Request per CORS.";
             }
 
             return error.message;
           }
 
-          return "Senden fehlgeschlagen. Bitte pruefen Sie den lokalen Mailserver auf localhost:8000.";
+          return "Senden fehlgeschlagen. Bitte pruefen Sie den Zielserver oder dessen CORS-Konfiguration.";
         }
 
         form.addEventListener("submit", async function (event) {
