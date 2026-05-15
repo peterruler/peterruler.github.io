@@ -1492,12 +1492,6 @@
         const fallbackEndpoint = form.getAttribute("action");
 
         function resolveEndpoint() {
-          const hostname = window.location.hostname;
-
-          if (hostname === "peterstroessler.com" || hostname === "www.peterstroessler.com") {
-            return "/api/contact";
-          }
-
           return fallbackEndpoint;
         }
 
