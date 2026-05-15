@@ -1284,7 +1284,7 @@
             <div class="bg-white shadow-service rounded-xl py-10 px-8">
               <form
                 id="contactForm"
-                action="https://keepitnative.xyz/mailer"
+                action="https://keepitnative.xyz/mailer/"
                 method="post"
                 novalidate
               >
@@ -1495,15 +1495,6 @@
           return fallbackEndpoint;
         }
 
-        function isCrossOriginEndpoint(endpoint) {
-          try {
-            const resolvedUrl = new URL(endpoint, window.location.href);
-            return resolvedUrl.origin !== window.location.origin;
-          } catch (_error) {
-            return false;
-          }
-        }
-
         function setStatus(message, type) {
           status.textContent = message;
           status.classList.remove("is-error", "is-success", "is-pending", "is-visible");
@@ -1618,12 +1609,9 @@
           setStatus("Nachricht wird gesendet...", "is-pending");
           setSubmittingState(true);
 
-          const useNoCors = isCrossOriginEndpoint(endpoint);
-
           try {
             const response = await fetch(endpoint, {
               method: "POST",
-              mode: useNoCors ? "no-cors" : "cors",
               headers: {
                 "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
                 "Accept": "application/json, text/plain, */*",
@@ -1631,7 +1619,7 @@
               body: requestBody.toString(),
             });
 
-            if (!useNoCors && !response.ok) {
+            if (!response.ok) {
               throw new Error("Mailer request failed.");
             }
 
