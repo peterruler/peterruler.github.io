@@ -120,10 +120,6 @@
         box-shadow:0 0 0 3px rgba(220, 53, 69, 0.12);
       }
 
-      #contact-submit-frame {
-        display:none;
-      }
-
     </style>
   <body>
     <!-- ====== Navbar Section Start -->
@@ -1288,8 +1284,7 @@
             <div class="bg-white shadow-service rounded-xl py-10 px-8">
               <form
                 id="contactForm"
-                action="http://petethegreat.atwebpages.com/swiftmailer.php"
-                target="contact-submit-frame"
+                action="https://zhaw.rf.gd/mailer/swiftmailer.php"
                 method="post"
                 novalidate
               >
@@ -1324,7 +1319,6 @@
                   </div>
                 </div>
               </form>
-              <iframe id="contact-submit-frame" name="contact-submit-frame" title="Kontakt Fallback"></iframe>
             </div>
           </div>
         </div>
@@ -1488,7 +1482,6 @@
       ;(function () {
         const form = document.getElementById("contactForm");
         const status = document.getElementById("result");
-        const fallbackFrame = document.getElementById("contact-submit-frame");
 
         if (!form || !status) {
           return;
@@ -1496,8 +1489,26 @@
 
         const submitButton = form.querySelector('button[type="submit"]');
         const defaultButtonLabel = submitButton ? submitButton.dataset.label || submitButton.textContent.trim() : "Senden";
-        let waitingForSubmit = false;
-        const endpoint = form.getAttribute("action");
+        const fallbackEndpoint = form.getAttribute("action");
+
+        function resolveEndpoint() {
+          const hostname = window.location.hostname;
+
+          if (hostname === "peterstroessler.com" || hostname === "www.peterstroessler.com") {
+            return "/api/contact";
+          }
+
+          return fallbackEndpoint;
+        }
+
+        function isCrossOriginEndpoint(endpoint) {
+          try {
+            const resolvedUrl = new URL(endpoint, window.location.href);
+            return resolvedUrl.origin !== window.location.origin;
+          } catch (_error) {
+            return false;
+          }
+        }
 
         function setStatus(message, type) {
           status.textContent = message;
@@ -1595,34 +1606,66 @@
           submitButton.textContent = isSubmitting ? "Wird gesendet..." : defaultButtonLabel;
         }
 
-        if (fallbackFrame instanceof HTMLIFrameElement) {
-          fallbackFrame.addEventListener("load", function () {
-            if (!waitingForSubmit) {
-              return;
-            }
-
-            waitingForSubmit = false;
-            setSubmittingState(false);
-            setStatus("Nachricht wurde ueber das Formular gesendet.", "is-success");
-            form.reset();
-          });
-        }
-
-        form.addEventListener("submit", function (event) {
-          if (!validateForm()) {
-            event.preventDefault();
-            return;
-          }
-
+        async function submitForm(endpoint) {
           if (!endpoint) {
-            event.preventDefault();
             setStatus("Kein Mail-Endpunkt definiert.", "is-error");
             return;
           }
 
-          waitingForSubmit = true;
-          setStatus("Nachricht wird ueber Formular gesendet...", "is-pending");
+          const formData = new FormData(form);
+          const requestBody = new URLSearchParams();
+
+          formData.forEach(function (value, key) {
+            if (typeof value === "string") {
+              requestBody.append(key, value);
+            }
+          });
+
+          setStatus("Nachricht wird gesendet...", "is-pending");
           setSubmittingState(true);
+
+          const useNoCors = isCrossOriginEndpoint(endpoint);
+
+          try {
+            const response = await fetch(endpoint, {
+              method: "POST",
+              mode: useNoCors ? "no-cors" : "cors",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "Accept": "application/json, text/plain, */*",
+              },
+              body: requestBody.toString(),
+            });
+
+            if (!useNoCors && !response.ok) {
+              throw new Error("Mailer request failed.");
+            }
+
+            form.reset();
+            clearFieldValidation();
+            setStatus("Vielen Dank. Ihre Nachricht wurde erfolgreich versendet.", "is-success");
+          } catch (_error) {
+            setStatus("Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie mir per E-Mail.", "is-error");
+          } finally {
+            setSubmittingState(false);
+          }
+        }
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          if (!validateForm()) {
+            return;
+          }
+
+          const endpoint = resolveEndpoint();
+
+          if (!endpoint) {
+            setStatus("Kein Mail-Endpunkt definiert.", "is-error");
+            return;
+          }
+
+          void submitForm(endpoint);
         });
       })();
     </script>
