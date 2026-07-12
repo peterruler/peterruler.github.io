@@ -2,52 +2,65 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8">
-    <link href="style.css" rel="stylesheet">
-<script>
-  var visum = "";
-  var json = {};
-
-  window.eventsFromK5 = async function(json) {
-    // Check if json is valid before proceeding
-    if (!json) {
-      console.warn("Received an empty or invalid json.");
-      // return Promise.reject("Invalid JSON received.");
-    } else {
-      // Log the incoming JSON
-      console.warn("Received JSON: " + JSON.stringify(json));
-  
-      // Extract and log visum if present
-      const {type, visum} = json;
-      if (type && visum) {
-        console.info("json is: " + type + " " + visum);
-      } else {
-        console.warn("Visum is not present in the JSON.");
-      }
-      return json;
-      // Return the resolved promise with the original JSON
-      /*
-      return new Promise((resolve) => {
-        resolve(json);
-      });
-      */
-    }
-  };
-</script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Peter Strössler - PSWeb">
-    <meta name="keywords" content="Nodejs, Python, AI, KI, HTML, CSS, Typescript, JavaScript">
-    <meta name="author" content="Peter Strössler">
-    <meta name="robots" content="index,follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peter Strössler - PSWeb</title>
-    <link rel="icon" type="image/png" href="src/images/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="src/images//favicon.svg" />
-    <link rel="shortcut icon" href="src/images/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="src/images/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="PSWeb" />
-    <link rel="manifest" href="src/images/site.webmanifest" />
+    <title>Peter Strössler | Software Engineer für Web, Apps &amp; KI</title>
+    <meta name="description" content="Peter Strössler ist Software Engineer aus der Schweiz für moderne Webanwendungen, Mobile Apps, Backend-Systeme und praxisnahe KI-Lösungen.">
+    <meta name="author" content="Peter Strössler">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://peterstroessler.com/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_CH">
+    <meta property="og:site_name" content="PSWeb">
+    <meta property="og:title" content="Peter Strössler | Software Engineer für Web, Apps &amp; KI">
+    <meta property="og:description" content="Software Engineering aus der Schweiz: moderne Webanwendungen, Mobile Apps, Backend-Systeme und praxisnahe KI-Lösungen.">
+    <meta property="og:url" content="https://peterstroessler.com/">
+    <meta property="og:image" content="https://peterstroessler.com/src/images/hero/hero-image.webp">
+    <meta property="og:image:width" content="529">
+    <meta property="og:image:height" content="600">
+    <meta property="og:image:alt" content="Porträt von Software Engineer Peter Strössler">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Peter Strössler | Software Engineer für Web, Apps &amp; KI">
+    <meta name="twitter:description" content="Software Engineering aus der Schweiz für Web, Mobile, Backend und KI.">
+    <meta name="twitter:image" content="https://peterstroessler.com/src/images/hero/hero-image.webp">
+
+    <link rel="preload" href="src/images/hero/hero-image.webp" as="image" type="image/webp" fetchpriority="high">
+    <link href="style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="src/images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="src/images/favicon.svg">
+    <link rel="shortcut icon" href="src/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="src/images/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="PSWeb">
+    <link rel="manifest" href="src/images/site.webmanifest">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="src/images/mstile-150x150.png">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://peterstroessler.com/#website",
+            "url": "https://peterstroessler.com/",
+            "name": "PSWeb",
+            "alternateName": "Peter Strössler",
+            "inLanguage": "de-CH"
+          },
+          {
+            "@type": "Person",
+            "@id": "https://peterstroessler.com/#person",
+            "name": "Peter Strössler",
+            "url": "https://peterstroessler.com/",
+            "image": "https://peterstroessler.com/src/images/hero/hero-image.webp",
+            "jobTitle": "Software Engineer",
+            "nationality": { "@type": "Country", "name": "Switzerland" },
+            "sameAs": ["https://github.com/peterruler"],
+            "knowsAbout": ["Software Engineering", "Web Development", "Mobile Apps", "Backend Development", "Artificial Intelligence", "TypeScript", "JavaScript", "Node.js", "Python"]
+          }
+        ]
+      }
+    </script>
     <style>
       section#education {
         max-width:100%;
@@ -121,14 +134,15 @@
       }
 
     </style>
+  </head>
   <body>
     <!-- ====== Navbar Section Start -->
     <header class="header bg-transparent absolute top-0 left-0 z-40 w-full flex items-center transition">
       <div class="container">
         <div class="flex mx-[-16px] items-center justify-between relative">
           <div class="px-4 w-60 max-w-full">
-            <a href="index.html" class="header-logo w-full block py-6 lg:py-8">
-              <img src="src/images/logo/logo.svg" alt="logo" class="w-full" >
+            <a href="/" aria-label="PSWeb – Startseite" class="header-logo w-full block py-6 lg:py-8">
+              <img src="src/images/logo/logo.svg" alt="PSWeb – Peter Strössler" width="220" height="48" class="w-full" >
             </a>
           </div>
           <div class="flex px-4 justify-between items-center w-full">
@@ -136,7 +150,10 @@
               <button
                 id="navbarToggler"
                 name="navbarToggler"
-                aria-label="navbarToggler"
+                type="button"
+                aria-label="Navigation öffnen"
+                aria-controls="navbarCollapse"
+                aria-expanded="false"
                 class="block absolute right-4 top-1/2 translate-y-[-50%] lg:hidden focus:ring-2 ring-primary px-3 py-[6px] rounded-lg"
               >
                 <span class="relative w-[30px] h-[2px] my-[6px] block bg-dark"></span>
@@ -187,6 +204,7 @@
     </header>
     <!-- ====== Navbar Section End -->
 
+    <main>
     <!-- ====== Hero Section Start -->
     <section id="home" class="relative z-10 pt-[150px] lg:pt-[100px] 2xl:flex items-center 2xl:h-[700px]">
       <div class="container">
@@ -206,22 +224,17 @@
               <p class="max-w-[470px] font-medium text-body-color text-base leading-relaxed mb-11">Ich bin Software Engineer mit Herz und Seele.<br >Mein Beruf ist meine Passion.</p>
               <div class="flex items-center mb-20">
                 <a
-                  href="/Peter_Stroessler_CV_2026.pdf?v=2" target="_blank"
+                  href="/Peter_Stroessler_CV_2026.pdf?v=2" target="_blank" rel="noopener noreferrer"
                   class="text-base font-semibold text-white bg-primary py-3 px-8 mr-4 hover:shadow-signUp hover:bg-opacity-90 rounded-full transition duration-300 ease-in-out"
                 >
                   Download CV
                 </a>
-                <!--
-                <a href="javascript:void(0)" class="text-base font-semibold text-white bg-black py-3 px-8 hover:shadow-signUp hover:bg-opacity-90 rounded-full transition duration-300 ease-in-out">
-                  Learn More
-                </a>
-                -->
               </div>
             </div>
           </div>
           <div class="w-full lg:w-1/2 self-end px-4">
             <div class="relative mt-12 lg:mt-0 z-10 2xl:absolute 2xl:bottom-0 2xl:right-40">
-              <img src="src/images/hero/hero-image.webp" alt="image" class="max-w-full mx-auto" >
+              <img src="src/images/hero/hero-image.webp" alt="Porträt von Software Engineer Peter Strössler" width="529" height="600" fetchpriority="high" decoding="async" class="max-w-full mx-auto" >
             </div>
           </div>
         </div>
@@ -280,8 +293,8 @@
           </div>
 
           <div class="flex flex-wrap mx-[-16px]">
-            <div class="w-full md:w-1/2 xl:w-1/4 px-4">
-              <div class="bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
+            <div class="service-column w-full md:w-1/2 xl:w-1/4 px-4">
+              <div class="service-card bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
                 <div class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary">
                   <svg width="35" height="33" viewBox="0 0 35 33" class="fill-current">
                     <path
@@ -289,8 +302,8 @@
                     />
                   </svg>
                 </div>
-                <h3 class="font-bold text-black text-xl sm:text-2xl lg:text-xl 2xl:text-2xl group-hover:text-white mb-3">Frontend</h3>
-                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Ich spreche fliessend HTML5, CSS und Typescript. Mit ReactJS kenne ich mich aus.</p>
+                <h3 class="font-bold text-black text-xl sm:text-2xl lg:text-xl 2xl:text-2xl group-hover:text-white mb-3">Fullstack Web</h3>
+                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Ich entwickle moderne Webanwendungen durchgängig – von React und TypeScript im Frontend bis zu Node.js, Java oder PHP im Backend.</p>
                 <div>
                   <span class="absolute top-0 right-0 -z-1">
                     <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -317,8 +330,8 @@
                 </div>
               </div>
             </div>
-            <div class="w-full md:w-1/2 xl:w-1/4 px-4">
-              <div class="bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
+            <div class="service-column w-full md:w-1/2 xl:w-1/4 px-4">
+              <div class="service-card bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
                 <div class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary">
                   <svg width="36" height="36" viewBox="0 0 36 36" class="fill-current">
                     <path
@@ -326,8 +339,8 @@
                     />
                   </svg>
                 </div>
-                <h3 class="font-bold text-black text-xl sm:text-2xl lg:text-xl 2xl:text-2xl group-hover:text-white mb-3">Backend</h3>
-                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Ob NodeJs, Java - Springboot oder PHP - Codeigniter. Ich kann Webservices.</p>
+                <h3 class="font-bold text-black text-xl sm:text-2xl lg:text-xl 2xl:text-2xl group-hover:text-white mb-3">AI</h3>
+                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Ich entwickle KI-Anwendungen von Computer Vision und neuronalen Netzen bis zu Sprachverarbeitung, medizinischen Chat-Systemen und modernen LLMs.</p>
                 <div>
                   <span class="absolute top-0 right-0 -z-1">
                     <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -354,8 +367,8 @@
                 </div>
               </div>
             </div>
-            <div class="w-full md:w-1/2 xl:w-1/4 px-4">
-              <div class="bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
+            <div class="service-column w-full md:w-1/2 xl:w-1/4 px-4">
+              <div class="service-card bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
                 <div class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary">
                   <svg width="40" height="25" viewBox="0 0 40 25" class="fill-current">
                     <path
@@ -364,7 +377,7 @@
                   </svg>
                 </div>
                 <h3 class="font-bold text-black text-xl sm:text-2xl lg:text-xl 2xl:text-2xl group-hover:text-white mb-3">Graphic Design</h3>
-                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Das nötige Rüstzeugs, um Grafiken für das Web aufzubereiten habe ich verfügbar.</p>
+                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Ich bringe das nötige Rüstzeug mit, um Grafiken professionell für das Web aufzubereiten.</p>
                 <div>
                   <span class="absolute top-0 right-0 -z-1">
                     <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -391,15 +404,15 @@
                 </div>
               </div>
             </div>
-            <div class="w-full md:w-1/2 xl:w-1/4 px-4">
-              <div class="bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
+            <div class="service-column w-full md:w-1/2 xl:w-1/4 px-4">
+              <div class="service-card bg-white group hover:bg-primary shadow-service py-10 px-8 rounded-xl relative z-10 overflow-hidden text-center duration-200 mb-8">
                 <div class="mx-auto w-20 h-20 mb-6 rounded-full bg-primary flex items-center justify-center text-white group-hover:bg-white group-hover:text-primary">
                   <svg width="30" height="30" viewBox="0 0 30 30" class="fill-current">
                     <path d="M16.6667 0V13.3333H30V0H16.6667ZM0 30H13.3333V16.6667H0V30ZM0 0V13.3333H13.3333V0H0ZM16.6667 21.6667H21.6667V16.6667H25V21.6667H30V25H25V30H21.6667V25H16.6667V21.6667Z" />
                   </svg>
                 </div>
                 <h3 class="font-bold text-black text-xl sm:text-2xl lg:text-xl 2xl:text-2xl group-hover:text-white mb-3">Consulting</h3>
-                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Was sie wissen müssen, ich helfe gerne weiter. In Webtechnologien kenne ich mich aus.</p>
+                <p class="font-medium text-body-color group-hover:text-white leading-relaxed text-sm">Bei technischen Fragen helfe ich gerne weiter und berate Sie fundiert zu modernen Webtechnologien.</p>
                 <div>
                   <span class="absolute top-0 right-0 -z-1">
                     <svg width="218" height="109" viewBox="0 0 218 109" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -440,17 +453,17 @@
             <div class="max-w-[600px] mx-auto text-center mb-[50px]">
               <span class="font-semibold text-lg text-primary block mb-2"> Projekte </span>
               <h2 class="font-bold text-black text-3xl sm:text-4xl md:text-[45px] mb-5">Meine Arbeiten</h2>
-              <p class="font-medium text-lg text-body-color">Ein Auszug meiner Arbeiten in Web und Mobile. Weitere finden sie auf meinem <a style="color:#4B6CF7 !important;" href="https://github.com/peterruler?tab=repositories" target="_blank">Github</a> Account. Meine Webprojekte aus dem Bachelor Studium sind <a style="color:#4B6CF7 !important;" href="https://zhaw.rf.gd/" target="_blank">hier</a>.</p>
+              <p class="font-medium text-lg text-body-color">Ein Auszug meiner Arbeiten in Web und Mobile. Weitere finden Sie auf meinem <a style="color:#4B6CF7 !important;" href="https://github.com/peterruler?tab=repositories" target="_blank" rel="noopener noreferrer">GitHub</a>-Account. Meine Webprojekte aus dem Bachelorstudium sind <a style="color:#4B6CF7 !important;" href="https://zhaw.rf.gd/" target="_blank" rel="noopener noreferrer">hier</a>.</p>
             </div>
           </div>
           <div class="w-full px-4">
             <div class="portfolio-buttons flex flex-wrap items-center justify-center mb-12">
-              <button class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color hover:bg-primary hover:text-white active" data-filter=".feat">Featured</button>
-              <button class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color" data-filter=".web">Web</button>
-              <button class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color hover:bg-primary hover:text-white" data-filter=".ai">
+              <button type="button" aria-pressed="true" class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color hover:bg-primary hover:text-white active" data-filter=".feat">Ausgewählt</button>
+              <button type="button" aria-pressed="false" class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color" data-filter=".web">Web</button>
+              <button type="button" aria-pressed="false" class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color hover:bg-primary hover:text-white" data-filter=".ai">
                 AI
               </button>
-              <button class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color hover:bg-primary hover:text-white" data-filter=".app">App</button>
+              <button type="button" aria-pressed="false" class="sm:font-semibold text-sm sm:text-base block py-2 px-5 md:mx-2 mb-2 rounded-full text-body-color hover:bg-primary hover:text-white" data-filter=".app">App</button>
             </div>
           </div>
         </div>
@@ -461,11 +474,11 @@
               <div class="w-full md:w-1/2 px-4 item app">
                 <div class="mb-12">
                   <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                    <img src="src/images/portfolio/portfolio-01.webp" alt="image" class="w-full" >
+                    <img src="src/images/portfolio/portfolio-01.webp" alt="Projektvorschau: Währungsrechner App" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                     <div
                       class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                     >
-                      <a href="src/images/portfolio/portfolio-01.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                      <a href="src/images/portfolio/portfolio-01.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                         </svg>
@@ -473,19 +486,19 @@
                     </div>
                   </div>
                   <h3 class="mt-6">
-                    <a href="https://snack.expo.dev/@petethegreat/currency-reactnative?platform=web" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3" target="_blank"> Währungsrechner </a>
+                    <a href="https://snack.expo.dev/@petethegreat/currency-reactnative?platform=web" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3" target="_blank" rel="noopener noreferrer"> Währungsrechner </a>
                   </h3>
-                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://snack.expo.dev/@petethegreat/currency-reactnative?platform=web" target="_blank">Weiterleitung zur App</a></p>
+                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://snack.expo.dev/@petethegreat/currency-reactnative?platform=web" target="_blank" rel="noopener noreferrer">Weiterleitung zur App</a></p>
                 </div>
               </div>
               <div class="w-full md:w-1/2 px-4 item feat">
                 <div class="mb-12">
                   <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                    <img src="src/images/portfolio/portfolio-02.webp" alt="image" class="w-full" >
+                    <img src="src/images/portfolio/portfolio-02.webp" alt="Projektvorschau: Website von FIAN Schweiz" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                     <div
                       class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                     >
-                      <a href="src/images/portfolio/portfolio-02.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                      <a href="src/images/portfolio/portfolio-02.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                         </svg>
@@ -495,17 +508,17 @@
                   <h3 class="mt-6">
                     <a href="https://fian-ch.org" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> Wordpress Fian Schweiz </a>
                   </h3>
-                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://fian-ch.org" target="_blank">Weiter zur Webseite</a></p>
+                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://fian-ch.org" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                 </div>
               </div>
               <div class="w-full md:w-1/2 px-4 item ai app">
                 <div class="mb-12">
                   <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                    <img src="src/images/portfolio/portfolio-03.webp" alt="image" class="w-full" >
+                    <img src="src/images/portfolio/portfolio-03.webp" alt="Projektvorschau: KI-App zur Katzen- und Hundeerkennung" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                     <div
                       class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                     >
-                      <a href="src/images/portfolio/portfolio-03.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                      <a href="src/images/portfolio/portfolio-03.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                         </svg>
@@ -513,19 +526,19 @@
                     </div>
                   </div>
                   <h3 class="mt-6">
-                    <a href="https://snack.expo.dev/@petethegreat/github.com-peterruler-react-native-frontend" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3" target="_blank"> KI mit Katzen und Hunde Detektion </a>
+                    <a href="https://snack.expo.dev/@petethegreat/github.com-peterruler-react-native-frontend" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3" target="_blank" rel="noopener noreferrer"> KI mit Katzen und Hunde Detektion </a>
                   </h3>
-                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://snack.expo.dev/@petethegreat/github.com-peterruler-react-native-frontend" target="_blank">Weiterleitung zur App</a></p>
+                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://snack.expo.dev/@petethegreat/github.com-peterruler-react-native-frontend" target="_blank" rel="noopener noreferrer">Weiterleitung zur App</a></p>
                 </div>
               </div>
               <div class="w-full md:w-1/2 px-4 item web">
                 <div class="mb-12">
                   <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                    <img src="src/images/portfolio/portfolio-04.webp" alt="image" class="w-full" >
+                    <img src="src/images/portfolio/portfolio-04.webp" alt="Projektvorschau: React und TypeScript Todo App" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                     <div
                       class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                     >
-                      <a href="src/images/portfolio/portfolio-04.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                      <a href="src/images/portfolio/portfolio-04.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                         </svg>
@@ -535,7 +548,7 @@
                   <h3 class="mt-6">
                     <a href="https://vercel-issue-tracker.vercel.app" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> Todo App - FH Projekt React / Typescript</a>
                   </h3>
-                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://vercel-issue-tracker.vercel.app" target="_blank">Weiter zur Webseite</a></p>
+                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://vercel-issue-tracker.vercel.app" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                 </div>
               </div>
 
@@ -543,11 +556,11 @@
               <div class="w-full md:w-1/2 px-4 item web">
                 <div class="mb-12">
                   <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                    <img src="src/images/portfolio/portfolio-05.webp" alt="image" class="w-full" >
+                    <img src="src/images/portfolio/portfolio-05.webp" alt="Projektvorschau: Angular Hotel App" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                     <div
                       class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                     >
-                      <a href="src/images/portfolio/portfolio-05.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                      <a href="src/images/portfolio/portfolio-05.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                         </svg>
@@ -557,7 +570,7 @@
                   <h3 class="mt-6">
                     <a href="https://hotel-app-qkpu.onrender.com" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> Hotel App - Angular 2.x </a>
                   </h3>
-                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://hotel-app-qkpu.onrender.com" target="_blank">Weiter zur Webseite</a></p>
+                  <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://hotel-app-qkpu.onrender.com" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                 </div>
               </div>
               <!-- 05 END-->
@@ -566,11 +579,11 @@
                 <div class="w-full md:w-1/2 px-4 item feat">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-06.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-06.webp" alt="Projektvorschau: HAPI-FHIR React App" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-06.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-06.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -580,7 +593,7 @@
                     <h3 class="mt-6">
                       <a href="https://reactjs-hapifhir.vercel.app" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> HAPI Fhir App Reactjs</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://reactjs-hapifhir.vercel.app" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://reactjs-hapifhir.vercel.app" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 06 END-->
@@ -588,11 +601,11 @@
                 <div class="w-full md:w-1/2 px-4 item web">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-07.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-07.webp" alt="Projektvorschau: PWA-Schach-App mit WebSockets" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-07.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-07.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -602,7 +615,7 @@
                     <h3 class="mt-6">
                       <a href="https://render-chess.onrender.com" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> PWA / Websocket Schachapp</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://render-chess.onrender.com" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://render-chess.onrender.com" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 07 END-->
@@ -610,11 +623,11 @@
                 <div class="w-full md:w-1/2 px-4 item web">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-08.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-08.webp" alt="Projektvorschau: Connect Four React App" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-08.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-08.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -624,7 +637,7 @@
                     <h3 class="mt-6">
                       <a href="https://zhaw.rf.gd/moba2/connect-four-one-file" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> Connect4 Reactjs</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://zhaw.rf.gd/moba2/connect-four-one-file" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://zhaw.rf.gd/moba2/connect-four-one-file" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 08 END-->
@@ -632,11 +645,11 @@
                 <div class="w-full md:w-1/2 px-4 item web">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-09.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-09.webp" alt="Projektvorschau: Node.js- und MongoDB-REST-API" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-09.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-09.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -646,7 +659,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/mongo-arm" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> RestAPI Nodejs / Mongodb ARM Cloudserver</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/mongo-arm" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/mongo-arm" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 09 END-->
@@ -654,11 +667,11 @@
                 <div class="w-full md:w-1/2 px-4 item ai web">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-10.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-10.webp" alt="Projektvorschau: React-Webanwendung mit KI" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-10.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-10.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -668,7 +681,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/react-webapp-frontend" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3"> ReactJS Webapp mit AI</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/react-webapp-frontend" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/react-webapp-frontend" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 10 END-->
@@ -676,11 +689,11 @@
                 <div class="w-full md:w-1/2 px-4 item ai">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-11.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-11.webp" alt="Projektvorschau: Speech-to-Structure KI-Projekt" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-11.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-11.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -690,7 +703,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/nodejs-speech2structure" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">Diagnose Speech2Structure</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/nodejs-speech2structure" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/nodejs-speech2structure" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 11 END-->
@@ -698,11 +711,11 @@
                 <div class="w-full md:w-1/2 px-4 item ai">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-12.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-12.webp" alt="Projektvorschau: KI-Anwendung für virtuellen Kleidungswechsel" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-12.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-12.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -712,7 +725,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/openai-imagemod" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">AI Shirt Replacement</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/openai-imagemod" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/openai-imagemod" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 12 END-->
@@ -720,11 +733,11 @@
                 <div class="w-full md:w-1/2 px-4 item ai">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-13.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-13.webp" alt="Projektvorschau: Neuronale Regression" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-13.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-13.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -734,7 +747,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/linreg-pytorch" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">ANN Regression Numeric</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/linreg-pytorch" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/linreg-pytorch" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 13 END-->                
@@ -742,11 +755,11 @@
                 <div class="w-full md:w-1/2 px-4 item ai">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-14.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-14.webp" alt="Projektvorschau: Neuronale Klassifikation" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-14.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-14.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -756,7 +769,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/iris-ann" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">ANN Regression Classification</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/iris-ann" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/iris-ann" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 14 END -->  
@@ -764,11 +777,11 @@
                 <div class="w-full md:w-1/2 px-4 item ai">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-15.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-15.webp" alt="Projektvorschau: Flask-Server für Llama" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-15.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-15.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -778,7 +791,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/llama-server" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">Flask Llama 3.1 LLM Server</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/llama-server" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/llama-server" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 15 END-->
@@ -786,11 +799,11 @@
                 <div class="w-full md:w-1/2 px-4 item ai">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-16.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-16.webp" alt="Projektvorschau: KI-generierter Spionage-Thriller" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-16.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-16.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -800,7 +813,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/ai-spy-thriller" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">AI generated spy thriller</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/ai-spy-thriller" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/ai-spy-thriller" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 16 END-->
@@ -808,11 +821,11 @@
                 <div class="w-full md:w-1/2 px-4 item ai">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-17.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-17.webp" alt="Projektvorschau: ChatGPT Fine-Tuning" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-17.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-17.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -822,7 +835,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/chatgpt-finetune" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">Finetune Chatgpt</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/chatgpt-finetune" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/chatgpt-finetune" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 17 END-->
@@ -830,11 +843,11 @@
                 <div class="w-full md:w-1/2 px-4 item ai">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-18.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-18.webp" alt="Projektvorschau: MedGemma Radiologie-Projekt" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-18.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-18.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -844,7 +857,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/med-gemma" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">Medgemma Radiology</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/med-gemma" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/med-gemma" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 18 END-->
@@ -852,11 +865,11 @@
                 <div class="w-full md:w-1/2 px-4 item ai feat">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-19.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-19.webp" alt="Projektvorschau: Brustkrebs-Erkennung mit CNN" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-19.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-19.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -866,7 +879,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/breast-cancer-cnn" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">Breast Cancer CNN</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/breast-cancer-cnn" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/breast-cancer-cnn" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 19 END-->
@@ -874,11 +887,11 @@
                 <div class="w-full md:w-1/2 px-4 item ai">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-20.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-20.webp" alt="Projektvorschau: Malaria-Erkennung mit CNN" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-20.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-20.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -888,7 +901,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/malaria-cnn" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">Malaria Detection CNN</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/malaria-cnn" target="_blank">Weiter zur Webseite</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/malaria-cnn" target="_blank" rel="noopener noreferrer">Weiter zur Webseite</a></p>
                   </div>
                 </div>
                 <!-- 20 END-->
@@ -896,11 +909,11 @@
                 <div class="w-full md:w-1/2 px-4 item app feat">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-21.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-21.webp" alt="Projektvorschau: Mobile Wetter-App" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-21.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-21.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -910,7 +923,7 @@
                     <h3 class="mt-6">
                       <a href="https://snack.expo.dev/@petethegreat/github.com-peterruler-weather-app" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">Wetter App</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://snack.expo.dev/@petethegreat/github.com-peterruler-weather-app" target="_blank">Weiter zur App</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://snack.expo.dev/@petethegreat/github.com-peterruler-weather-app" target="_blank" rel="noopener noreferrer">Weiter zur App</a></p>
                   </div>
                 </div>
                 <!-- 21 END-->
@@ -918,11 +931,11 @@
                 <div class="w-full md:w-1/2 px-4 item web feat">
                   <div class="mb-12">
                     <div class="relative group mb-8 overflow-hidden shadow-service rounded-md">
-                      <img src="src/images/portfolio/portfolio-22.webp" alt="image" class="w-full" >
+                      <img src="src/images/portfolio/portfolio-22.webp" alt="Projektvorschau: Fullstack Issue Tracker" width="470" height="264" loading="lazy" decoding="async" class="w-full" >
                       <div
                         class="absolute w-full h-full top-0 left-0 bg-primary bg-opacity-[17%] flex items-center justify-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition"
                       >
-                        <a href="src/images/portfolio/portfolio-22.webp" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
+                        <a href="src/images/portfolio/portfolio-22.webp" target="_blank" rel="noopener noreferrer" class="glightbox w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full">
                           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14 8H8V14H6V8H0V6H6V0H8V6H14V8Z" fill="white" />
                           </svg>
@@ -932,7 +945,7 @@
                     <h3 class="mt-6">
                       <a href="https://github.com/peterruler/nodejs-server" class="font-semibold text-black hover:text-primary text-xl inline-block mb-3">Fullstack Issue Tracker mit Auth</a>
                     </h3>
-                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/nodejs-server" target="_blank">Weiter zur Anwendung</a></p>
+                    <p class="font-medium text-base text-body-color"><a style="color:#4B6CF7 !important;" href="https://github.com/peterruler/nodejs-server" target="_blank" rel="noopener noreferrer">Weiter zur Anwendung</a></p>
                   </div>
                 </div>
                 <!-- 22 END-->              
@@ -1203,10 +1216,10 @@
       <div class="flex flex-wrap -mx-4">
         <div class="w-full lg:w-1/2 px-4">
           <div class="bg-white rounded-xl relative overflow-hidden px-7 sm:px-10 p-10 shadow-testimonial mb-10">
-            <div class="mb-5"><img src="src/images/testimonial/fian.svg" alt="lineicons" class="ac" style="width:70% !important"></div>
+            <div class="mb-5"><img src="src/images/testimonial/fian.svg" alt="FIAN Schweiz" width="200" height="26" loading="lazy" decoding="async" class="ac" style="width:70% !important"></div>
             <p class="font-medium text-lg text-body-color mb-8">Peter Strössler baute vor vielen Jahren in enger Zusammenarbeit mit uns die Website von FIAN Schweiz auf betreut sie seither. Seine Arbeit umfasst gelegentliche Anpassungen im Layout, die Einbindung und das Update von Plugins, die Beantwortung unserer Fragen und anderes. Da die Zusammenarbeit jeweils zeitnah und kompetent erfolgt und wo nötig auf eigener Initiative basiert, sind wir sehr zufrieden damit.</p>
             <div class="flex items-center">
-              <div class="max-w-[60px] w-full h-[60px] rounded-full overflow-hidden mr-3"><img src="src/images/testimonial/image-1.png" alt="image" class="w-full"></div>
+              <div class="max-w-[60px] w-full h-[60px] rounded-full overflow-hidden mr-3"><img src="src/images/testimonial/image-1.png" alt="Porträt von Shagaro Wali" width="60" height="60" loading="lazy" decoding="async" class="w-full"></div>
               <div>
                 <h3 class="font-semibold text-base text-black mb-1">Michael Nanz</h3>
                 <p class="text-sm text-body-color">Co-Präsident @ Fian Schweiz / Suisse</p>
@@ -1223,10 +1236,10 @@
         </div>
         <div class="w-full lg:w-1/2 px-4">
           <div class="bg-white rounded-xl relative overflow-hidden px-7 sm:px-10 p-10 shadow-testimonial mb-10">
-            <div class="mb-5"><img src="src/images/testimonial/placementservices.svg" alt="tailgrids" class="ac"></div>
+            <div class="mb-5"><img src="src/images/testimonial/placementservices.svg" alt="Placement Services" width="333" height="96" loading="lazy" decoding="async" class="ac"></div>
             <p class="font-medium text-lg text-body-color mb-8">Herr Strössler hatte sich dank seiner raschen Auffassungsgabe selbständig in sein komplexes Aufgabengebiet eingearbeitet. Er arbeitete zuverlässig, zeigte grosses Interesse und zeichnete sich insbesondere durch seine hohe Lernbereitschaft aus. Dank seiner überdurchschnittlichen Programmierkenntnisse löste er auch fachlich anspruchsvolle Problemstellungen. In Zeiten grosser Arbeitsbelastung war er flexibel. Die ihm übertragenen Aufgaben erledigte Herr Strössler mit grossem Engagement zu unserer vollsten Zufriedenheit.</p>
             <div class="flex items-center">
-              <div class="max-w-[60px] w-full h-[60px] rounded-full overflow-hidden mr-3"><img src="src/images/testimonial/image-2.png" alt="image" class="w-full"></div>
+              <div class="max-w-[60px] w-full h-[60px] rounded-full overflow-hidden mr-3"><img src="src/images/testimonial/image-2.png" alt="Porträt von David Truninger" width="120" height="120" loading="lazy" decoding="async" class="w-full"></div>
               <div>
                 <h3 class="font-semibold text-base text-black mb-1">Tolga Tuna - Andelfingen</h3>
                 <p class="text-sm text-body-color">CEO @ Placementservices</p>
@@ -1284,22 +1297,22 @@
               >
                 <div class="flex flex-wrap mx-[-12px]">
                   <div class="w-full md:w-1/2 px-3 mb-6">
-                    <input type="text" name="name" placeholder="Ihr Name" class="contact-field" required />
+                    <input type="text" name="name" aria-label="Ihr Name" autocomplete="name" placeholder="Ihr Name" class="contact-field" required />
                   </div>
                   <div class="w-full md:w-1/2 px-3 mb-6">
-                    <input type="text" name="company" placeholder="Firma (optional)" class="contact-field" />
+                    <input type="text" name="company" aria-label="Firma" autocomplete="organization" placeholder="Firma (optional)" class="contact-field" />
                   </div>
                   <div class="w-full md:w-1/2 px-3 mb-6">
-                    <input type="email" name="email" placeholder="Ihre E-Mail" class="contact-field" required />
+                    <input type="email" name="email" aria-label="Ihre E-Mail-Adresse" autocomplete="email" placeholder="Ihre E-Mail" class="contact-field" required />
                   </div>
                   <div class="w-full md:w-1/2 px-3 mb-6">
-                    <input type="tel" name="phone" placeholder="Telefon (optional)" class="contact-field" />
+                    <input type="tel" name="phone" aria-label="Telefonnummer" autocomplete="tel" placeholder="Telefon (optional)" class="contact-field" />
                   </div>
                   <div class="w-full px-3 mb-6">
-                    <input type="text" name="area" placeholder="Fachgebiet" class="contact-field" required />
+                    <input type="text" name="area" aria-label="Fachgebiet" placeholder="Fachgebiet" class="contact-field" required />
                   </div>
                   <div class="w-full px-3 mb-8">
-                    <textarea rows="6" name="content" placeholder="Erzählen Sie mir von Ihrem Projekt" class="contact-field" required></textarea>
+                    <textarea rows="6" name="content" aria-label="Projektbeschreibung" placeholder="Erzählen Sie mir von Ihrem Projekt" class="contact-field" required></textarea>
                   </div>
                   <div class="w-full px-3">
                     <button
@@ -1319,13 +1332,14 @@
       </div>
     </section>
     <!-- ====== Contact Section End  -->     
+    </main>
     <!-- ====== Footer Section Start  -->
     <footer class="bg-black pt-[100px] pb-12 relative z-10">
       <div class="container">
         <div class="flex flex-wrap -mx-4">
           <div class="w-full md:w-1/2 lg:w-4/12 px-4">
             <div class="mb-10">
-              <h2 class="font-bold text-white text-[44px] leading-tight mb-5">Lass uns miteinander sprechen!</h2>
+              <h2 class="font-bold text-white text-[44px] leading-tight mb-5">Lassen Sie uns sprechen!</h2>
               <h3 class="font-bold text-white opacity-70 text-2xl mb-2">Kontakt Info</h3>
               <p class="font-medium text-base text-body-color mb-1"><a style="color:#4B6CF7 !important;" href="#contact" class="menu-scroll">Kontaktformular</a></p>
               <p class="font-medium text-base text-body-color mb-1">Schweiz</p>
@@ -1345,12 +1359,6 @@
       <div class="mt-10 pt-12 border-t border-white border-opacity-10">
         <p class="font-medium text-base text-body-color text-center">Alle Rechte vorbehalten © und gemacht mit <span style="color:#dc3545;">♥</span> von Peter Strössler <span id="year-footer"></span>
         </p>
-      <script>
-        ;(function () {
-          const year = new Date().getFullYear();
-          document.getElementById("year-footer").innerText = year;
-        })();
-      </script>
       </div>
       <div class="absolute left-0 bottom-0 -z-1">
         <span class="hidden">shape</span>
@@ -1395,255 +1403,14 @@
 
     <!-- ====== Back To Top Start -->
     <a
-      href="javascript:void(0)"
+      href="#home"
+      aria-label="Zurück zum Seitenanfang"
       class="hidden items-center justify-center bg-primary text-white w-10 h-10 rounded-md fixed bottom-8 right-8 left-auto z-[999] hover:shadow-signUp transition duration-300 back-to-top"
     >
       <span class="w-3 h-3 border-t border-l border-white rotate-45 mt-[6px]"></span>
     </a>
     <!-- ====== Back To Top End -->
 
-    <!-- ====== All Scripts -->
-    <script>
-      // ==== for menu scroll
-      const pageLink = document.querySelectorAll(".menu-scroll");
-
-      pageLink.forEach((elem) => {
-        elem.addEventListener("click", (e) => {
-          e.preventDefault();
-          document.querySelector(elem.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-            offsetTop: 1 - 60,
-          });
-        });
-      });
-
-      // section menu active
-      function onScroll(event) {
-        const sections = document.querySelectorAll(".menu-scroll");
-        const scrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
-
-        for (let i = 0; i < sections.length; i++) {
-          const currLink = sections[i];
-          const val = currLink.getAttribute("href");
-          const refElement = document.querySelector(val);
-          const scrollTopMinus = scrollPos + 73;
-          if (refElement.offsetTop <= scrollTopMinus && refElement.offsetTop + refElement.offsetHeight > scrollTopMinus) {
-            document.querySelector(".menu-scroll").classList.remove("active");
-            currLink.classList.add("active");
-          } else {
-            currLink.classList.remove("active");
-          }
-        }
-      }
-
-      window.document.addEventListener("scroll", onScroll);
-
-    </script>
-    <script type="module">
-      try {
-        const json =  await window.eventsFromK5();
-        if(json) {
-          const {type, visum} = json;
-          console.warn("3. working "+JSON.stringify(visum));
-        } else {
-          console.warn("received undefined or null data from eventsFromK5");
-        }
-      } catch (e) {
-        console.error("error calling eventsFromK5" , e);
-      }
-    </script>
-    <script>
-      window.addEventListener("load", function () {
-        const itemsWrapper = document.querySelector("#portfolio .items-wrapper");
-        const featuredButton = document.querySelector('.portfolio-buttons button[data-filter=".feat"]');
-
-        if (!itemsWrapper) {
-          return;
-        }
-
-        itemsWrapper.querySelectorAll(".item").forEach(function (item) {
-          item.style.display = item.classList.contains("feat") ? "" : "none";
-        });
-
-        if (featuredButton) {
-          featuredButton.click();
-        }
-
-        itemsWrapper.classList.add("portfolio-ready");
-      });
-    </script>
-    <script>
-      ;(function () {
-        const form = document.getElementById("contactForm");
-        const status = document.getElementById("result");
-
-        if (!form || !status) {
-          return;
-        }
-
-        const submitButton = form.querySelector('button[type="submit"]');
-        const defaultButtonLabel = submitButton ? submitButton.dataset.label || submitButton.textContent.trim() : "Senden";
-        const fallbackEndpoint = form.getAttribute("action");
-
-        function resolveEndpoint() {
-          return fallbackEndpoint;
-        }
-
-        function setStatus(message, type) {
-          status.textContent = message;
-          status.classList.remove("is-error", "is-success", "is-pending", "is-visible");
-
-          if (!message) {
-            return;
-          }
-
-          status.classList.add("is-visible");
-
-          if (type) {
-            status.classList.add(type);
-          }
-        }
-
-        function clearFieldValidation() {
-          form.querySelectorAll(".contact-field").forEach(function (field) {
-            field.classList.remove("is-invalid");
-          });
-        }
-
-        function invalidateField(field, message) {
-          if (field) {
-            field.classList.add("is-invalid");
-            field.focus();
-          }
-
-          setStatus(message, "is-error");
-        }
-
-        function validateForm() {
-          const nameField = form.elements.namedItem("name");
-          const companyField = form.elements.namedItem("company");
-          const emailField = form.elements.namedItem("email");
-          const phoneField = form.elements.namedItem("phone");
-          const areaField = form.elements.namedItem("area");
-          const contentField = form.elements.namedItem("content");
-          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          const phonePattern = /^[0-9+()\-\s/]{6,}$/;
-          const textPattern = /^[\p{L}\p{M}0-9 .,'&()\-/]+$/u;
-
-          clearFieldValidation();
-
-          if (!(nameField instanceof HTMLInputElement) || nameField.value.trim().length < 2) {
-            invalidateField(nameField, "Bitte geben Sie einen gueltigen Namen ein.");
-            return false;
-          }
-
-          if (!textPattern.test(nameField.value.trim())) {
-            invalidateField(nameField, "Der Name enthaelt ungueltige Zeichen.");
-            return false;
-          }
-
-          if (companyField instanceof HTMLInputElement && companyField.value.trim() && !textPattern.test(companyField.value.trim())) {
-            invalidateField(companyField, "Die Firma enthaelt ungueltige Zeichen.");
-            return false;
-          }
-
-          if (!(emailField instanceof HTMLInputElement) || !emailPattern.test(emailField.value.trim())) {
-            invalidateField(emailField, "Bitte geben Sie eine gueltige E-Mail-Adresse ein.");
-            return false;
-          }
-
-          if (phoneField instanceof HTMLInputElement && phoneField.value.trim() && !phonePattern.test(phoneField.value.trim())) {
-            invalidateField(phoneField, "Bitte geben Sie eine gueltige Telefonnummer ein.");
-            return false;
-          }
-
-          if (!(areaField instanceof HTMLInputElement) || areaField.value.trim().length < 2) {
-            invalidateField(areaField, "Bitte geben Sie ein Fachgebiet ein.");
-            return false;
-          }
-
-          if (!textPattern.test(areaField.value.trim())) {
-            invalidateField(areaField, "Das Fachgebiet enthaelt ungueltige Zeichen.");
-            return false;
-          }
-
-          if (!(contentField instanceof HTMLTextAreaElement) || contentField.value.trim().length < 10) {
-            invalidateField(contentField, "Bitte beschreiben Sie Ihr Anliegen mit mindestens 10 Zeichen.");
-            return false;
-          }
-
-          setStatus("");
-          return true;
-        }
-
-        function setSubmittingState(isSubmitting) {
-          if (!submitButton) {
-            return;
-          }
-
-          submitButton.disabled = isSubmitting;
-          submitButton.textContent = isSubmitting ? "Wird gesendet..." : defaultButtonLabel;
-        }
-
-        async function submitForm(endpoint) {
-          if (!endpoint) {
-            setStatus("Kein Mail-Endpunkt definiert.", "is-error");
-            return;
-          }
-
-          const formData = new FormData(form);
-          const requestBody = new URLSearchParams();
-
-          formData.forEach(function (value, key) {
-            if (typeof value === "string") {
-              requestBody.append(key, value);
-            }
-          });
-
-          setStatus("Nachricht wird gesendet...", "is-pending");
-          setSubmittingState(true);
-
-          try {
-            const response = await fetch(endpoint, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-                "Accept": "application/json, text/plain, */*",
-              },
-              body: requestBody.toString(),
-            });
-
-            if (!response.ok) {
-              throw new Error("Mailer request failed.");
-            }
-
-            form.reset();
-            clearFieldValidation();
-            setStatus("Vielen Dank. Ihre Nachricht wurde erfolgreich versendet.", "is-success");
-          } catch (_error) {
-            setStatus("Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie mir per E-Mail.", "is-error");
-          } finally {
-            setSubmittingState(false);
-          }
-        }
-
-        form.addEventListener("submit", function (event) {
-          event.preventDefault();
-
-          if (!validateForm()) {
-            return;
-          }
-
-          const endpoint = resolveEndpoint();
-
-          if (!endpoint) {
-            setStatus("Kein Mail-Endpunkt definiert.", "is-error");
-            return;
-          }
-
-          void submitForm(endpoint);
-        });
-      })();
-    </script>
-  <script defer src="bundle.js"></script></body>
+    <script defer src="site.js"></script>
+  </body>
 </html>
