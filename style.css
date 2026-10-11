@@ -1909,3 +1909,33 @@ input[type="checkbox"]:checked ~ label span svg{
     line-height: 2rem;
   }
 }
+.digital-twin-frame {
+  display: block;
+  width: 100%;
+  height: 800px;
+  height: clamp(560px, 80svh, 1000px);
+  border: 1px solid #E9ECF8;
+  border-radius: 12px;
+  background: #f8f9ff;
+}
+
+#digital-twin {
+  scroll-margin-top: 80px;
+}
+
+@media (min-width: 960px) {
+  .header-navigation {
+    justify-content: flex-end;
+    min-width: 0;
+  }
+
+  #navbarCollapse ul {
+    gap: clamp(16px, 2vw, 32px);
+  }
+
+  #navbarCollapse .menu-scroll {
+    margin-left: 0;
+    margin-right: 0;
+    white-space: nowrap;
+  }
+}
